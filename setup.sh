@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+export USCFANALDIR=$PWD
+export PYTHONPATH=$USCFANALDIR:$PYTHONPATH
+export PATH=$USCFANALDIR/bin:$PATH
