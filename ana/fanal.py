@@ -69,8 +69,9 @@ def selection_blind(df, eroi = eroi, eblob2 = eblob2):
     sel0 = (df.track0_E >= eroi[0]) &  (df.track0_E < eroi[1])
     sel1 = (df.blob2_E  > eblob2)
     sel  = np.logical_or(sel0, sel1)
-    return ~sel
-
+    sel  = ~sel
+    sele = (df.E >= erange[0]) &  (df.E < erange[1])
+    return np.logical_and(sel, sele)
 
 def generate_mc_experiment(mcs, nevts):
     """ generate a MC experiment with the mcs samples, mcs, and the events in each sample, nevents
