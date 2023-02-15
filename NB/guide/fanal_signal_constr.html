@@ -1,0 +1,1286 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Fanal, a neutrino-less beta decay experiment &#8212; Fanal - USC</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Fanal - USC</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Fanal - USC
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/fanal.html">
+   Fanal, a neutrino-less beta decay search
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/guide/fanal_selection.html">
+   Signal Selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/guide/fanal_energy_resolution.html">
+   Energy resolution
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/guide/fanal_bkg.html">
+   Expected number of background events
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/guide/fanal_signal_countexp.html">
+   Sensitivity of a counting experiment
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/guide/fanal_signal.html">
+   Estimate the number of signal events,
+   <span class="math notranslate nohighlight">
+    \(n^{\beta\beta}_{RoI}\)
+   </span>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notebooks/guide/fanal_data_access.html">
+   Open the box
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/NB/guide/fanal_signal_constr.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/NB/guide/fanal_signal_constr.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/NB/guide/fanal_signal_constr.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-open-exercise">
+   An open exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentitivity-of-the-experiment">
+   Sentitivity of the experiment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usc-master-de-fisica-fisica-de-particula-ii">
+     USC, Master de Física, Física de Partícula II
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-modules">
+       Importing modules
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indications">
+   Indications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective">
+     Objective:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tasks">
+     Tasks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   Notes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-evil-is-in-the-details">
+     The evil is in the details:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-parameters">
+   Main parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-data">
+   Access the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-a-mc-experiment">
+   Generate a MC experiment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimate-the-number-of-events">
+     Estimate the number of events
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-the-mc-sample-pdfs">
+     Generate the mc sample pdfs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-a-mc-experiment-and-fit-the-e-spectrum">
+     Generate  a MC experiment and Fit the E spectrum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fit-the-energy-distribution">
+     Fit the Energy distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-to-the-3-samples-estimate-the-number-of-signal-events">
+   Fit to the 3 samples: estimate the number of signal events
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-n-experiments-in-different-signal-scenarios">
+     Generate n-experiments in different signal scenarios.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-the-half-time">
+   Estimate the half-time
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fanal, a neutrino-less beta decay experiment</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-open-exercise">
+   An open exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sentitivity-of-the-experiment">
+   Sentitivity of the experiment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usc-master-de-fisica-fisica-de-particula-ii">
+     USC, Master de Física, Física de Partícula II
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#importing-modules">
+       Importing modules
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indications">
+   Indications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective">
+     Objective:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tasks">
+     Tasks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   Notes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-evil-is-in-the-details">
+     The evil is in the details:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#main-parameters">
+   Main parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-the-data">
+   Access the data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-a-mc-experiment">
+   Generate a MC experiment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimate-the-number-of-events">
+     Estimate the number of events
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-the-mc-sample-pdfs">
+     Generate the mc sample pdfs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-a-mc-experiment-and-fit-the-e-spectrum">
+     Generate  a MC experiment and Fit the E spectrum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fit-the-energy-distribution">
+     Fit the Energy distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-to-the-3-samples-estimate-the-number-of-signal-events">
+   Fit to the 3 samples: estimate the number of signal events
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-n-experiments-in-different-signal-scenarios">
+     Generate n-experiments in different signal scenarios.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimate-the-half-time">
+   Estimate the half-time
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="fanal-a-neutrino-less-beta-decay-experiment">
+<h1>Fanal, a neutrino-less beta decay experiment<a class="headerlink" href="#fanal-a-neutrino-less-beta-decay-experiment" title="Permalink to this headline">#</a></h1>
+<section id="an-open-exercise">
+<h2>An open exercise<a class="headerlink" href="#an-open-exercise" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="sentitivity-of-the-experiment">
+<h2>Sentitivity of the experiment<a class="headerlink" href="#sentitivity-of-the-experiment" title="Permalink to this headline">#</a></h2>
+<section id="usc-master-de-fisica-fisica-de-particula-ii">
+<h3>USC, Master de Física, Física de Partícula II<a class="headerlink" href="#usc-master-de-fisica-fisica-de-particula-ii" title="Permalink to this headline">#</a></h3>
+<p>J. A. Hernando-Morata, with the help of J. Muñoz, J. M. Benlloch, B. Palmeiro, G. Díaz</p>
+<p>February 2021 - February 2022</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<section id="importing-modules">
+<h4>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tables</span> <span class="k">as</span> <span class="nn">tb</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">scipy.constants</span> <span class="k">as</span> <span class="nn">constants</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>     <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span>  <span class="k">as</span> <span class="nn">optimize</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># REMEMBER TO ADD THE FOLDER TO PYTHONPATH</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">dirpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()[:</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;add path to PYTHONPATH : &#39;</span><span class="p">,</span> <span class="n">dirpath</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">dirpath</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">core.pltext</span>  <span class="k">as</span> <span class="nn">pltext</span>   <span class="c1"># extensions for plotting histograms</span>
+<span class="kn">import</span> <span class="nn">core.hfit</span>    <span class="k">as</span> <span class="nn">hfit</span>     <span class="c1"># extension to fit histograms</span>
+<span class="kn">import</span> <span class="nn">core.efit</span>    <span class="k">as</span> <span class="nn">efit</span>     <span class="c1"># Fit Utilites - Includes Extend Likelihood Fit with composite PDFs</span>
+<span class="kn">import</span> <span class="nn">core.utils</span>   <span class="k">as</span> <span class="nn">ut</span>       <span class="c1"># generic utilities</span>
+<span class="kn">import</span> <span class="nn">ana.fanal</span>    <span class="k">as</span> <span class="nn">fn</span>       <span class="c1"># analysis functions specific to fanal</span>
+<span class="kn">import</span>     <span class="nn">collpars</span> <span class="k">as</span> <span class="nn">collpars</span> <span class="c1"># collaboration specific parameters</span>
+<span class="n">pltext</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="indications">
+<h2>Indications<a class="headerlink" href="#indications" title="Permalink to this headline">#</a></h2>
+<section id="objective">
+<h3>Objective:<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h3>
+<p><strong>Validate the method to compute the number of signal events</strong>.</p>
+</section>
+<section id="tasks">
+<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Open the data file (HDF) and access the simulated data (MC) of 214Bi, 208Tl and bb0nu.</p></li>
+<li><p>Generate experiments with a given number of signal events and a level of background compatible with the one estimated using the blind-data sample (in previous task).</p></li>
+<li><p>Ensure that the estimation of your signal is correct in different signal scenarios.</p>
+<ul>
+<li><p>Consider for example the case where the signal events are equal to Bi.</p></li>
+</ul>
+</li>
+<li><p>Try to estimate the uncertainties on the number of signal events.</p></li>
+<li><p>Estimate the half-life for different number signal scenarios.</p></li>
+</ul>
+</section>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>To valide a fit, usually we generate a large number of experiments with known true parameters; estimate the parameters, and study their distributions.</p></li>
+<li><p>In the case of ‘gaussian’ limits, these distributions are gaussian, centered in the true value of the parameters and their standard deviations are the uncertentities of the parameters.</p></li>
+</ul>
+<section id="the-evil-is-in-the-details">
+<h3>The evil is in the details:<a class="headerlink" href="#the-evil-is-in-the-details" title="Permalink to this headline">#</a></h3>
+<p>Here we are going to generate n-experiments with the number background events compatible with the values obtained using the blind-data (previous section) and several scenarios of possible number of signal events.</p>
+<p>We aply the selection to each experiment data. Here we use the fanal selection, except that we do not apply the last cut, the refined energy region (RoI). Then we fit the energy distribution of the selected data to a combined PDF obtained from the three MC samples (bb0nu, Bi, Tl) in which we have previously applied the selection.</p>
+<p>A trick has been used: as the blob-energy and the event energy are uncorrelated, we have used  the event energy distributions obtained before the blob-energy cut as templates for the PDFs. If we have a large MC statistics we do not need this trick.</p>
+</section>
+</section>
+<section id="main-parameters">
+<h2>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coll</span>          <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">collaboration</span>
+<span class="n">ntracks_range</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">ntracks_range</span>
+<span class="n">eblob2_range</span>  <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eblob2_range</span>
+<span class="n">erange</span>        <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">erange</span>
+<span class="n">eroi</span>          <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eroi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Collaboration             : </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coll</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of tracks range    : (</span><span class="si">{:d}</span><span class="s1">, </span><span class="si">{:6.2f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ntracks_range</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Blob-2 energy range       : (</span><span class="si">{:6.3f}</span><span class="s1">, </span><span class="si">{:6.3f}</span><span class="s1">) MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">eblob2_range</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Energy range              : (</span><span class="si">{:6.3f}</span><span class="s1">, </span><span class="si">{:6.3f}</span><span class="s1">) MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">erange</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Energy RoI range          : (</span><span class="si">{:6.3f}</span><span class="s1">, </span><span class="si">{:6.3f}</span><span class="s1">) MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">eroi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration             : new_alpha
+number of tracks range    : (1,   1.10)
+Blob-2 energy range       : ( 0.400,  1.200) MeV
+Energy range              : ( 2.400,  2.700) MeV
+Energy RoI range          : ( 2.430,  2.480) MeV
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of the selection variables names and ranges</span>
+<span class="n">varnames</span>  <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;num_tracks&#39;</span><span class="p">,</span> <span class="s1">&#39;blob2_E&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+<span class="n">varranges</span> <span class="o">=</span> <span class="p">[</span><span class="n">ntracks_range</span><span class="p">,</span> <span class="n">eblob2_range</span><span class="p">,</span> <span class="n">erange</span><span class="p">,</span> <span class="n">eroi</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;varnames  : &#39;</span><span class="p">,</span> <span class="n">varnames</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;varranges : &#39;</span><span class="p">,</span> <span class="n">varranges</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>varnames  :  [&#39;num_tracks&#39;, &#39;blob2_E&#39;, &#39;E&#39;, &#39;E&#39;]
+varranges :  [(1, 1.1), (0.4, 1.2), (2.4, 2.7), (2.43, 2.48)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of  blind events</span>
+<span class="n">nevts_Bi_blind</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">nevts_Bi_blind</span>
+<span class="n">nevts_Tl_blind</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">nevts_Tl_blind</span>
+<span class="n">nevts_blind</span>    <span class="o">=</span> <span class="p">[</span><span class="n">nevts_Bi_blind</span><span class="p">,</span> <span class="n">nevts_Tl_blind</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of bkg events in blind data : Bi = </span><span class="si">{:6.2f}</span><span class="s1">, Tl = </span><span class="si">{:6.2f}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">nevts_blind</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">56</span><span class="o">/</span><span class="n">_pmdccc97ljb_l3v3s6gkrxm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_83293</span><span class="o">/</span><span class="mf">1868147190.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># number of  blind events</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">nevts_Bi_blind</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">nevts_Bi_blind</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">nevts_Tl_blind</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">nevts_Tl_blind</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">nevts_blind</span>    <span class="o">=</span> <span class="p">[</span><span class="n">nevts_Bi_blind</span><span class="p">,</span> <span class="n">nevts_Tl_blind</span><span class="p">]</span>
+<span class="nn">      5 print(&#39;Number of bkg events</span> in <span class="ni">blind data : Bi = {:6.2f}, Tl = {:6.2f}.&#39;.format</span><span class="nt">(*nevts_blind))</span>
+
+<span class="ne">AttributeError</span>: module &#39;collpars&#39; has no attribute &#39;nevts_Bi_blind&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="access-the-data">
+<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dirpath</span> <span class="o">=</span> <span class="s1">&#39;/Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal/data/&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;fanal_&#39;</span> <span class="o">+</span> <span class="n">coll</span> <span class="o">+</span> <span class="s1">&#39;.h5&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data path and filename : &#39;</span><span class="p">,</span> <span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+
+<span class="n">mcbi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span>
+<span class="n">mctl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span>
+<span class="n">mcbb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bb0nu&#39;</span><span class="p">)</span>
+
+<span class="n">mcs</span>      <span class="o">=</span> <span class="p">[</span><span class="n">mcbb</span><span class="p">,</span> <span class="n">mcbi</span><span class="p">,</span> <span class="n">mctl</span><span class="p">]</span>
+<span class="n">tsamples</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bb&#39;</span><span class="p">,</span> <span class="s1">&#39;Bi&#39;</span><span class="p">,</span> <span class="s1">&#39;Tl&#39;</span><span class="p">]</span>
+<span class="n">ssamples</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\beta\beta0\nu$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">$Tl&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal/data/fanal_new_beta.h5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generate-a-mc-experiment">
+<h2>Generate a MC experiment<a class="headerlink" href="#generate-a-mc-experiment" title="Permalink to this headline">#</a></h2>
+<section id="estimate-the-number-of-events">
+<h3>Estimate the number of events<a class="headerlink" href="#estimate-the-number-of-events" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collpars</span> <span class="kn">import</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">,</span> <span class="n">nevts_Bi_E</span><span class="p">,</span> <span class="n">nevts_Tl_E</span>
+<span class="kn">from</span> <span class="nn">collpars</span> <span class="kn">import</span> <span class="n">unevts_Bi</span><span class="p">,</span> <span class="n">unevts_Tl</span>
+<span class="kn">from</span> <span class="nn">collpars</span> <span class="kn">import</span> <span class="n">eff_bb_E</span>
+
+<span class="n">nbb_E</span> <span class="o">=</span> <span class="n">nevts_Bi_E</span>
+
+<span class="n">nevts</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total number of events :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{:6.1f}</span><span class="s1">,&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ni</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tsamples</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total number of events : bb 	   48.7, Bi 	 1403.4, Tl 	 20665.1,
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">effs_E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">collpars</span><span class="o">.</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;efficiencies    &#39;</span><span class="p">,</span> <span class="n">effs_E</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;expected events &#39;</span><span class="p">,</span> <span class="n">effs_E</span> <span class="o">*</span> <span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;events in E&#39;</span><span class="p">,</span> <span class="n">nevts_Bi_E</span><span class="p">,</span> <span class="n">nevts_Tl_E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>efficiencies     [0.519  0.018  0.0073]
+expected events  [ 25.254      25.260894  150.8555147]
+events in E 25.254 150.787
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="generate-the-mc-sample-pdfs">
+<h3>Generate the mc sample pdfs<a class="headerlink" href="#generate-the-mc-sample-pdfs" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the MC reference samples with only two cuts *ntracks_range*, *erange*</span>
+<span class="n">refmcs_vars</span>   <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;num_tracks&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+<span class="n">refmcs_ranges</span> <span class="o">=</span> <span class="p">[</span><span class="n">ntracks_range</span><span class="p">,</span> <span class="n">erange</span><span class="p">]</span>
+<span class="n">refmcs</span>        <span class="o">=</span> <span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">_select_sample</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">refmcs_vars</span><span class="p">,</span> <span class="n">refmcs_ranges</span><span class="p">)</span> <span class="k">for</span> <span class="n">mc</span> <span class="ow">in</span> <span class="n">mcs</span><span class="p">]</span>
+
+<span class="c1"># select the variable and range to generate the pdfs</span>
+<span class="n">bins</span>     <span class="o">=</span> <span class="mi">100</span>
+<span class="n">varname</span>  <span class="o">=</span> <span class="s1">&#39;E&#39;</span> 
+<span class="n">varrange</span> <span class="o">=</span> <span class="n">erange</span>
+
+<span class="c1"># generate the PDFs using the blind mc samples</span>
+<span class="n">histos</span>   <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">mc</span><span class="p">[</span><span class="n">varname</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">varrange</span><span class="p">)</span> <span class="k">for</span> <span class="n">mc</span>    <span class="ow">in</span> <span class="n">refmcs</span><span class="p">]</span>
+<span class="n">pdfs</span>     <span class="o">=</span> <span class="p">[</span><span class="n">stats</span><span class="o">.</span><span class="n">rv_histogram</span><span class="p">(</span><span class="n">histo</span><span class="p">)</span>                         <span class="k">for</span> <span class="n">histo</span> <span class="ow">in</span> <span class="n">histos</span><span class="p">]</span>
+<span class="n">ell</span>      <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">ExtComPDF</span><span class="p">(</span><span class="n">pdfs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subplot</span> <span class="o">=</span> <span class="n">pltext</span><span class="o">.</span><span class="n">canvas</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">varrange</span><span class="p">,</span> <span class="n">bins</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pdf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pdfs</span><span class="p">):</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">pdf</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="n">ssamples</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;E (MeV)&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;PDFs&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fanal_signal_constr_20_0.png" src="../../_images/fanal_signal_constr_20_0.png" />
+</div>
+</div>
+</section>
+<section id="generate-a-mc-experiment-and-fit-the-e-spectrum">
+<h3>Generate  a MC experiment and Fit the E spectrum<a class="headerlink" href="#generate-a-mc-experiment-and-fit-the-e-spectrum" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbb_E</span> <span class="o">=</span> <span class="n">nevts_Bi_E</span>
+<span class="n">nevts</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">))</span>
+<span class="n">unevts</span>  <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">unevts_Bi</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">unevts_Tl</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total number of events :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{:6.1f}</span><span class="s1">,&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ni</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tsamples</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unc   number of events :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{:6.1f}</span><span class="s1">,&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">ni</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tsamples</span><span class="p">,</span> <span class="n">unevts</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total number of events : bb 	   48.7, Bi 	 1403.4, Tl 	 20665.1,
+Unc   number of events : bb 	    0.0, Bi 	   63.2, Tl 	  176.2,
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># generate an experiment from mc samples</span>
+<span class="n">mcdat</span>     <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">generate_mc_experiment</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;data size &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mcdat</span><span class="p">))</span>
+
+<span class="c1"># apply selection</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;selection        :&#39;</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;selection ranges :&#39;</span><span class="p">,</span> <span class="n">varranges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">mcdatana</span>  <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">_select_sample</span><span class="p">(</span><span class="n">mcdat</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">varranges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;selected data size &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mcdatana</span><span class="p">))</span>
+
+<span class="c1"># data selection efficiency</span>
+<span class="n">eff_data</span>  <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mcdatana</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mcdat</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;data selection efficiency </span><span class="si">{:1.2e}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">eff_data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data size  21931
+selection        : [&#39;num_tracks&#39;, &#39;blob2_E&#39;, &#39;E&#39;]
+selection ranges : [(1, 1.1), (0.4, 1.2), (2.4, 2.7)]
+selected data size  180
+data selection efficiency 8.21e-03
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># array with the energies of selected mc-data in erange</span>
+<span class="n">enes</span>      <span class="o">=</span> <span class="n">mcdatana</span><span class="p">[</span><span class="n">varname</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> 
+
+<span class="c1"># expecte number of events in the selected mc-data</span>
+<span class="n">nevts_exp</span> <span class="o">=</span> <span class="n">nevts</span>  <span class="o">*</span> <span class="n">effs_E</span> 
+
+<span class="n">res</span>       <span class="o">=</span> <span class="n">ell</span><span class="o">.</span><span class="n">best_estimate</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts_exp</span><span class="p">)</span>
+<span class="n">nevts_est</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nevts_est</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total number of events     :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> = </span><span class="si">{:6.2f}</span><span class="s1">, &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">ni</span><span class="p">)</span> \
+                                              <span class="k">for</span> <span class="n">si</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tsamples</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected number of events  :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> = </span><span class="si">{:6.2f}</span><span class="s1">, &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">ni</span><span class="p">)</span> \
+                                              <span class="k">for</span> <span class="n">si</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tsamples</span><span class="p">,</span> <span class="n">nevts_exp</span><span class="p">)])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fit success ?              :&#39;</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated number of events :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> = </span><span class="si">{:6.2f}</span><span class="s1">, &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">si</span><span class="p">,</span> <span class="n">ni</span><span class="p">)</span> \
+                                              <span class="k">for</span> <span class="n">si</span><span class="p">,</span> <span class="n">ni</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">tsamples</span><span class="p">,</span> <span class="n">nevts_est</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 13.08233184  22.51837246 144.39563067]
+Total number of events     : bb =  48.66,  Bi = 1403.38,  Tl = 20665.14, 
+Expected number of events  : bb =  25.25,  Bi =  25.26,  Tl = 150.86, 
+Fit success ?              : True
+Estimated number of events : bb =  13.08,  Bi =  22.52,  Tl = 144.40, 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the distribution of the energies of the blind data</span>
+<span class="c1"># over impose the pdfs with scaled by the estimated number of blind events in each sample</span>
+<span class="n">fn</span><span class="o">.</span><span class="n">plot_fit_ell</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">nevts_est</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">parnames</span> <span class="o">=</span> <span class="n">ssamples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fanal_signal_constr_25_0.png" src="../../_images/fanal_signal_constr_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbb_E</span> <span class="o">=</span> <span class="n">nevts_Bi_E</span>
+<span class="n">nevts</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">))</span>
+<span class="n">unevts</span>  <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">unevts_Bi</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">unevts_Tl</span><span class="p">)</span>
+
+<span class="c1"># generate an experiment from mc samples</span>
+<span class="n">mcdat</span>     <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">generate_mc_experiment</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;data size &#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mcdat</span><span class="p">))</span>
+
+<span class="n">ns_exp</span><span class="p">,</span> <span class="n">uns_exp</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">_nevents_expected_in_selection</span><span class="p">(</span><span class="n">nevts</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">varranges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">unevts</span><span class="p">)</span>
+<span class="n">res</span><span class="p">,</span> <span class="n">ene</span><span class="p">,</span> <span class="n">ell</span>   <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">ana_experiment</span><span class="p">(</span><span class="n">mcdat</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">,</span> <span class="n">unevts</span><span class="p">)</span>
+<span class="n">ns_est</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected     &#39;</span><span class="p">,</span> <span class="n">ns_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unc Expected &#39;</span><span class="p">,</span> <span class="n">uns_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Estimated    &#39;</span><span class="p">,</span> <span class="n">ns_est</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data size  22281
+selection variables  : [&#39;E&#39;, &#39;num_tracks&#39;, &#39;blob2_E&#39;]
+selection ranges     : [(2.4, 2.65), (1.0, 1.1), (0.4, inf)]
+selection mc samples : [&#39;E&#39;, &#39;num_tracks&#39;]
+data size            : 189
+mc sizes             : [30217, 6688, 31607]
+efficiencies         :   0.52, 1.76e-02, 7.28e-03
+Initial       Events :  25.26,  24.65, 150.43
+Uncertainties Events :   0.00,   1.11,   1.28
+Fit success          :  True
+Estimated     Events :  29.62,  24.52, 150.29
+Expected      [ 25.2539142   25.25361872 150.78731914]
+Unc Expected  [0.         1.13770424 1.28570772]
+Estimated     [ 29.62420949  24.51907328 150.2855695 ]
+</pre></div>
+</div>
+<img alt="../../_images/fanal_signal_constr_26_1.png" src="../../_images/fanal_signal_constr_26_1.png" />
+</div>
+</div>
+</section>
+<section id="fit-the-energy-distribution">
+<h3>Fit the Energy distribution<a class="headerlink" href="#fit-the-energy-distribution" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="fit-to-the-3-samples-estimate-the-number-of-signal-events">
+<h2>Fit to the 3 samples: estimate the number of signal events<a class="headerlink" href="#fit-to-the-3-samples-estimate-the-number-of-signal-events" title="Permalink to this headline">#</a></h2>
+<p>The <em>ana_experiment</em> in the <em>fanal</em> module does the analysis:</p>
+<ol class="simple">
+<li><p>Selects the data and the MC-samples. It uses fanal selection (E-range, 1-track, blob2 &gt; 0.4 MeV).</p></li>
+<li><p>Creates the Composide PDF with the MC-selected samples for the energy.</p></li>
+<li><p>Fits the energy of selected data to the composite PDF.</p></li>
+<li><p>Returns the fit results, the energy values, the ExtComPDF object, and the efficiencies of the selection in MC</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#  do the analysis</span>
+<span class="n">mcdat</span>  <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">generate_mc_experiment</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+<span class="n">ns_exp</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">_nevents_expected_in_selection</span><span class="p">(</span><span class="n">nevts</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">varranges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">res</span><span class="p">,</span> <span class="n">ene</span><span class="p">,</span> <span class="n">ell</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">ana_experiment</span><span class="p">(</span><span class="n">mcdat</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+<span class="n">ns_est</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">ns_exp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ns_est</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>selection variables  : [&#39;E&#39;, &#39;num_tracks&#39;, &#39;blob2_E&#39;]
+selection ranges     : [(2.4, 2.65), (1.0, 1.1), (0.4, inf)]
+selection mc samples : [&#39;E&#39;, &#39;num_tracks&#39;]
+data size            : 199
+mc sizes             : [30217, 6688, 31607]
+efficiencies         :   0.52, 1.76e-02, 7.28e-03
+Initial       Events :  25.26,  24.65, 150.43
+Fit success          :  True
+Estimated     Events :  24.08,  17.95, 156.97
+(array([ 25.2539142 ,  25.25361872, 150.78731914]), None)
+[ 24.08306707  17.94765917 156.96731028]
+</pre></div>
+</div>
+<img alt="../../_images/fanal_signal_constr_30_1.png" src="../../_images/fanal_signal_constr_30_1.png" />
+</div>
+</div>
+<section id="generate-n-experiments-in-different-signal-scenarios">
+<h3>Generate n-experiments in different signal scenarios.<a class="headerlink" href="#generate-n-experiments-in-different-signal-scenarios" title="Permalink to this headline">#</a></h3>
+<p>Generate n-experiments (1000) with different 0bbnu events, for example 100, 10, 2 events in the RoI.</p>
+<p>Be careful with the case of very few bb0nu events in the RoI.</p>
+<p>Get the distribution of the estimated number of events.</p>
+<p>Estimate the number of events uncertainties for each scenario</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Compute the efficiencies in the E-range of the fit for Bi, Tl</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tmu</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">mubest</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">ell</span><span class="o">.</span><span class="n">loglike</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="o">*</span><span class="n">mu</span><span class="p">)</span> <span class="o">-</span> <span class="n">ell</span><span class="o">.</span><span class="n">loglike</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="o">*</span><span class="n">mubest</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">tmu1</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">mubest</span><span class="p">):</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">mu1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">mubest</span><span class="p">)</span>
+    <span class="n">mu1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">mu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">ell</span><span class="o">.</span><span class="n">best_estimate</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="o">*</span><span class="n">mu1</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+    <span class="c1">#print(mu1, res.x)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">tmu</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mubest</span><span class="p">)</span> <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">result</span>                            
+
+<span class="k">def</span> <span class="nf">q0</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">mubest</span><span class="p">):</span>
+    
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">mubest</span><span class="p">)</span>
+    <span class="n">mu</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">ell</span><span class="o">.</span><span class="n">best_estimate</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="o">*</span><span class="n">mu</span><span class="p">,</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">tmu</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mubest</span><span class="p">)</span> <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">success</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">experiments</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">nevts</span><span class="p">,</span> <span class="n">unevts</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">ssamples</span> <span class="o">=</span> <span class="n">ssamples</span><span class="p">,</span> <span class="n">plot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+    
+    <span class="n">nevts0</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">_nevents_expected_in_selection</span><span class="p">(</span><span class="n">nevts</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">varranges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">unevts</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nevts0&#39;</span><span class="p">,</span> <span class="n">nevts0</span><span class="p">)</span>
+
+    <span class="n">nevts0</span> <span class="o">=</span> <span class="n">nevts0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">unevts</span> <span class="o">!=</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">nevts0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;nevts0&#39;</span><span class="p">,</span> <span class="n">nevts0</span><span class="p">)</span>
+    
+    <span class="n">mevts</span>  <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+        <span class="n">mdat</span>            <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">generate_mc_experiment</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">,</span> <span class="n">unevts</span><span class="p">)</span>
+        <span class="n">res</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">ell</span>  <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">ana_experiment</span><span class="p">(</span><span class="n">mdat</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">nevts</span><span class="p">,</span> <span class="n">unevts</span> <span class="o">=</span> <span class="n">unevts</span><span class="p">,</span> <span class="n">verbose</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">success</span><span class="p">):</span> 
+            <span class="n">tmui</span>  <span class="o">=</span> <span class="n">tmu</span> <span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">nevts0</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">tmu1i</span> <span class="o">=</span> <span class="n">tmu1</span><span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">nevts0</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">q0i</span>   <span class="o">=</span> <span class="n">q0</span>  <span class="p">(</span><span class="n">ell</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">mevts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="o">*</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">tmui</span><span class="p">,</span> <span class="n">tmu1i</span><span class="p">,</span> <span class="n">q0i</span><span class="p">))</span>
+            
+    <span class="k">def</span> <span class="nf">_plot</span><span class="p">():</span>
+        <span class="n">tnames</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;tmu&#39;</span><span class="p">,</span> <span class="s1">&#39;tmu1&#39;</span><span class="p">,</span> <span class="s1">&#39;q0&#39;</span><span class="p">)</span>
+        <span class="n">subplot</span> <span class="o">=</span> <span class="n">pltext</span><span class="o">.</span><span class="n">canvas</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mevts</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">subplot</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">nn</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mevts</span><span class="p">]</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pltext</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">):</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n events&#39;</span><span class="p">);</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">ssamples</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span> <span class="k">else</span> <span class="n">tnames</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>            
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+            <span class="n">xs</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">):</span>
+                <span class="n">ndf</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># if nevts0[0] &gt; 0 else 3</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ndf</span><span class="p">));</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
+                <span class="n">fac</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">nevts0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.5</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fac</span> <span class="o">*</span> <span class="n">stats</span><span class="o">.</span><span class="n">chi2</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">plot</span><span class="p">):</span> <span class="n">_plot</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">mevts</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span>    <span class="o">=</span> <span class="mi">500</span>
+<span class="n">nbb_E</span>   <span class="o">=</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">nevts_Bi_E</span>
+<span class="n">nevts_fit</span> <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span><span class="p">,</span> <span class="n">nevts_Tl</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">)</span>
+<span class="n">nevts</span>     <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">)</span>
+<span class="n">unevts</span>    <span class="o">=</span> <span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">unevts_Bi</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">unevts_Tl</span><span class="p">)</span>
+
+<span class="n">mevts</span><span class="p">,</span> <span class="n">umevts</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">_nevents_expected_in_selection</span><span class="p">(</span><span class="n">nevts</span><span class="p">,</span> <span class="n">mcs</span><span class="p">,</span> <span class="n">varnames</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">varranges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">unevts</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total events           :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected events        :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">mevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unc Exp events         :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">umevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected Events in fit :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts_fit</span><span class="p">)</span>
+<span class="n">evts</span>   <span class="o">=</span> <span class="n">experiments</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">nevts</span><span class="p">,</span> <span class="n">unevts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total events           : 486.5895953757226 1403.383 20665.139
+Expected events        : 252.53914196141554 25.253618719260935 150.78731914296148
+Unc Exp events         : 0.0 1.1377042403296558 1.285707721698189
+Expected Events in fit : 252.54000000000002 25.260894 150.8555147
+nevts0 (array([252.53914196,  25.25361872, 150.78731914]), array([0.        , 1.13770424, 1.28570772]))
+nevts0 [252.53914196  25.25361872 150.78731914]
+</pre></div>
+</div>
+<img alt="../../_images/fanal_signal_constr_34_1.png" src="../../_images/fanal_signal_constr_34_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span>    <span class="o">=</span> <span class="mi">500</span>
+<span class="n">nbb_E</span>   <span class="o">=</span> <span class="mf">1.</span> <span class="o">*</span> <span class="n">nevts_Bi_E</span>
+<span class="n">nevts_fit</span> <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span><span class="p">,</span> <span class="n">nevts_Tl</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">)</span>
+<span class="n">nevts</span>     <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total events           :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected Events in fit :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts_fit</span><span class="p">)</span>
+<span class="n">mevts</span>   <span class="o">=</span> <span class="n">experiments</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total events           : 48.65895953757226 1403.383 20665.139
+Expected Events in fit : 25.254 25.260894 150.8555147
+</pre></div>
+</div>
+<img alt="../../_images/fanal_signal_constr_35_1.png" src="../../_images/fanal_signal_constr_35_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span>    <span class="o">=</span> <span class="mi">500</span>
+<span class="n">nbb_E</span>   <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">nevts_Bi_E</span>
+<span class="n">nevts_fit</span> <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span><span class="p">,</span> <span class="n">nevts_Tl</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">)</span>
+<span class="n">nevts</span>     <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total events           :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected Events in fit :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts_fit</span><span class="p">)</span>
+<span class="n">mevts</span>   <span class="o">=</span> <span class="n">experiments</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total events           : 24.32947976878613 1403.383 20665.139
+Expected Events in fit : 12.627 25.260894 150.8555147
+</pre></div>
+</div>
+<img alt="../../_images/fanal_signal_constr_36_1.png" src="../../_images/fanal_signal_constr_36_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span>    <span class="o">=</span> <span class="mi">500</span>
+<span class="n">nbb_E</span>   <span class="o">=</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">nevts_Bi_E</span>
+<span class="n">nevts_fit</span> <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span><span class="p">,</span> <span class="n">nevts_Tl</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">)</span>
+<span class="n">nevts</span>     <span class="o">=</span> <span class="p">(</span><span class="n">nbb_E</span><span class="o">/</span><span class="n">eff_bb_E</span><span class="p">,</span> <span class="n">nevts_Bi</span><span class="p">,</span> <span class="n">nevts_Tl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total events           :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Expected Events in fit :&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">nevts_fit</span><span class="p">)</span>
+<span class="n">mevts</span>   <span class="o">=</span> <span class="n">experiments</span><span class="p">(</span><span class="n">mcs</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">nevts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total events           : 0.0 1403.383 20665.139
+Expected Events in fit : 0.0 25.260894 150.8555147
+</pre></div>
+</div>
+<img alt="../../_images/fanal_signal_constr_37_1.png" src="../../_images/fanal_signal_constr_37_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="estimate-the-half-time">
+<h2>Estimate the half-time<a class="headerlink" href="#estimate-the-half-time" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collpars</span> <span class="kn">import</span> <span class="n">exposure</span>
+
+<span class="n">nevts_bb_RoI</span> <span class="o">=</span> <span class="n">nevts_Bi_RoI</span>
+<span class="n">acc_bb</span>       <span class="o">=</span> <span class="mf">0.794</span>
+<span class="n">eff</span>          <span class="o">=</span> <span class="n">acc_bb</span> <span class="o">*</span> <span class="n">eff_bb_RoI</span>
+<span class="n">tau</span>          <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">half_life</span><span class="p">(</span><span class="n">nevts_bb_RoI</span><span class="p">,</span> <span class="n">exposure</span><span class="p">,</span> <span class="n">eff</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of bb0nu events  : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nevts_bb_RoI</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exposure                : </span><span class="si">{:6.2f}</span><span class="s1"> kg y&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exposure</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total signal efficiency : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">eff</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bb0nu half-life         : </span><span class="si">{:6.2e}</span><span class="s1"> y &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tau</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events  : 65.991
+exposure                : 3000.00 kg y
+total signal efficiency :  0.411
+bb0nu half-life         : 5.17e+25 y 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./NB/guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By José Ángel Hernando Morata<br/>
+  
+      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
