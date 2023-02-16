@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Signal Selection" href="guide/fanal_selection.html" />
+    <link rel="next" title="Signal selection" href="guide/fanal_selection.html" />
     <link rel="prev" title="Fanal - USC" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -123,7 +123,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="guide/fanal_selection.html">
-   Signal Selection
+   Signal selection
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,13 +137,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="guide/fanal_bkg_uncertanties.html">
+   Uncertainties on the number of backgrounds events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="guide/fanal_signal_countexp.html">
    Sensitivity of a counting experiment
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="guide/fanal_signal.html">
-   Estimate the number of signal events
+   Estimate the number of signal events using a fit to the energy spectrum
   </a>
  </li>
  <li class="toctree-l1">
@@ -210,7 +215,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/fanal.ipynb"
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-Fanal-v2/master?urlpath=tree/docs/notebooks/fanal.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -223,24 +228,6 @@ title="Launch on Binder"
     <img src="../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/notebooks/fanal.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -262,6 +249,51 @@ title="Fullscreen mode"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2/issues/new?title=Issue%20on%20page%20%2Fnotebooks/fanal.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -448,17 +480,18 @@ title="Print to PDF"
 <section id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Do a search for double-beta neutrino-less decays, <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, in <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>, using mock detector data.</p></li>
-<li><p>Learn the different steps in a typical “rare decay” analysis of a HEP experimental collaboration</p></li>
+<li><p>Do a search for double-beta neutrino-less decays, <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, in <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span> using mock detector data.</p></li>
+<li><p>Learn the different steps in a typical “rare decay” seach analysis in a High Energy Physics, HEP, collaboration</p></li>
 </ul>
 </section>
 <section id="dynamic">
 <h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Students groups in collaborations and select an student as the <em>spokeperson</em></p></li>
+<li><p>Students groups in collaborations</p></li>
 <li><p>Each collaboration:</p>
 <ul>
-<li><p>selects its name from: <em>alpha, beta, gamma, epsilon, delta</em>, and accesses its “detector” data</p></li>
+<li><p>select an student as spokeperson</p></li>
+<li><p>selects its name from: <em>alpha, beta, gamma, epsilon, delta</em>, and accesses its detector mock data</p></li>
 <li><p>performs a <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> search following these notebooks as a guidelines</p></li>
 <li><p>presents its resuls in a oral contribution and writes an article.</p></li>
 </ul>
@@ -467,30 +500,31 @@ title="Print to PDF"
 </section>
 <section id="physics">
 <h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
-<p>One of the most relevant questions still open in Particle Physics is if <strong>the neutrino is its own anti-particle</strong>.</p>
-<p>The only <strong>viable experiment</strong> to search for a <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> decay, where a nucleous simultaneously decays into two electrons with no emision of neutrinos.</p>
-<p>This hypothetical decay can only happen in <strong>few isotopes</strong>, i.e <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>.</p>
+<p>One of the most relevant questions still open in Particle Physics is if <strong>the neutrino is its own anti-particle</strong>, if it is <em>Majorana</em>.</p>
+<p>The only <strong>viable experiment</strong> to determine if the neutrino is Majoran is to observe a <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> decay, an hypothetical decay where a nucleous simultaneously decays into two electrons with no emision of neutrinos.</p>
+<p>This decay can only happen in <strong>few isotopes</strong>, i.e <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>.</p>
 <p>The <strong>signal</strong> of the decay is quite clear:</p>
 <ul class="simple">
-<li><p>The <strong>energy of the two electrons</strong> is equal to the <span class="math notranslate nohighlight">\(Q\)</span> of the decay, for <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>, <span class="math notranslate nohighlight">\(Q = 2458\)</span> keV.</p></li>
+<li><p>The <strong>energy of the two electrons</strong> is equal to the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> of the decay, for <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>, <span class="math notranslate nohighlight">\(Q_{\beta\beta} = 2458\)</span> keV.</p></li>
 <li><p>The presence of two electrons, compared with the main backgrounds, which are single electrons.</p></li>
 </ul>
-<p>The main <strong>background</strong> are single electron from photoelectric of comptom of the radioisotopes of the natural chains of <span class="math notranslate nohighlight">\(\mathrm{U}, \mathrm{Th}\)</span></p>
+<p>The main <strong>background</strong> are single electron from photo-electric or comptom scattering of the gammas produced from the radioisotopes of the natural chains, <span class="math notranslate nohighlight">\(\mathrm{U}, \mathrm{Th}\)</span>.</p>
 <p>In the case of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span> the <strong>main backgrounds</strong> are:</p>
 <ul class="simple">
 <li><p>The 2.447 MeV energy of the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> photopeak.</p></li>
-<li><p>The tail of the 2.615 MeV <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> photopeak.</p></li>
+<li><p>The tail of the 2.615 MeV <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> gamma interactions.</p></li>
 </ul>
 <p>The <strong>main parameters</strong> of a neutrino-less <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> esperiments are:</p>
 <ul class="simple">
-<li><p>A large <strong>exposure</strong> in kg y (the total number of isotopes, proportial to the mass, kg) multiples by the time (years)</p></li>
-<li><p>An excellent <strong>energy resolution</strong> (to reduce the width of the <span class="math notranslate nohighlight">\(Q\)</span> peak associated to the energy of the <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> events)</p></li>
-<li><p>A low <strong>number of background events</strong> (the number of bkg events expecte for a given exposure in the energy Region of Interest, RoI, defined around the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span>)</p></li>
+<li><p>A large <strong>exposure</strong> in kg y (the total number of isotopes is proportial to the mass, kg) multipled by the time running time (years)</p></li>
+<li><p>An excellent <strong>energy resolution</strong> (related with the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> reconstructed peak)</p></li>
+<li><p>A low <strong>number of background events</strong> (the number of bkg events expecte for a given exposured in the energy Region of Interest, RoI, defined around the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> for a given exposure)</p></li>
 </ul>
 </section>
 <section id="the-analysis">
 <h2>The analysis<a class="headerlink" href="#the-analysis" title="Permalink to this headline">#</a></h2>
-<p>In HEP usually the search for rare decays are <strong>blind analyses</strong>, which implies that the full analysis must be defined using simulated, calibration or <em>blind</em> data (data where the possible signal events have been removed) before accessing the full data set.</p>
+<p>In HEP usually the search for rare decays are <strong>blind analyses</strong>.</p>
+<p>The analysis must be defined using simulated and studied with calibration or <em>blind</em> data (data where the possible signal events have been removed) before accessing the full data set.</p>
 <p>Blind analyses are designed in order to avoid human biases!</p>
 <section id="the-data">
 <h3>The data<a class="headerlink" href="#the-data" title="Permalink to this headline">#</a></h3>
@@ -498,26 +532,26 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><strong>simulated data</strong> of <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>. These data will be used to define a signal selection, the RoI and to estimate the energy resolution in the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> region</p></li>
 <li><p><strong>blind data</strong>, which contain no signal events. This data will be used to estimate the total number of <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and the number of bkg events expected after the signal selection in the RoI.</p></li>
-<li><p>the <strong>full data</strong> where estimate the number of signal events and the half-life of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>.</p></li>
+<li><p>the <strong>full data</strong>, to estimate the number of signal events and the half-life of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>.</p></li>
 </ul>
 </section>
 <section id="the-analysis-steps">
 <h3>The analysis steps<a class="headerlink" href="#the-analysis-steps" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
-<li><p>Using simulated data <strong>define the signal selection</strong> and <strong>define the RoI</strong>. Compute the signal <strong>selection efficiencies</strong> in the differents samples <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, <a class="reference internal" href="guide/fanal_selection.html"><span class="doc std std-doc">NB</span></a>.</p></li>
-<li><p>Using simulated data estimate <strong>the energy resolution</strong> for the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, <a class="reference internal" href="guide/fanal_energy_resolution.html"><span class="doc std std-doc">NB</span></a>.</p></li>
-<li><p>Using blinb data estimate <strong>the number of background events</strong> <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and the number of bkg events in the RoI, <a class="reference internal" href="guide/fanal_bkg.html"><span class="doc std std-doc">NB</span></a>. Estimate also the uncertainty in the number of bkg events, <a class="reference internal" href="guide/fanal_bkg_uncertanties.html"><span class="doc std std-doc">NB</span></a>.</p></li>
+<li><p>Using <em>simulated data</em>, MC, to <strong>define the signal selection</strong> and <strong>the RoI</strong>. Compute the signal <strong>selection efficiencies</strong> in the differents MC samples <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, <a class="reference internal" href="guide/fanal_selection.html"><span class="doc std std-doc">NB</span></a>.</p></li>
+<li><p>Using <em>simulated data</em> to estimate <strong>the energy resolution</strong> for the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, <a class="reference internal" href="guide/fanal_energy_resolution.html"><span class="doc std std-doc">NB</span></a>.</p></li>
+<li><p>Using <em>blinb data</em> to estimate <strong>the number of background events</strong> <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and the number of bkg events in the RoI, <a class="reference internal" href="guide/fanal_bkg.html"><span class="doc std std-doc">NB</span></a>. Estimate also the uncertainty in the number of bkg events, <a class="reference internal" href="guide/fanal_bkg_uncertanties.html"><span class="doc std std-doc">NB</span></a>.</p></li>
 </ol>
 <ol class="simple">
-<li><p>Estimate <strong>the sensitivity of the experiment</strong> as a <strong>counting experiment</strong>. If in the RoI we observe <span class="math notranslate nohighlight">\(n\)</span> events, what is the limits or cover interval at 90% C.L that we set on the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>? Has the experiment perform a discovery? <a class="reference internal" href="guide/fanal_signal_countexp.html"><span class="doc std std-doc">NB</span></a></p></li>
-<li><p>Using simulated data, define a <strong>fit method</strong> to extract from the data in an enlarged energy region the number of bkg events and signal, <a class="reference internal" href="guide/fanal_signal.html"><span class="doc std std-doc">NB</span></a>.</p></li>
+<li><p>Estimate <strong>the sensitivity of the experiment</strong> as a <strong>counting experiment</strong>. If in the RoI we observe <span class="math notranslate nohighlight">\(n\)</span> events, what is the limits or the cover interval at certain, 95%, C.L that we set on the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>? Has the experiment performed a discovery? <a class="reference internal" href="guide/fanal_signal_countexp.html"><span class="doc std std-doc">NB</span></a></p></li>
+<li><p>Using <em>simulated data</em>, define a <strong>fit method</strong> to extract from the data in an enlarged energy region the number of bkg events and signal, <a class="reference internal" href="guide/fanal_signal.html"><span class="doc std std-doc">NB</span></a>.</p></li>
 </ol>
 <ol>
-<li><p>Access the full data, <a class="reference internal" href="guide/fanal_data_access.html"><span class="doc std std-doc">NB</span></a>  . Consider <strong>two analysis</strong>:</p>
+<li><p>Access the <em>full data</em>, <a class="reference internal" href="guide/fanal_data_access.html"><span class="doc std std-doc">NB</span></a>  . Consider <strong>two analysis</strong>:</p>
 <p>i)  <strong>counting experiment</strong>: how many signal events are in your RoI?</p>
 <p>ii) <strong>do a fit and extract the number of signal events</strong></p>
 </li>
-<li><p><strong>Estimate the limit or the cover interval</strong> at 9t %CL of the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>.</p></li>
+<li><p><strong>Estimate the limit or the cover interval</strong> at 95 %CL of the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>.</p></li>
 <li><p><strong>Publish the results</strong>, prepare an oral presentation for a conference and an article to publish</p></li>
 </ol>
 </section>
@@ -577,7 +611,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="guide/fanal_selection.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Signal Selection</p>
+        <p class="prev-next-title">Signal selection</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

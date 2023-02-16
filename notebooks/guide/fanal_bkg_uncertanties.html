@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Uncertainties on the number of backgrounds &#8212; Fanal - USC</title>
+    <title>Uncertainties on the number of backgrounds events &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sensitivity of a counting experiment" href="fanal_signal_countexp.html" />
+    <link rel="prev" title="Expected number of background events" href="fanal_bkg.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,15 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta decay search
+   Fanal, a neutrino-less beta double decay search
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_selection.html">
-   Signal Selection
+   Signal selection
   </a>
  </li>
  <li class="toctree-l1">
@@ -134,6 +136,11 @@ const thebe_selector_output = ".output, .cell_output"
    Expected number of background events
   </a>
  </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Uncertainties on the number of backgrounds events
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal_countexp.html">
    Sensitivity of a counting experiment
@@ -141,10 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events,
-   <span class="math notranslate nohighlight">
-    \(n^{\beta\beta}_{RoI}\)
-   </span>
+   Estimate the number of signal events using a fit to the energy spectrum
   </a>
  </li>
  <li class="toctree-l1">
@@ -211,7 +215,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/guide/fanal_bkg_uncertanties.ipynb"
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-Fanal-v2/master?urlpath=tree/docs/notebooks/guide/fanal_bkg_uncertanties.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -224,24 +228,6 @@ title="Launch on Binder"
     <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/notebooks/guide/fanal_bkg_uncertanties.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -263,6 +249,51 @@ title="Fullscreen mode"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_bkg_uncertanties.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -394,7 +425,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Uncertainties on the number of backgrounds</h1>
+                <h1>Uncertainties on the number of backgrounds events</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -468,8 +499,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="uncertainties-on-the-number-of-backgrounds">
-<h1>Uncertainties on the number of backgrounds<a class="headerlink" href="#uncertainties-on-the-number-of-backgrounds" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="uncertainties-on-the-number-of-backgrounds-events">
+<h1>Uncertainties on the number of backgrounds events<a class="headerlink" href="#uncertainties-on-the-number-of-backgrounds-events" title="Permalink to this headline">#</a></h1>
 <section id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -816,6 +847,20 @@ Uncertainty in number of Tl events in RoI    =  0.032
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="fanal_bkg.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Expected number of background events</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="fanal_signal_countexp.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sensitivity of a counting experiment</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

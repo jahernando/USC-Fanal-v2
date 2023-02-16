@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Estimate the number of signal events &#8212; Fanal - USC</title>
+    <title>Estimate the number of signal events using a fit to the energy spectrum &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -118,12 +118,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta decay search
+   Fanal, a neutrino-less beta double decay search
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_selection.html">
-   Signal Selection
+   Signal selection
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,13 +137,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="fanal_bkg_uncertanties.html">
+   Uncertainties on the number of backgrounds events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal_countexp.html">
    Sensitivity of a counting experiment
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Estimate the number of signal events
+   Estimate the number of signal events using a fit to the energy spectrum
   </a>
  </li>
  <li class="toctree-l1">
@@ -210,7 +215,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/guide/fanal_signal.ipynb"
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-Fanal-v2/master?urlpath=tree/docs/notebooks/guide/fanal_signal.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -223,24 +228,6 @@ title="Launch on Binder"
     <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/notebooks/guide/fanal_signal.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -262,6 +249,51 @@ title="Fullscreen mode"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_signal.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -403,7 +435,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Estimate the number of signal events</h1>
+                <h1>Estimate the number of signal events using a fit to the energy spectrum</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -487,8 +519,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="estimate-the-number-of-signal-events">
-<h1>Estimate the number of signal events<a class="headerlink" href="#estimate-the-number-of-signal-events" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="estimate-the-number-of-signal-events-using-a-fit-to-the-energy-spectrum">
+<h1>Estimate the number of signal events using a fit to the energy spectrum<a class="headerlink" href="#estimate-the-number-of-signal-events-using-a-fit-to-the-energy-spectrum" title="Permalink to this headline">#</a></h1>
 <section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
 <p>Estimate the number of signal events using the extended maximum likelihood fit and simulated experiments</p>
@@ -765,9 +797,9 @@ Number of bb total events = 41.956
 Number of Bi expected events in E window = 25.287
 Number of Tl expected events in E window = 150.775
 Number of bb expected events in E window = 21.775
-Number of Bi estimated events in E window = 34.027
-Number of Tl estimated events in E window = 136.412
-Number of bb estimated events in E window = 29.564
+Number of Bi estimated events in E window = 26.084
+Number of Tl estimated events in E window = 180.395
+Number of bb estimated events in E window = 16.516
 </pre></div>
 </div>
 </div>
@@ -799,9 +831,9 @@ Number of bb estimated events in E window = 29.564
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (27.12, 41.88)
-Number of Tl events CI at   68 % CL = (125.45, 148.33)
-Number of bb events CI at   68 % CL = (23.57, 36.44)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (20.04, 32.96)
+Number of Tl events CI at   68 % CL = (167.79, 194.10)
+Number of bb events CI at   68 % CL = (11.71, 21.99)
 </pre></div>
 </div>
 </div>
@@ -816,9 +848,9 @@ Number of bb events CI at   68 % CL = (23.57, 36.44)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 34.03  -6.90 + 7.86
-Number of Tl events CI at   68 % CL = 136.41  -10.96 +11.92
-Number of bb events CI at   68 % CL = 29.56  -5.99 + 6.88
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 26.08  -6.05 + 6.88
+Number of Tl events CI at   68 % CL = 180.40  -12.61 +13.71
+Number of bb events CI at   68 % CL = 16.52  -4.81 + 5.47
 </pre></div>
 </div>
 </div>
@@ -838,7 +870,7 @@ Number of bb events CI at   68 % CL = 29.56  -5.99 + 6.88
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis p-value 1.50e-12, 6.98 sigmas
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis p-value 8.76e-06, 4.29 sigmas
 </pre></div>
 </div>
 </div>
@@ -888,11 +920,11 @@ Number of bb events CI at   68 % CL = 29.56  -5.99 + 6.88
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events in E  : 29.564
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events in E  : 16.516
 exposure                     : 1000.00 kg y
 total signal efficiency      :  0.410
-bb0nu half-life              : 3.83e+25 y 
-bb0nu half-life 68% CL       : [3.11e+25, 4.81e+25] y 
+bb0nu half-life              : 6.86e+25 y 
+bb0nu half-life 68% CL       : [5.15e+25, 9.68e+25] y 
 </pre></div>
 </div>
 </div>

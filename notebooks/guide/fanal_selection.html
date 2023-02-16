@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Signal Selection &#8212; Fanal - USC</title>
+    <title>Signal selection &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Energy resolution" href="fanal_energy_resolution.html" />
-    <link rel="prev" title="Fanal, a neutrino-less beta decay search" href="../fanal.html" />
+    <link rel="prev" title="Fanal, a neutrino-less beta double decay search" href="../fanal.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,12 +118,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta decay search
+   Fanal, a neutrino-less beta double decay search
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Signal Selection
+   Signal selection
   </a>
  </li>
  <li class="toctree-l1">
@@ -137,16 +137,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="fanal_bkg_uncertanties.html">
+   Uncertainties on the number of backgrounds events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal_countexp.html">
    Sensitivity of a counting experiment
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events,
-   <span class="math notranslate nohighlight">
-    \(n^{\beta\beta}_{RoI}\)
-   </span>
+   Estimate the number of signal events using a fit to the energy spectrum
   </a>
  </li>
  <li class="toctree-l1">
@@ -213,7 +215,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/guide/fanal_selection.ipynb"
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-Fanal-v2/master?urlpath=tree/docs/notebooks/guide/fanal_selection.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -226,24 +228,6 @@ title="Launch on Binder"
     <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/notebooks/guide/fanal_selection.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -265,6 +249,51 @@ title="Fullscreen mode"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_selection.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -357,13 +386,11 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#the-main-variables">
        The main variables
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#other-variables">
-         Other variables
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-variables">
+       Other variables
+      </a>
      </li>
     </ul>
    </li>
@@ -451,7 +478,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Signal Selection</h1>
+                <h1>Signal selection</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -485,13 +512,11 @@ title="Print to PDF"
       <a class="reference internal nav-link" href="#the-main-variables">
        The main variables
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#other-variables">
-         Other variables
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-variables">
+       Other variables
+      </a>
      </li>
     </ul>
    </li>
@@ -581,43 +606,46 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="signal-selection">
-<h1>Signal Selection<a class="headerlink" href="#signal-selection" title="Permalink to this headline">#</a></h1>
+<h1>Signal selection<a class="headerlink" href="#signal-selection" title="Permalink to this headline">#</a></h1>
 <section id="objectives">
 <h2>Objectives:<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Define a selection (a set of cuts on a list of variables) on simulated data samples to select <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> events and reject background, <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{208}\mathrm{Tl}\)</span>, events.</p></li>
+<li><p><strong>Define a selection</strong> (a set of cuts on a list of variables) on <em>simulated data</em> samples to select <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> events and reject background, <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{208}\mathrm{Tl}\)</span>, events.</p></li>
 </ul>
 </section>
 <section id="physics">
 <h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
-<p>Using simulated data (signal and backgrounds) we define a selection to enhance the signal content in our data.</p>
-<p>For every decay in the detector a collection of variables are provide, for example, the number of tracks in the event, or the energy of the event.</p>
-<p>We define a set of cuts on tohose variables to reduce the background and enhance the signal.</p>
+<p>Using simulated data (signal and backgrounds) we define a selection to enhance the signal content in our data and reject the background.</p>
+<p>For every decay in the detector a collection of variables are provided, for example, the number of tracks in the event, or the energy of the event.</p>
+<p>We define a set of cuts on those variables to reduce the background and enhance the signal.</p>
 <p>We define an energy region of interest (RoI) where to perform a counting experiment.</p>
 <section id="the-detector">
 <h3>The detector<a class="headerlink" href="#the-detector" title="Permalink to this headline">#</a></h3>
-<p>The detector of our data is a variation of the NEXT experiment, where <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> decays are detected in a Time Projection Chamber with chas:</p>
+<p>The detector of our data is a variation of the NEXT experiment, where <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> decays are detected in a Time Projection Chamber with:</p>
 <ol class="simple">
 <li><p>excellent energy resolution <span class="math notranslate nohighlight">\(&lt;1\)</span> % FWHM</p></li>
-<li><p>tracking capabilities (<span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>) events are a unique track that is made of two electrons, of approximatelly 10 cm. The detector reconstruct the track in 3D, and is able to identify the extremes of the track.</p></li>
+<li><p>tracking capabilities.</p></li>
 </ol>
+<p><span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> events are a unique track which a length of ~10 cm in the TPC that is made of two electrons.</p>
+<p>The detector reconstruct the track in 3D, and is able to identify the extremes of the track. In the case of the signal both extremes correspond to a Bragg peak, while for the electron, only one is a Bragg peak.</p>
 </section>
 <section id="the-selection-analysis">
 <h3>The selection analysis<a class="headerlink" href="#the-selection-analysis" title="Permalink to this headline">#</a></h3>
-<p>The main background are electrons produced in the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> Photopeak or <span class="math notranslate nohighlight">\(^{216}\mathrm{Tl}\)</span>, while the signal is only one track composed with two electrons <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span></p>
+<p>The main background are electrons produced in the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> or the tail of <span class="math notranslate nohighlight">\(^{216}\mathrm{Tl}\)</span> photopeak, while the signal is only one track composed with two electrons <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> with energy <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span></p>
 <section id="the-main-variables">
 <h4>The main variables<a class="headerlink" href="#the-main-variables" title="Permalink to this headline">#</a></h4>
-<p>The data is presented in a <em>panda</em> <em>DataFrame</em>, each row contains the information of one events</p>
+<p>The data is presented in a <em>panda</em> <em>DataFrame</em>, each row contains the information of one event</p>
 <p>The relevant variables for an event are:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * num_tracks, the number of tracks or separeted depositions in the detector
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * num_tracks, the number of tracks or separated depositions in the detector
 
     * E, energy (MeV) of the event
 
     * eblob2, energy (keV) on the extreme of the track with the lowest energy
 </pre></div>
 </div>
+</section>
 <section id="other-variables">
-<h5>Other variables<a class="headerlink" href="#other-variables" title="Permalink to this headline">#</a></h5>
+<h4>Other variables<a class="headerlink" href="#other-variables" title="Permalink to this headline">#</a></h4>
 <p>Other variables in the event are</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * length, the length of the track (mm)
 
@@ -628,14 +656,12 @@ title="Print to PDF"
 </div>
 </section>
 </section>
-</section>
 <section id="id1">
 <h3>The selection analysis<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<p>The main background are electrons produced in the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> Photopeak or <span class="math notranslate nohighlight">\(^{216}\mathrm{Tl}\)</span>, while the signal is only one track composed with two electrons <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span></p>
 <p>The typical selection requires the following cuts:</p>
 <section id="number-of-tracks">
 <h4>Number of tracks<a class="headerlink" href="#number-of-tracks" title="Permalink to this headline">#</a></h4>
-<p>Electrons radiate photons by bremsstrahlung that can produce other electrons. Each secondary electron can generate a track in the detector. In general, the signal has only one track while the backgrounds events produce more tracks.</p>
+<p>Electrons radiate photons by bremsstrahlung that can produce other electrons. Each secondary electron can generate a track in the detector. In general, the signal has only one track while the backgrounds events have more than one track.</p>
 <p>We select events with only one track:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* num_tracks == 1
 </pre></div>
@@ -651,8 +677,8 @@ title="Print to PDF"
 </section>
 <section id="energy-of-the-2nd-blob">
 <h4>Energy of the 2nd blob<a class="headerlink" href="#energy-of-the-2nd-blob" title="Permalink to this headline">#</a></h4>
-<p>An electron at the of if its track deposits more energy in a Bragg peak (or blob). In the case of the signal, both extremes of the treck are blobs, while for the background, which is made of single electrons, only on of the extremes is a real blob and the other, the start of the electron track, should have much less energy.</p>
-<p>We require an energy in the extreme with the lowest energy (or <em>second blob</em>) is above an energy threshold, 400 keV</p>
+<p>An electron at the of if its track deposits more energy in a Bragg peak (or blob). In the case of the signal, both track extremes are blobs, while for the background, which is made of a single electron, only one of the extremes is a real blob while the other, the start of the electron track, has much less energy.</p>
+<p>We require an energy in the extreme with the lowest energy (or <em>second blob</em>) above an energy threshold, 400 keV</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* eblob2 &gt; 400 
 </pre></div>
 </div>
@@ -1077,7 +1103,7 @@ variable : track1_length
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_selection_28_0.png" src="../../_images/fanal_selection_28_0.png" />
+<img alt="../../_images/fanal_selection_27_0.png" src="../../_images/fanal_selection_27_0.png" />
 </div>
 </div>
 <p><strong>Exercise</strong>: Study the variables and decide wich ones have the larges discrimination power between signal and background.</p>
@@ -1141,13 +1167,13 @@ Efficiencies bb :   1 track = 0.71757,   E blob2 = 0.57719,   E = 0.51906,   RoI
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_selection_32_0.png" src="../../_images/fanal_selection_32_0.png" />
+<img alt="../../_images/fanal_selection_31_0.png" src="../../_images/fanal_selection_31_0.png" />
 </div>
 </div>
 <section id="write-out">
 <h3>Write out<a class="headerlink" href="#write-out" title="Permalink to this headline">#</a></h3>
 <p>We write the relevant python variables into a file <em><a class="reference external" href="http://collpars.py">collpars.py</a></em>, which contains the relevant parameters of the analysis and which will be used in the following notebooks.</p>
-<p>WE write out into the parameter file:</p>
+<p>We write out into the parameter file:</p>
 <ul class="simple">
 <li><p>The selection cuts</p></li>
 <li><p>The efficiencies of the selection for each sample</p></li>
@@ -1208,7 +1234,7 @@ Efficiencies bb :   1 track = 0.71757,   E blob2 = 0.57719,   E = 0.51906,   RoI
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Fanal, a neutrino-less beta decay search</p>
+            <p class="prev-next-title">Fanal, a neutrino-less beta double decay search</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="fanal_energy_resolution.html" title="next page">

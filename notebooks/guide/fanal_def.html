@@ -116,12 +116,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta decay search
+   Fanal, a neutrino-less beta double decay search
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_selection.html">
-   Signal Selection
+   Signal selection
   </a>
  </li>
  <li class="toctree-l1">
@@ -135,16 +135,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="fanal_bkg_uncertanties.html">
+   Uncertainties on the number of backgrounds events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal_countexp.html">
    Sensitivity of a counting experiment
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events,
-   <span class="math notranslate nohighlight">
-    \(n^{\beta\beta}_{RoI}\)
-   </span>
+   Estimate the number of signal events using a fit to the energy spectrum
   </a>
  </li>
  <li class="toctree-l1">
@@ -211,7 +213,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/guide/fanal_def.ipynb"
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-Fanal-v2/master?urlpath=tree/docs/notebooks/guide/fanal_def.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -224,24 +226,6 @@ title="Launch on Binder"
     <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/notebooks/guide/fanal_def.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -263,6 +247,51 @@ title="Fullscreen mode"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_def.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -568,7 +597,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">56</span><span class="o">/</span><span class="n">_pmdccc97ljb_l3v3s6gkrxm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_83338</span><span class="o">/</span><span class="mf">2922512266.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">56</span><span class="o">/</span><span class="n">_pmdccc97ljb_l3v3s6gkrxm0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_940</span><span class="o">/</span><span class="mf">2922512266.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">core.pltext</span>  <span class="k">as</span> <span class="nn">pltext</span>   <span class="c1"># extensions for plotting histograms</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">core.hfit</span>    <span class="k">as</span> <span class="nn">hfit</span>     <span class="c1"># extension to fit histograms</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">core.utils</span>   <span class="k">as</span> <span class="nn">ut</span>       <span class="c1"># generic utilities</span>
@@ -946,7 +975,7 @@ variable : track1_length
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_def_16_01.png" src="../../_images/fanal_def_16_01.png" />
+<img alt="../../_images/fanal_def_16_0.png" src="../../_images/fanal_def_16_0.png" />
 </div>
 </div>
 </section>
@@ -1011,7 +1040,7 @@ variable : track1_length
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_def_21_01.png" src="../../_images/fanal_def_21_01.png" />
+<img alt="../../_images/fanal_def_21_0.png" src="../../_images/fanal_def_21_0.png" />
 </div>
 </div>
 <p><strong>Exercise</strong>: Study the variables and decide wich ones have the larges discrimination power between signal and background.</p>
@@ -1066,7 +1095,7 @@ Efficiencies Tl :   num_tracks = 0.04630,   blob2_E = 0.00734,   E = 0.00730,   
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_def_25_01.png" src="../../_images/fanal_def_25_01.png" />
+<img alt="../../_images/fanal_def_25_0.png" src="../../_images/fanal_def_25_0.png" />
 </div>
 </div>
 <p><strong>Exercises</strong>:</p>
@@ -1102,7 +1131,7 @@ Efficiencies Tl :   num_tracks = 0.04630,   blob2_E = 0.00734,   E = 0.00730,   
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_def_29_01.png" src="../../_images/fanal_def_29_01.png" />
+<img alt="../../_images/fanal_def_29_0.png" src="../../_images/fanal_def_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">

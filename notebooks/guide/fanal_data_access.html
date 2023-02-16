@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Estimate the number of signal events, \(n^{\beta\beta}_{RoI}\)" href="fanal_signal.html" />
+    <link rel="prev" title="Estimate the number of signal events using a fit to the energy spectrum" href="fanal_signal.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,12 +117,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta decay search
+   Fanal, a neutrino-less beta double decay search
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_selection.html">
-   Signal Selection
+   Signal selection
   </a>
  </li>
  <li class="toctree-l1">
@@ -136,16 +136,18 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="fanal_bkg_uncertanties.html">
+   Uncertainties on the number of backgrounds events
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal_countexp.html">
    Sensitivity of a counting experiment
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events,
-   <span class="math notranslate nohighlight">
-    \(n^{\beta\beta}_{RoI}\)
-   </span>
+   Estimate the number of signal events using a fit to the energy spectrum
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -212,7 +214,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/notebooks/guide/fanal_data_access.ipynb"
+        <a href="https://mybinder.org/v2/gh/jahernando/USC-Fanal-v2/master?urlpath=tree/docs/notebooks/guide/fanal_data_access.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -225,24 +227,6 @@ title="Launch on Binder"
     <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/notebooks/guide/fanal_data_access.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -264,6 +248,51 @@ title="Fullscreen mode"
   </span>
 
 </button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/jahernando/USC-Fanal-v2/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_data_access.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -419,13 +448,13 @@ title="Print to PDF"
 <h1>Open the box<a class="headerlink" href="#open-the-box" title="Permalink to this headline">#</a></h1>
 <section id="objetives">
 <h2>Objetives<a class="headerlink" href="#objetives" title="Permalink to this headline">#</a></h2>
-<p>Access the full data set and estimate the number of signal events</p>
+<p><strong>Access the full data sample and estimate the number of signal events</strong></p>
 <ul class="simple">
-<li><p>Consider the case of a counting experiment, estimate the number of signal events in the RoI, <span class="math notranslate nohighlight">\(n^{\beta\beta}_{RoI}\)</span>.</p></li>
-<li><p>Estimate the <span class="math notranslate nohighlight">\(n^{\beta\beta}_E\)</span> events in the enlarged energy window.</p></li>
+<li><p>Consider the case of a counting experiment, estimate the number of signal events <strong>in the RoI</strong>, <span class="math notranslate nohighlight">\(n^{\beta\beta}_{RoI}\)</span>.</p></li>
+<li><p>Estimate the number of signal events, <span class="math notranslate nohighlight">\(n^{\beta\beta}_E\)</span>, <strong>in the enlarged energy window</strong>.</p></li>
 </ul>
-<p>In both cases set a limit or a confidence interval for <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span></p>
-<p>Compute also the p-value of the null hypothesis</p>
+<p>In both cases <strong>set a limit or a confidence interval for <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span></strong></p>
+<p><strong>Compute also the p-value of the null hypothesis</strong></p>
 </section>
 <section id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
@@ -544,6 +573,9 @@ Number Tl events in E   = 150.775
 </section>
 <section id="access-the-data">
 <h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this headline">#</a></h2>
+<p>We access the full data</p>
+<p>We plot the energy distribution of all the events in the (2.4, 2.7) MeV window</p>
+<p><strong>Use</strong> the <em>mask</em> variable to apply the signal selection defined in the first NB</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path to the data directory and filenames</span>
@@ -622,7 +654,7 @@ Number Tl events in E   = 150.775
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Estimate the number of signal events, <span class="math notranslate nohighlight">\(n^{\beta\beta}_{RoI}\)</span></p>
+            <p class="prev-next-title">Estimate the number of signal events using a fit to the energy spectrum</p>
         </div>
     </a>
 </div>
