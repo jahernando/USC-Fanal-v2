@@ -8,7 +8,7 @@ chapters:
 - file: notebooks/guide/fanal_selection.ipynb
 - file: notebooks/guide/fanal_energy_resolution.ipynb
 - file: notebooks/guide/fanal_bkg.ipynb
-- file: notebooks/guide/fanal_bkg_uncertainties.ipynb
+- file: notebooks/guide/fanal_bkg_uncertanties.ipynb
 - file: notebooks/guide/fanal_signal_countexp.ipynb
 - file: notebooks/guide/fanal_signal.ipynb
 - file: notebooks/guide/fanal_data_access.ipynb
