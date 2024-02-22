@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/hernando/opt/anaconda3/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+collaboration = collpars.collaboration
+sel_ntracks   = collpars.sel_ntracks
+sel_eblob2    = collpars.sel_eblob2
+sel_erange    = collpars.sel_erange
+sel_eroi      = collpars.sel_eroi
+
+n_Bi_E        = collpars.n_Bi_E
+n_Tl_E        = collpars.n_Tl_E
+n_Bi_RoI      = collpars.n_Bi_RoI
+n_Tl_RoI      = collpars.n_Tl_RoI
+
+
+print('Collaboration             : {:s}'.format(collaboration))
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+[0;32m/var/folders/56/_pmdccc97ljb_l3v3s6gkrxm0000gn/T/ipykernel_15189/2191871696.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      5[0m [0msel_eroi[0m      [0;34m=[0m [0mcollpars[0m[0;34m.[0m[0msel_eroi[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;34m[0m[0m
+[0;32m----> 7[0;31m [0mn_Bi_E[0m        [0;34m=[0m [0mcollpars[0m[0;34m.[0m[0mn_Bi_E[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      8[0m [0mn_Tl_E[0m        [0;34m=[0m [0mcollpars[0m[0;34m.[0m[0mn_Tl_E[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      9[0m [0mn_Bi_RoI[0m      [0;34m=[0m [0mcollpars[0m[0;34m.[0m[0mn_Bi_RoI[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mAttributeError[0m: module 'collpars' has no attribute 'n_Bi_E'
+AttributeError: module 'collpars' has no attribute 'n_Bi_E'
+
