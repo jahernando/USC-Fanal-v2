@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expected number of background events &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,6 +33,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertanties.html" />
     <link rel="prev" title="Energy resolution" href="fanal_energy_resolution.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1">
@@ -529,21 +529,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="expected-number-of-background-events">
-<h1>Expected number of background events<a class="headerlink" href="#expected-number-of-background-events" title="Permalink to this headline">#</a></h1>
-<section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="expected-number-of-background-events">
+<h1>Expected number of background events<a class="headerlink" href="#expected-number-of-background-events" title="Permalink to this heading">#</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Estimate the total number of background events</p></li>
-<li><p>number of selected background events in the energy enlarged window and in the RoI</p></li>
+<li><p><strong>Estimate the total number of background events</strong></p></li>
+<li><p><strong>Estimate the number of selected background events</strong> in the energy enlarged window and <strong>in the RoI</strong></p></li>
 </ul>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
 <p>We will use a <em>blind</em> data sample, data where the signal events have been removed by an selection, which we called <em>blind</em> selection.</p>
 <p>The blind selection removes from the full data the signal events while maintains most of the bkg events.</p>
-<p>We will compute the efficiency of the <em>blid</em> selection on simulated background samples, that is: <span class="math notranslate nohighlight">\(\epsilon^k_b\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span></p>
-<p>We sill estimate the number of background events in the <em>blind</em>, <span class="math notranslate nohighlight">\(n_b^k\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span>.</p>
+<p>We will compute the efficiency of the <em>blid</em> selection on <em>simulated background samples</em>, that is: <span class="math notranslate nohighlight">\(\epsilon^k_b\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span></p>
+<p>We sill estimate the number of background events in the <em>blind</em> sample, <span class="math notranslate nohighlight">\(n_b^k\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span>.</p>
 <p>We estimate the number of background events in the RoI, given the selection efficiency in the RoI <span class="math notranslate nohighlight">\(\epsilon^k_{RoI}\)</span></p>
 <div class="math notranslate nohighlight">
 \[ 
@@ -563,12 +563,12 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * sel_ntracks, sel_eblob2, sel_erange
 </pre></div>
 </div>
-</section>
-<section id="estimation-of-the-bkg-events-in-the-blind-sample">
-<h2>Estimation of the bkg events in the blind sample<a class="headerlink" href="#estimation-of-the-bkg-events-in-the-blind-sample" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="estimation-of-the-bkg-events-in-the-blind-sample">
+<h2>Estimation of the bkg events in the blind sample<a class="headerlink" href="#estimation-of-the-bkg-events-in-the-blind-sample" title="Permalink to this heading">#</a></h2>
 <p>We estimate the number of bkg events <span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b, \, n^{\mathrm{Tl}}_b\)</span> as those values that minimized the -2 log extended maximum likelihood.</p>
-<p>We estimate first the pdf of the energy, <span class="math notranslate nohighlight">\(E\)</span>, of each bkg sample, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}\)</span></p>
-<p>We combine the pdfs int an extended likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}({\bf E} |{\bf n}_n)\)</span>, where <span class="math notranslate nohighlight">\({\bf n}_b = (n^{\mathrm{Bi}}_b, n^{\mathrm{Tl}}_b)\)</span>, and <span class="math notranslate nohighlight">\({\bf E}\)</span> are the energies of the <span class="math notranslate nohighlight">\(m\)</span> events in the blind sample, <span class="math notranslate nohighlight">\(E_i, \;\, i= 1, \dots, m\)</span>.</p>
+<p>We define first the pdf of the energy, <span class="math notranslate nohighlight">\(E\)</span>, of each bkg sample, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}\)</span>, using <em>simulated data</em></p>
+<p>We combine the pdfs int an extended likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}({\bf E} |{\bf n}_n)\)</span>, where <span class="math notranslate nohighlight">\({\bf n}_b = (n^{\mathrm{Bi}}_b, n^{\mathrm{Tl}}_b)\)</span>, <span class="math notranslate nohighlight">\(n_b = n^{\mathrm{Bi}}_b + n^{\mathrm{Tl}}_b\)</span>, and <span class="math notranslate nohighlight">\({\bf E}\)</span> are the energies of the <span class="math notranslate nohighlight">\(m\)</span> events in the blind sample, <span class="math notranslate nohighlight">\(E_i, \;\, i= 1, \dots, m\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}({\bf E} | {\bf n}_b) =  g(m | n_b) \, \Pi_{i=1}^m \sum_k \frac{n^k_b}{n_b}  \, g_k(E_i)
@@ -579,11 +579,11 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 \[
 - 2 \log \mathcal{L}({\bf E} | {\bf n}_b).
 \]</div>
-</section>
-<section id="id1">
-<h2>Analysis<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
-<section id="import-modules">
-<h3>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="id1">
+<h2>Analysis<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="section" id="import-modules">
+<h3>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -641,9 +641,9 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </div>
 </div>
 </div>
-</section>
-<section id="parameters">
-<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coll</span>          <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">collaboration</span>
@@ -676,9 +676,9 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 </div>
-</section>
-<section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#dirpath = &#39;/Users/hernando/docencia/master/Fisica_Particulas/USC-Fanal/data/&#39;</span>
@@ -701,9 +701,9 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 </div>
-</section>
-<section id="estimate-blind-selection-efficiency-in-mc">
-<h3>Estimate blind selection efficiency in MC<a class="headerlink" href="#estimate-blind-selection-efficiency-in-mc" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="estimate-blind-selection-efficiency-in-mc">
+<h3>Estimate blind selection efficiency in MC<a class="headerlink" href="#estimate-blind-selection-efficiency-in-mc" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># apply the blind selection to the mc samples to obtaine blind mc samples</span>
@@ -731,10 +731,10 @@ Tl blind edd : 70.7461 %
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="energy-distribution-of-the-blind-data-and-mc-samples">
-<h2>Energy distribution of the blind data and mc samples<a class="headerlink" href="#energy-distribution-of-the-blind-data-and-mc-samples" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="energy-distribution-of-the-blind-data-and-mc-samples">
+<h2>Energy distribution of the blind data and mc samples<a class="headerlink" href="#energy-distribution-of-the-blind-data-and-mc-samples" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_energy</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
@@ -757,19 +757,15 @@ Tl blind edd : 70.7461 %
 <img alt="../../_images/fanal_bkg_18_0.png" src="../../_images/fanal_bkg_18_0.png" />
 </div>
 </div>
-</section>
-<section id="estimate-the-number-of-background-events-in-the-blind-data">
-<h2>Estimate the number of background events in the blind-data<a class="headerlink" href="#estimate-the-number-of-background-events-in-the-blind-data" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="estimate-the-number-of-background-events-in-the-blind-data">
+<h2>Estimate the number of background events in the blind-data<a class="headerlink" href="#estimate-the-number-of-background-events-in-the-blind-data" title="Permalink to this heading">#</a></h2>
 <p>Estimate the number of events of Bi and Tl:</p>
 <ul class="simple">
 <li><p>Obtain the pdfs distribution for a reference variable, i.e. energy, for each blind sample.</p></li>
 <li><p>Generate a combined pdf where the parameters are the number of events of each sample.</p></li>
 <li><p>Estimate the number of blind Tl and Bi events fitting the energy distribution to the combined pdf.</p></li>
 <li><p>Compute the total number of Tl and Bi using the efficiencies of the blind selection in the MC samples.</p></li>
-</ul>
-<p>Note:</p>
-<ul class="simple">
-<li><p>There is an appendix in the NB to show the code step by step</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -792,8 +788,8 @@ Tl blind edd : 70.7461 %
 <img alt="../../_images/fanal_bkg_21_0.png" src="../../_images/fanal_bkg_21_0.png" />
 </div>
 </div>
-<section id="compute-the-total-number-of-background-events">
-<h3>Compute the total number of background events<a class="headerlink" href="#compute-the-total-number-of-background-events" title="Permalink to this headline">#</a></h3>
+<div class="section" id="compute-the-total-number-of-background-events">
+<h3>Compute the total number of background events<a class="headerlink" href="#compute-the-total-number-of-background-events" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_Bi_blind</span> <span class="o">=</span> <span class="n">nevts_blind</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -811,9 +807,9 @@ Tl blind edd : 70.7461 %
 </div>
 </div>
 </div>
-</section>
-<section id="number-of-background-events-in-roi-and-e-ragne">
-<h3>Number of background events in RoI and E ragne<a class="headerlink" href="#number-of-background-events-in-roi-and-e-ragne" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="number-of-background-events-in-roi-and-e-ragne">
+<h3>Number of background events in RoI and E ragne<a class="headerlink" href="#number-of-background-events-in-roi-and-e-ragne" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_Bi_total</span> <span class="o">=</span> <span class="n">n_Bi_blind</span> <span class="o">/</span> <span class="n">eff_Bi_blind</span>
@@ -847,10 +843,11 @@ Tl blind edd : 70.7461 %
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="write-out">
-<h2>Write out<a class="headerlink" href="#write-out" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="write-out">
+<h2>Write out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h2>
+<p>We write out into the <em><a class="reference external" href="http://collpars.py">collpars.py</a></em> file the number of events</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exposures</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;new_alpha&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;new_beta&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;new_gamma&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
@@ -882,8 +879,8 @@ Tl blind edd : 70.7461 %
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

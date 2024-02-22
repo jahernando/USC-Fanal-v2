@@ -1,12 +1,11 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>Estimate the number of signal events using a fit to the energy spectrum &#8212; Fanal - USC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estimate the number of signal events &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -34,6 +33,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Open the box" href="fanal_data_access.html" />
     <link rel="prev" title="Sensitivity of a counting experiment" href="fanal_signal_countexp.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1">
@@ -435,7 +435,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Estimate the number of signal events using a fit to the energy spectrum</h1>
+                <h1>Estimate the number of signal events</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -519,25 +519,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="estimate-the-number-of-signal-events-using-a-fit-to-the-energy-spectrum">
-<h1>Estimate the number of signal events using a fit to the energy spectrum<a class="headerlink" href="#estimate-the-number-of-signal-events-using-a-fit-to-the-energy-spectrum" title="Permalink to this headline">#</a></h1>
-<section id="objective">
-<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h2>
-<p>Estimate the number of signal events using the extended maximum likelihood fit and simulated experiments</p>
-<p>Estimate the p-value of the null hypothesis (there is no signal)</p>
-</section>
-<section id="physics">
-<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="estimate-the-number-of-signal-events">
+<h1>Estimate the number of signal events<a class="headerlink" href="#estimate-the-number-of-signal-events" title="Permalink to this heading">#</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Estimate the number of signal events</strong> using the extended maximum likelihood fit and <strong>simulated experiments</strong>.</p></li>
+<li><p><strong>Estimate the p-value of the null hypothesis</strong> (there is no signal)</p></li>
+</ul>
+</div>
+<div class="section" id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
 <p>We are going to estimate the number of signal events using an extended maximum likelihood fit.</p>
-<p>Similar to how we computed the number of bkg events in a blind sample, we fit the energy distribution in the energy enlarged window to the energy template distributions of the signal and the backgrounds whose pdfs, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}, \beta\beta\)</span>, we obtain from simulated data.</p>
-<p>We test the fitting method generating an experiment with a number of background events compatible with out estimations based on the blind data a guess number of signal events.</p>
+<p>We will test the method here with the <strong>simulated data</strong>!</p>
+<p>Similar to how we computed the number of bkg events in a blind sample, we fit the energy distribution in the energy enlarged window to the energy template distributions of the signal and the backgrounds whose pdfs, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}, \beta\beta0\nu\)</span>, we obtain from simulated data.</p>
+<p>We test the fitting method generating an experiment with a number of background events compatible with our estimations based on the blind data and a guess number of signal events.</p>
 <p>We can vary the number of signal events to test the performance of the fit.</p>
-<p>Finally, we test the p-value of the null hypothesis.</p>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
-<section id="importing-modules">
-<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">#</a></h3>
+<p>Finally, we test the p-value of the null hypothesis, for a given simulated experiment.</p>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
+<div class="section" id="importing-modules">
+<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -595,9 +598,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="main-parameters">
-<h3>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="main-parameters">
+<h3>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coll</span>          <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">collaboration</span>
@@ -671,9 +674,9 @@ ref varranges :  [(1, 1.1), (2.4, 2.7)]
 </div>
 </div>
 </div>
-</section>
-<section id="the-data">
-<h3>the data<a class="headerlink" href="#the-data" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="the-data">
+<h3>the data<a class="headerlink" href="#the-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the path to the data directory and filenames</span>
@@ -708,14 +711,15 @@ MC Sample bb, number of simulated events = 47636
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="check-the-method-to-extract-n-beta-beta-e">
-<h2>Check the method to extract <span class="math notranslate nohighlight">\(n^{\beta\beta}_E\)</span><a class="headerlink" href="#check-the-method-to-extract-n-beta-beta-e" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="check-the-method-to-extract-n-beta-beta-e">
+<h2>Check the method to extract <span class="math notranslate nohighlight">\(n^{\beta\beta}_E\)</span><a class="headerlink" href="#check-the-method-to-extract-n-beta-beta-e" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>We generate a MC experiments with number of events compatible with estimated number of bkg events and a hipothetical number of signal events.</p></li>
+<li><p>We generate a MC experiments with number of events compatible with the estimated number of bkg events and an hipothetical number of signal events.</p></li>
 <li><p>We fit the energy distribution of the selected events to the samples pdfs: Bi, Tl, bb</p></li>
-<li><p>We do a profile scan to estimate the confidence interval and p0-value for this example</p></li>
+<li><p>We do a profile scan to estimate the confidence interval</p></li>
+<li><p>We computeh the p0-value using the ration of the likelihood of the best estimation and the case where we estimate only the bkg events forcing the signal to be null.</p></li>
 </ul>
 <p><strong>Exercise</strong></p>
 <ul class="simple">
@@ -749,8 +753,8 @@ MC Sample bb, number of simulated events = 47636
 </div>
 </div>
 </div>
-<section id="simulate-fit-the-data-of-an-experiment">
-<h3>Simulate &amp; Fit the data of an experiment<a class="headerlink" href="#simulate-fit-the-data-of-an-experiment" title="Permalink to this headline">#</a></h3>
+<div class="section" id="simulate-fit-the-data-of-an-experiment">
+<h3>Simulate &amp; Fit the data of an experiment<a class="headerlink" href="#simulate-fit-the-data-of-an-experiment" title="Permalink to this heading">#</a></h3>
 <p>The simulated experiment expect the same number of bkg events that our experiment and a certain number of signal events</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -797,17 +801,17 @@ Number of bb total events = 41.956
 Number of Bi expected events in E window = 25.287
 Number of Tl expected events in E window = 150.775
 Number of bb expected events in E window = 21.775
-Number of Bi estimated events in E window = 26.084
-Number of Tl estimated events in E window = 180.395
-Number of bb estimated events in E window = 16.516
+Number of Bi estimated events in E window = 16.107
+Number of Tl estimated events in E window = 149.081
+Number of bb estimated events in E window = 30.818
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="parameter-uncertanties-estimation">
-<h2>Parameter uncertanties estimation<a class="headerlink" href="#parameter-uncertanties-estimation" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="parameter-uncertanties-estimation">
+<h2>Parameter uncertanties estimation<a class="headerlink" href="#parameter-uncertanties-estimation" title="Permalink to this heading">#</a></h2>
 <p>We perform a likelihood scan to estimate the parameter uncerstainties</p>
 <p>We estimate the 60% C.L intervals</p>
 <div class="cell docutils container">
@@ -831,9 +835,9 @@ Number of bb estimated events in E window = 16.516
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (20.04, 32.96)
-Number of Tl events CI at   68 % CL = (167.79, 194.10)
-Number of bb events CI at   68 % CL = (11.71, 21.99)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (10.37, 22.50)
+Number of Tl events CI at   68 % CL = (137.62, 161.54)
+Number of bb events CI at   68 % CL = (24.70, 37.84)
 </pre></div>
 </div>
 </div>
@@ -848,15 +852,15 @@ Number of bb events CI at   68 % CL = (11.71, 21.99)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 26.08  -6.05 + 6.88
-Number of Tl events CI at   68 % CL = 180.40  -12.61 +13.71
-Number of bb events CI at   68 % CL = 16.52  -4.81 + 5.47
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 16.11  -5.73 + 6.39
+Number of Tl events CI at   68 % CL = 149.08  -11.46 +12.46
+Number of bb events CI at   68 % CL = 30.82  -6.12 + 7.02
 </pre></div>
 </div>
 </div>
 </div>
-<section id="compute-the-p-value-in-the-case-of-no-signal">
-<h3>Compute the p-value in the case of no-signal<a class="headerlink" href="#compute-the-p-value-in-the-case-of-no-signal" title="Permalink to this headline">#</a></h3>
+<div class="section" id="compute-the-p-value-in-the-case-of-no-signal">
+<h3>Compute the p-value in the case of no-signal<a class="headerlink" href="#compute-the-p-value-in-the-case-of-no-signal" title="Permalink to this heading">#</a></h3>
 <p>We compute the p-value of the null hypothesis (that there is no signal)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -870,14 +874,14 @@ Number of bb events CI at   68 % CL = 16.52  -4.81 + 5.47
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis p-value 8.76e-06, 4.29 sigmas
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis p-value 3.26e-13, 7.19 sigmas
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="estimate-the-half-time-of-the-simulated-experiment">
-<h3>Estimate the half-time of the simulated experiment<a class="headerlink" href="#estimate-the-half-time-of-the-simulated-experiment" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="estimate-the-half-time-of-the-simulated-experiment">
+<h3>Estimate the half-time of the simulated experiment<a class="headerlink" href="#estimate-the-half-time-of-the-simulated-experiment" title="Permalink to this heading">#</a></h3>
 <p>We estimate the value of the half-time, <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span>.</p>
 <p>We use as inputs:</p>
 <ul class="simple">
@@ -899,39 +903,34 @@ Number of bb events CI at   68 % CL = 16.52  -4.81 + 5.47
 <li><p><span class="math notranslate nohighlight">\(N_A\)</span> is the Avogadro number</p></li>
 <li><p><span class="math notranslate nohighlight">\(W\)</span> is the atomic mass in (g)</p></li>
 </ul>
+<p><strong>Exsercise</strong> Compute the lifetime and its uncertainty!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collpars</span> <span class="kn">import</span> <span class="n">exposure</span>
 
-<span class="n">eff</span>      <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">acc_bb</span> <span class="o">*</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_bb_E</span> <span class="c1"># total signal selection efficiency in the E window</span>
+<span class="n">eff</span>      <span class="o">=</span> <span class="mf">1.</span> <span class="c1"># total signal selection efficiency in the E window</span>
 <span class="n">n_bb_E</span>   <span class="o">=</span> <span class="n">n_est</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># estimated number of bb  in E</span>
-<span class="n">tau</span>      <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">half_life</span><span class="p">(</span><span class="n">n_bb_E</span><span class="p">,</span> <span class="n">exposure</span><span class="p">,</span> <span class="n">eff</span><span class="p">)</span> <span class="c1"># tau_1/2</span>
+<span class="n">tau</span>      <span class="o">=</span> <span class="mf">1e25</span> <span class="c1">## compute the value of the lifetime</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of bb0nu events in E  : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_bb_E</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exposure                     : </span><span class="si">{:6.2f}</span><span class="s1"> kg y&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exposure</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total signal efficiency      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">eff</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bb0nu half-life              : </span><span class="si">{:6.2e}</span><span class="s1"> y &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tau</span><span class="p">))</span>
-
-<span class="n">n_bb_ci</span>    <span class="o">=</span> <span class="n">mucis</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># nbbs of the CL  </span>
-<span class="n">utaus</span> <span class="o">=</span> <span class="p">[</span><span class="n">fn</span><span class="o">.</span><span class="n">half_life</span><span class="p">(</span><span class="n">n_bb_i</span><span class="p">,</span> <span class="n">exposure</span><span class="p">,</span> <span class="n">eff</span><span class="p">)</span> <span class="k">for</span> <span class="n">n_bb_i</span> <span class="ow">in</span> <span class="n">n_bb_ci</span><span class="p">]</span>
-<span class="n">utaus</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bb0nu half-life </span><span class="si">{:d}</span><span class="s1">% CL       : [</span><span class="si">{:6.2e}</span><span class="s1">, </span><span class="si">{:6.2e}</span><span class="s1">] y &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">),</span> <span class="o">*</span><span class="n">utaus</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events in E  : 16.516
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events in E  : 30.818
 exposure                     : 1000.00 kg y
-total signal efficiency      :  0.410
-bb0nu half-life              : 6.86e+25 y 
-bb0nu half-life 68% CL       : [5.15e+25, 9.68e+25] y 
+total signal efficiency      :  1.000
+bb0nu half-life              : 1.00e+25 y 
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

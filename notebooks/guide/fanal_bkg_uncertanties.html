@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uncertainties on the number of backgrounds events &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,6 +33,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Sensitivity of a counting experiment" href="fanal_signal_countexp.html" />
     <link rel="prev" title="Expected number of background events" href="fanal_bkg.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1">
@@ -499,27 +499,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="uncertainties-on-the-number-of-backgrounds-events">
-<h1>Uncertainties on the number of backgrounds events<a class="headerlink" href="#uncertainties-on-the-number-of-backgrounds-events" title="Permalink to this headline">#</a></h1>
-<section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="uncertainties-on-the-number-of-backgrounds-events">
+<h1>Uncertainties on the number of backgrounds events<a class="headerlink" href="#uncertainties-on-the-number-of-backgrounds-events" title="Permalink to this heading">#</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Estimate the uncertainties in the number of background events</p></li>
+<li><p><strong>Estimate the uncertainties in the number of background events</strong></p></li>
 </ul>
-</section>
-<section id="physics">
-<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
 <p>We estimate the parameters uncertainty using the log likelihood scan.</p>
 <p>We have estimated the parameters as the values where the -2 log likelihood has a minimum</p>
-<p>We estimate the uncertenties at 60% confidence level using the value where the -2 log likelihood increses by one unit respect the minimum.</p>
+<p>We estimate the uncertenties at the 68% confidence level using the value where the -2 log likelihood increses by one unit respect the minimum.</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta - 2 \log \mathcal{L}( {\bf E} | {\bf n}) = 1
 \]</div>
+<p>where <span class="math notranslate nohighlight">\({\bf n} = {n^{Bi}_b, n^{Tl}_b}\)</span> are the number of background events for Bi, Tl respectively.</p>
 <p>To be precise, to compute the uncertainty on <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span> we scan the likelihood along the <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span>, but we estimate the other parameter <span class="math notranslate nohighlight">\(\hat{n}^{Tl}_b(n^{Bi}_b)\)</span> as the value that minimizes the -2 log likelihood, <span class="math notranslate nohighlight">\(-2 \log \mathcal{L}({\bf E} | {\bf n})\)</span> for a fix <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span>.</p>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -529,8 +530,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="importing-modules">
-<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">#</a></h3>
+<div class="section" id="importing-modules">
+<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
@@ -578,9 +579,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="parameters">
-<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collaboration</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">collaboration</span>
@@ -633,10 +634,10 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="access-the-data">
-<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="access-the-data">
+<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/data/fanal_&#39;</span> <span class="o">+</span> <span class="n">collaboration</span> <span class="o">+</span> <span class="s1">&#39;.h5&#39;</span>
@@ -658,8 +659,8 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 </div>
-<section id="re-do-the-fit-to-the-blind-data">
-<h3>Re-do the fit to the blind data<a class="headerlink" href="#re-do-the-fit-to-the-blind-data" title="Permalink to this headline">#</a></h3>
+<div class="section" id="re-do-the-fit-to-the-blind-data">
+<h3>Re-do the fit to the blind data<a class="headerlink" href="#re-do-the-fit-to-the-blind-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the blind mc samples</span>
@@ -689,14 +690,14 @@ Estimated number of events : 1102.80,  14602.46,
 <img alt="../../_images/fanal_bkg_uncertanties_16_1.png" src="../../_images/fanal_bkg_uncertanties_16_1.png" />
 </div>
 </div>
-</section>
-<section id="profile-likelihood-scan">
-<h3>Profile Likelihood Scan<a class="headerlink" href="#profile-likelihood-scan" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="profile-likelihood-scan">
+<h3>Profile Likelihood Scan<a class="headerlink" href="#profile-likelihood-scan" title="Permalink to this heading">#</a></h3>
 <p>We compute the uncertainties usign the log Likelihood scan</p>
 <p>The uncertainties on <span class="math notranslate nohighlight">\(\mu\)</span>, in the gaussian domain, when there are two parameters <span class="math notranslate nohighlight">\(\mu, \nu\)</span>, are defined as the <span class="math notranslate nohighlight">\(\mu\)</span> values where:</p>
 <div class="math notranslate nohighlight">
 \[
-t_\mu(x) \equiv \Delta - 2 \mathrm{log} \mathcal{L} = 
+t_\mu(x) \equiv \Delta - 2 \mathrm{log} \mathcal{L}(x | \mu, \nu) = 
 -2 \, \mathrm{log} \frac{\mathcal{L}(x | \mu, \hat{\nu}(\mu))}{\mathcal{L}(x | \hat{\mu}, \hat{\nu})}  = 1
 \]</div>
 <p>In the plot, the cover intervals at 68% CL of a parameter corresponds to the segment defined by the points where the  <span class="math notranslate nohighlight">\(\Delta -2 \log \mathcal{L} = 1\)</span> line crosses the likelihood parabola.</p>
@@ -743,9 +744,9 @@ Number of Tl events CI at   68 % CL = 14602.46  -96.18 +140.57
 </div>
 </div>
 </div>
-</section>
-<section id="computing-the-uncertainties-in-the-number-of-bkg">
-<h3>Computing the uncertainties in the number of Bkg<a class="headerlink" href="#computing-the-uncertainties-in-the-number-of-bkg" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="computing-the-uncertainties-in-the-number-of-bkg">
+<h3>Computing the uncertainties in the number of Bkg<a class="headerlink" href="#computing-the-uncertainties-in-the-number-of-bkg" title="Permalink to this heading">#</a></h3>
 <p>Now the uncertainties in the number of background events in the RoI are:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -755,70 +756,37 @@ Number of Tl events CI at   68 % CL = 14602.46  -96.18 +140.57
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">un_blind</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">mucis</span><span class="p">])</span>
 <span class="n">effs_blind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_blind</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_blind</span><span class="p">))</span>
-<span class="n">un_total</span>   <span class="o">=</span> <span class="n">un_blind</span><span class="o">/</span><span class="n">effs_blind</span>
 
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">un_blind</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uncertainty in number of blind </span><span class="si">{:s}</span><span class="s1"> events  = </span><span class="si">{:6.3f}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">un_total</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uncertainty in number of total </span><span class="si">{:s}</span><span class="s1"> events  = </span><span class="si">{:6.3f}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uncertainty in number of blind Bi events  = 48.796 
-Uncertainty in number of blind Tl events  = 118.375 
-Uncertainty in number of total Bi events  = 62.161 
-Uncertainty in number of total Tl events  = 167.432 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">effs_E</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span>  <span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">))</span>
+<span class="n">effs_E</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_E</span>  <span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_E</span><span class="p">))</span>
 <span class="n">effs_RoI</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_RoI</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_RoI</span><span class="p">))</span>
-
-<span class="n">un_E</span>   <span class="o">=</span> <span class="n">un_total</span> <span class="o">*</span> <span class="n">effs_E</span>
-<span class="n">un_RoI</span> <span class="o">=</span> <span class="n">un_total</span> <span class="o">*</span> <span class="n">effs_RoI</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">un_E</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uncertainty in number of </span><span class="si">{:s}</span><span class="s1"> events in erange = </span><span class="si">{:6.3f}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">un_RoI</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Uncertainty in number of </span><span class="si">{:s}</span><span class="s1"> events in RoI    = </span><span class="si">{:6.3f}</span><span class="s1"> &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">u</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uncertainty in number of Bi events in erange =  1.119 
-Uncertainty in number of Tl events in erange =  1.222 
-Uncertainty in number of Bi events in RoI    =  0.963 
-Uncertainty in number of Tl events in RoI    =  0.032 
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="write-out">
-<h2>Write Out<a class="headerlink" href="#write-out" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="write-out">
+<h2>Write Out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h2>
+<p><strong>Exercise</strong> Compute the total, blind, in energy range, and in RoI energy uncertienties efficiencies and store those values in the <em>colaboration</em> parameter file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
 
+<span class="n">collpar_filename</span> <span class="o">=</span> <span class="s2">&quot;collpars.py&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>
-    <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;collpars.py&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+    <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">collpar_filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sample_names</span><span class="p">):</span>
-        <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;un_&#39;</span><span class="o">+</span><span class="n">sample</span><span class="o">+</span><span class="s1">&#39;           = </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">un_total</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;un_&#39;</span><span class="o">+</span><span class="n">sample</span><span class="o">+</span><span class="s1">&#39;_blind     = </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">un_blind</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;un_&#39;</span><span class="o">+</span><span class="n">sample</span><span class="o">+</span><span class="s1">&#39;_E         = </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">un_E</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;un_&#39;</span><span class="o">+</span><span class="n">sample</span><span class="o">+</span><span class="s1">&#39;_RoI       = </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">un_RoI</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1">#    of.write(&#39;un_&#39;+sample+&#39;           = {:6.3f}&#39;.format(un_total[i])+&#39;\n&#39;)</span>
+    <span class="c1">#    of.write(&#39;un_&#39;+sample+&#39;_E         = {:6.3f}&#39;.format(un_E[i])  +&#39;\n&#39;)</span>
+    <span class="c1">#    of.write(&#39;un_&#39;+sample+&#39;_RoI       = {:6.3f}&#39;.format(un_RoI[i])  +&#39;\n&#39;)</span>
     <span class="n">of</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

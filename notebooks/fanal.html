@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fanal, a neutrino-less beta double decay search &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,6 +33,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Signal selection" href="guide/fanal_selection.html" />
     <link rel="prev" title="Fanal - USC" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="guide/fanal_signal.html">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1">
@@ -475,17 +475,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="fanal-a-neutrino-less-beta-double-decay-search">
-<h1>Fanal, a neutrino-less beta double decay search<a class="headerlink" href="#fanal-a-neutrino-less-beta-double-decay-search" title="Permalink to this headline">#</a></h1>
-<section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="fanal-a-neutrino-less-beta-double-decay-search">
+<h1>Fanal, a neutrino-less beta double decay search<a class="headerlink" href="#fanal-a-neutrino-less-beta-double-decay-search" title="Permalink to this heading">#</a></h1>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Do a search for double-beta neutrino-less decays, <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, in <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span> using mock detector data.</p></li>
 <li><p>Learn the different steps in a typical “rare decay” seach analysis in a High Energy Physics, HEP, collaboration</p></li>
 </ul>
-</section>
-<section id="dynamic">
-<h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="dynamic">
+<h2>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Students groups in collaborations</p></li>
 <li><p>Each collaboration:</p>
@@ -497,9 +497,9 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</section>
-<section id="physics">
-<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
 <p>One of the most relevant questions still open in Particle Physics is if <strong>the neutrino is its own anti-particle</strong>, if it is <em>Majorana</em>.</p>
 <p>The only <strong>viable experiment</strong> to determine if the neutrino is Majoran is to observe a <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> decay, an hypothetical decay where a nucleous simultaneously decays into two electrons with no emision of neutrinos.</p>
 <p>This decay can only happen in <strong>few isotopes</strong>, i.e <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>.</p>
@@ -518,25 +518,25 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>A large <strong>exposure</strong> in kg y (the total number of isotopes is proportial to the mass, kg) multipled by the time running time (years)</p></li>
 <li><p>An excellent <strong>energy resolution</strong> (related with the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> reconstructed peak)</p></li>
-<li><p>A low <strong>number of background events</strong> (the number of bkg events expecte for a given exposured in the energy Region of Interest, RoI, defined around the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> for a given exposure)</p></li>
+<li><p>A low <strong>number of background events</strong> (the number of bkg events expected for a given exposured in the energy Region of Interest, RoI, defined around the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> for a given exposure)</p></li>
 </ul>
-</section>
-<section id="the-analysis">
-<h2>The analysis<a class="headerlink" href="#the-analysis" title="Permalink to this headline">#</a></h2>
-<p>In HEP usually the search for rare decays are <strong>blind analyses</strong>.</p>
+</div>
+<div class="section" id="the-analysis">
+<h2>The analysis<a class="headerlink" href="#the-analysis" title="Permalink to this heading">#</a></h2>
+<p>In HEP usually the search for rare decays is done as a <strong>blind analysis</strong>.</p>
 <p>The analysis must be defined using simulated and studied with calibration or <em>blind</em> data (data where the possible signal events have been removed) before accessing the full data set.</p>
 <p>Blind analyses are designed in order to avoid human biases!</p>
-<section id="the-data">
-<h3>The data<a class="headerlink" href="#the-data" title="Permalink to this headline">#</a></h3>
+<div class="section" id="the-data">
+<h3>The data<a class="headerlink" href="#the-data" title="Permalink to this heading">#</a></h3>
 <p>Each collaboration has access to the following data:</p>
 <ul class="simple">
 <li><p><strong>simulated data</strong> of <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>. These data will be used to define a signal selection, the RoI and to estimate the energy resolution in the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> region</p></li>
 <li><p><strong>blind data</strong>, which contain no signal events. This data will be used to estimate the total number of <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and the number of bkg events expected after the signal selection in the RoI.</p></li>
 <li><p>the <strong>full data</strong>, to estimate the number of signal events and the half-life of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span>, <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>.</p></li>
 </ul>
-</section>
-<section id="the-analysis-steps">
-<h3>The analysis steps<a class="headerlink" href="#the-analysis-steps" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="the-analysis-steps">
+<h3>The analysis steps<a class="headerlink" href="#the-analysis-steps" title="Permalink to this heading">#</a></h3>
 <ol class="simple">
 <li><p>Using <em>simulated data</em>, MC, to <strong>define the signal selection</strong> and <strong>the RoI</strong>. Compute the signal <strong>selection efficiencies</strong> in the differents MC samples <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, <a class="reference internal" href="guide/fanal_selection.html"><span class="doc std std-doc">NB</span></a>.</p></li>
 <li><p>Using <em>simulated data</em> to estimate <strong>the energy resolution</strong> for the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{108}\mathrm{Tl}\)</span> and <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>, <a class="reference internal" href="guide/fanal_energy_resolution.html"><span class="doc std std-doc">NB</span></a>.</p></li>
@@ -554,10 +554,10 @@ title="Print to PDF"
 <li><p><strong>Estimate the limit or the cover interval</strong> at 95 %CL of the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}(^{136}\mathrm{Xe})\)</span>.</p></li>
 <li><p><strong>Publish the results</strong>, prepare an oral presentation for a conference and an article to publish</p></li>
 </ol>
-</section>
-</section>
-<section id="exposures">
-<h2>Exposures<a class="headerlink" href="#exposures" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="exposures">
+<h2>Exposures<a class="headerlink" href="#exposures" title="Permalink to this heading">#</a></h2>
 <p>Collaborations:</p>
 <ul class="simple">
 <li><p>alpha: Exposure 500 kg y.</p></li>
@@ -566,13 +566,13 @@ title="Print to PDF"
 <li><p>delta: Exposure 3000 kg y.</p></li>
 <li><p>epsilon: Exposure 3000 kg y.</p></li>
 </ul>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <p>[1] <a class="reference external" href="https://next.ific.uv.es/next/">NEXT web page</a></p>
 <p>[2] The NEXT Collaboration (J. Martín-Albo et al.), Sensitivity of NEXT-100 to neutrinoless double beta decay, <a class="reference external" href="https://link.springer.com/article/10.1007/JHEP05(2016)159">JHEP 1605 (2016) 159.</a></p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sensitivity of a counting experiment &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,6 +33,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -54,10 +54,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Estimate the number of signal events using a fit to the energy spectrum" href="fanal_signal.html" />
+    <link rel="next" title="Estimate the number of signal events" href="fanal_signal.html" />
     <link rel="prev" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertanties.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1">
@@ -377,23 +377,6 @@ title="Print to PDF"
      Importing modules
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indications">
-   Indications
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective">
-     Objective:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tasks">
-     Tasks
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-half-time-relation">
      The half-time relation
@@ -457,23 +440,6 @@ title="Print to PDF"
      Importing modules
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indications">
-   Indications
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#objective">
-     Objective:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tasks">
-     Tasks
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-half-time-relation">
      The half-time relation
@@ -513,17 +479,19 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-of-a-counting-experiment">
-<h1>Sensitivity of a counting experiment<a class="headerlink" href="#sensitivity-of-a-counting-experiment" title="Permalink to this headline">#</a></h1>
-<section id="objetives">
-<h2>Objetives<a class="headerlink" href="#objetives" title="Permalink to this headline">#</a></h2>
-<p>Estimate the sensitivity of the experiment</p>
-<p>Given a number of bkg events in the RoI what is the most probable limit that we impose in the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span> in the case of no signal.</p>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
-<section id="importing-modules">
-<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">#</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="sensitivity-of-a-counting-experiment">
+<h1>Sensitivity of a counting experiment<a class="headerlink" href="#sensitivity-of-a-counting-experiment" title="Permalink to this heading">#</a></h1>
+<div class="section" id="objetives">
+<h2>Objetives<a class="headerlink" href="#objetives" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Estimate the sensitivity of the counting experiment</strong></p></li>
+<li><p>Given a number of bkg events in the RoI what is the most probable limit that we impose in the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span> in the case of no signal.</p></li>
+</ul>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
+<div class="section" id="importing-modules">
+<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -581,25 +549,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="indications">
-<h2>Indications<a class="headerlink" href="#indications" title="Permalink to this headline">#</a></h2>
-<section id="objective">
-<h3>Objective:<a class="headerlink" href="#objective" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><strong>Estimate the senstitivity as a counting experiment</strong></p></li>
-</ul>
-</section>
-<section id="tasks">
-<h3>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Estimate the expected 90 % <span class="math notranslate nohighlight">\(T^{0\nu}_\nu\)</span> FC Confidence Intervals.</p></li>
-<li><p>Estimate the range of <span class="math notranslate nohighlight">\(T^{0\nu}_{1/2}\)</span> that will result in an observation</p></li>
-</ul>
-</section>
-<section id="the-half-time-relation">
-<h3>The half-time relation<a class="headerlink" href="#the-half-time-relation" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="the-half-time-relation">
+<h3>The half-time relation<a class="headerlink" href="#the-half-time-relation" title="Permalink to this heading">#</a></h3>
 <p>The relation of the <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span> with the number of estimated signal events <span class="math notranslate nohighlight">\(n^{\beta\beta}_{RoI}\)</span> in the RoI is:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -614,10 +566,10 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(N_A\)</span> is the Avogadro number</p></li>
 <li><p><span class="math notranslate nohighlight">\(W\)</span> is the atomic mass in (g)</p></li>
 </ul>
-</section>
-</section>
-<section id="main-parameters">
-<h2>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="main-parameters">
+<h2>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collaboration</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">collaboration</span>
@@ -642,8 +594,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Permalink to this headline">#</a></h3>
+<div class="section" id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### data</span>
@@ -671,21 +623,23 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_beta.h5
-MC Sample Bi, number of simulated events = 60184
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MC Sample Bi, number of simulated events = 60184
 MC Sample Tl, number of simulated events = 687297
 MC Sample bb, number of simulated events = 47636
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="conficence-intervals">
-<h3>Conficence Intervals<a class="headerlink" href="#conficence-intervals" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="conficence-intervals">
+<h3>Conficence Intervals<a class="headerlink" href="#conficence-intervals" title="Permalink to this heading">#</a></h3>
 <p>The frenquentist intervals are usually computed using the Feldman-Cousin construction.</p>
-<p>The following code constract the confidence bands for a given number of background events and a range on the number of signal events.</p>
+<p>The following code constract the confidence bands for a given number of <em>observed</em> events (in the <em>x</em> axis) and a range on the number of <em>true signal events</em> ( in the <em>y</em> axis).</p>
 <p><strong>Exercise</strong>:</p>
 <ul class="simple">
-<li><p>Study how the CI changes depending on the observation</p></li>
+<li><p>Study how the CI changes depending on the number of observed events</p></li>
 <li><p>Study what is the value of observed events that will give an observation and a discovery.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -708,7 +662,9 @@ MC Sample bb, number of simulated events = 47636
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC Cover Interval, observed n = 25, at 68 % CL = (0.00, 4.69)
-FC Cover Interval, observed n = 25, at 90 % CL = (0.00, 8.59)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC Cover Interval, observed n = 25, at 90 % CL = (0.00, 8.59)
 FC Cover Interval, observed n = 25, at 95 % CL = (0.00, 10.55)
 </pre></div>
 </div>
@@ -731,17 +687,17 @@ FC Cover Interval, observed n = 25, at 95 % CL = (0.00, 10.55)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_signal_countexp_18_0.png" src="../../_images/fanal_signal_countexp_18_0.png" />
+<img alt="../../_images/fanal_signal_countexp_17_0.png" src="../../_images/fanal_signal_countexp_17_0.png" />
 </div>
 </div>
 <p>Translate the number of signal events into half-life time.</p>
+<p><strong>Exsercise</strong> Implement the <em>tau</em> function to return the lifetime assocaited to <em>nbb</em> events in the selected RoI.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tau</span><span class="p">(</span><span class="n">nbb</span><span class="p">):</span>
-    <span class="n">acc_bb</span>   <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">acc_bb</span>
     <span class="n">eff</span>      <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_bb_RoI</span>
     <span class="n">exposure</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">exposure</span>
-    <span class="n">tau</span>      <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">half_life</span><span class="p">(</span><span class="n">nbb</span><span class="p">,</span> <span class="n">exposure</span><span class="p">,</span> <span class="n">acc_bb</span> <span class="o">*</span> <span class="n">eff</span><span class="p">)</span>
+    <span class="n">tau</span>      <span class="o">=</span> <span class="n">nbb</span><span class="o">/</span><span class="n">collpars</span><span class="o">.</span><span class="n">exposure</span> <span class="c1"># implement here the formula of the lifetime</span>
     <span class="k">return</span> <span class="n">tau</span>
 </pre></div>
 </div>
@@ -758,9 +714,9 @@ FC Cover Interval, observed n = 25, at 95 % CL = (0.00, 10.55)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC Cover Interval, observed n = 25, at 68 % CL = (2.42e+26,  inf)
-FC Cover Interval, observed n = 25, at 90 % CL = (1.32e+26,  inf)
-FC Cover Interval, observed n = 25, at 95 % CL = (1.07e+26,  inf)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC Cover Interval, observed n = 25, at 68 % CL = (4.69e-03, 0.00e+00)
+FC Cover Interval, observed n = 25, at 90 % CL = (8.59e-03, 0.00e+00)
+FC Cover Interval, observed n = 25, at 95 % CL = (1.05e-02, 0.00e+00)
 </pre></div>
 </div>
 </div>
@@ -784,12 +740,16 @@ FC Cover Interval, observed n = 25, at 95 % CL = (1.07e+26,  inf)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_signal_countexp_22_0.png" src="../../_images/fanal_signal_countexp_22_0.png" />
+<img alt="../../_images/fanal_signal_countexp_21_0.png" src="../../_images/fanal_signal_countexp_21_0.png" />
 </div>
 </div>
-</section>
-<section id="compute-p-value-of-null-hypothesis">
-<h3>Compute p-value of null hypothesis<a class="headerlink" href="#compute-p-value-of-null-hypothesis" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="compute-p-value-of-null-hypothesis">
+<h3>Compute p-value of null hypothesis<a class="headerlink" href="#compute-p-value-of-null-hypothesis" title="Permalink to this heading">#</a></h3>
+<p>The p-value is the probability to obtain an experiment with a agreemen with no-signal equal to the observation or worse.</p>
+<p>When the p-value of the null-hypotehsis is &gt; 3 sigmas, we claim an eividende, when the p-valyes is &gt; 5 sigmas, a discovery!</p>
+<p>Note that we claim a discovery when data does not agree with the hypothesis of only background!</p>
+<p>In the case of the counting experiment the distribution of number of observed events in the case of no signal is a Poisson distribution with mean <span class="math notranslate nohighlight">\(n^{bkg}_{RoI}\)</span>, the number of background events in the RoI</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Z3</span>    <span class="o">=</span> <span class="mf">0.0027</span>  <span class="c1"># 3-sigma</span>
@@ -804,7 +764,7 @@ FC Cover Interval, observed n = 25, at 95 % CL = (1.07e+26,  inf)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p0-values &lt; 2.70e-03 if n &gt; 41, Tbb &lt; 2.76e+25 y
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>p0-values &lt; 2.70e-03 if n &gt; 41, Tbb &lt; 4.10e-02 y
 </pre></div>
 </div>
 </div>
@@ -822,12 +782,12 @@ FC Cover Interval, observed n = 25, at 95 % CL = (1.07e+26,  inf)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_signal_countexp_25_0.png" src="../../_images/fanal_signal_countexp_25_0.png" />
+<img alt="../../_images/fanal_signal_countexp_24_0.png" src="../../_images/fanal_signal_countexp_24_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -866,7 +826,7 @@ FC Cover Interval, observed n = 25, at 95 % CL = (1.07e+26,  inf)
     <a class='right-next' id="next-link" href="fanal_signal.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Estimate the number of signal events using a fit to the energy spectrum</p>
+        <p class="prev-next-title">Estimate the number of signal events</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

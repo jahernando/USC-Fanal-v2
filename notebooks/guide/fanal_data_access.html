@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Open the box &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,6 +33,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -54,9 +54,9 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Estimate the number of signal events using a fit to the energy spectrum" href="fanal_signal.html" />
+    <link rel="prev" title="Estimate the number of signal events" href="fanal_signal.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -147,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -444,10 +444,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="open-the-box">
-<h1>Open the box<a class="headerlink" href="#open-the-box" title="Permalink to this headline">#</a></h1>
-<section id="objetives">
-<h2>Objetives<a class="headerlink" href="#objetives" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="open-the-box">
+<h1>Open the box<a class="headerlink" href="#open-the-box" title="Permalink to this heading">#</a></h1>
+<div class="section" id="objetives">
+<h2>Objetives<a class="headerlink" href="#objetives" title="Permalink to this heading">#</a></h2>
 <p><strong>Access the full data sample and estimate the number of signal events</strong></p>
 <ul class="simple">
 <li><p>Consider the case of a counting experiment, estimate the number of signal events <strong>in the RoI</strong>, <span class="math notranslate nohighlight">\(n^{\beta\beta}_{RoI}\)</span>.</p></li>
@@ -455,9 +455,9 @@ title="Print to PDF"
 </ul>
 <p>In both cases <strong>set a limit or a confidence interval for <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span></strong></p>
 <p><strong>Compute also the p-value of the null hypothesis</strong></p>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -467,8 +467,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="importing-modules">
-<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">#</a></h3>
+<div class="section" id="importing-modules">
+<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
@@ -516,9 +516,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="main-parameters">
-<h3>Main Parameters<a class="headerlink" href="#main-parameters" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="main-parameters">
+<h3>Main Parameters<a class="headerlink" href="#main-parameters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coll</span>          <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">collaboration</span>
@@ -569,10 +569,10 @@ Number Tl events in E   = 150.775
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="access-the-data">
-<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="access-the-data">
+<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this heading">#</a></h2>
 <p>We access the full data</p>
 <p>We plot the energy distribution of all the events in the (2.4, 2.7) MeV window</p>
 <p><strong>Use</strong> the <em>mask</em> variable to apply the signal selection defined in the first NB</p>
@@ -620,8 +620,8 @@ Number Tl events in E   = 150.775
 <img alt="../../_images/fanal_data_access_13_0.png" src="../../_images/fanal_data_access_13_0.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -654,7 +654,7 @@ Number Tl events in E   = 150.775
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Estimate the number of signal events using a fit to the energy spectrum</p>
+            <p class="prev-next-title">Estimate the number of signal events</p>
         </div>
     </a>
 </div>

@@ -1,11 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Energy resolution &#8212; Fanal - USC</title>
     
   <!-- Loaded before other Sphinx assets -->
@@ -34,6 +33,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="Expected number of background events" href="fanal_bkg.html" />
     <link rel="prev" title="Signal selection" href="fanal_selection.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
+    <meta name="docsearch:language" content="en">
     
 
     <!-- Google Analytics -->
@@ -148,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events using a fit to the energy spectrum
+   Estimate the number of signal events
   </a>
  </li>
  <li class="toctree-l1">
@@ -469,15 +469,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="energy-resolution">
-<h1>Energy resolution<a class="headerlink" href="#energy-resolution" title="Permalink to this headline">#</a></h1>
-<section id="physics">
-<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="energy-resolution">
+<h1>Energy resolution<a class="headerlink" href="#energy-resolution" title="Permalink to this heading">#</a></h1>
+<div class="section" id="physics">
+<h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
 <p>The energy resolution of the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> peak is one of the key parameters of the analysis.</p>
 <p>The resolution in fact degfines the width of the RoI and therefore the possible number of background events.</p>
-</section>
-<section id="analysis">
-<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -487,8 +487,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<section id="importing-modules">
-<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this headline">#</a></h3>
+<div class="section" id="importing-modules">
+<h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
@@ -532,9 +532,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-<section id="main-parameters">
-<h3>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="main-parameters">
+<h3>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this heading">#</a></h3>
 <p>In the next cell we define the main parameters of the selection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -549,10 +549,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
-</section>
-<section id="access-the-data">
-<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this headline">#</a></h2>
+</div>
+</div>
+<div class="section" id="access-the-data">
+<h2>Access the data<a class="headerlink" href="#access-the-data" title="Permalink to this heading">#</a></h2>
 <p>In the next cell we read the data (in a <em>h5</em> format), and access the simulated data of the backgrounds and the signal.</p>
 <p>We output the number of events in the simulated samples</p>
 <div class="cell docutils container">
@@ -564,14 +564,14 @@ title="Print to PDF"
 
 <span class="c1"># access the simulated data (DataFrames) for the different samples (Bi, Tl, bb) located in the data file</span>
 <span class="n">mcbi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span>
-<span class="n">mctl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span>
-<span class="n">mcbb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bb0nu&#39;</span><span class="p">)</span>
+<span class="c1">#mctl = pd.read_hdf(dirpath + filename, key = &#39;mc/tl208&#39;)</span>
+<span class="c1">#mcbb = pd.read_hdf(dirpath + filename, key = &#39;mc/bb0nu&#39;)</span>
 
 <span class="c1"># set the names of the samples</span>
 <span class="c1"># set the names of the samples</span>
-<span class="n">mc_samples</span>         <span class="o">=</span> <span class="p">[</span><span class="n">mcbi</span><span class="p">,</span> <span class="n">mctl</span><span class="p">,</span> <span class="n">mcbb</span><span class="p">]</span> <span class="c1"># list of the mc DFs</span>
-<span class="n">sample_names</span>       <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bi&#39;</span><span class="p">,</span> <span class="s1">&#39;Tl&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">]</span>
-<span class="n">sample_names_latex</span> <span class="o">=</span> <span class="p">[</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">$Tl&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\beta\beta0\nu$&#39;</span><span class="p">,]</span> <span class="c1"># str names of the mc samples</span>
+<span class="n">mc_samples</span>         <span class="o">=</span> <span class="p">[</span><span class="n">mcbi</span><span class="p">,]</span> <span class="c1"># list of the mc DFs</span>
+<span class="n">sample_names</span>       <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bi&#39;</span><span class="p">,]</span>
+<span class="n">sample_names_latex</span> <span class="o">=</span> <span class="p">[</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi&#39;</span><span class="p">,]</span> <span class="c1"># str names of the mc samples</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mc</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mc_samples</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MC Sample </span><span class="si">{:s}</span><span class="s1">, number of simulated events = </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sample_names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">mc</span><span class="p">)))</span>
@@ -581,23 +581,22 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_beta.h5
 MC Sample Bi, number of simulated events = 60184
-MC Sample Tl, number of simulated events = 687297
-MC Sample bb, number of simulated events = 47636
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="estimate-the-energy-resolution">
-<h2>Estimate the energy resolution<a class="headerlink" href="#estimate-the-energy-resolution" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="estimate-the-energy-resolution">
+<h2>Estimate the energy resolution<a class="headerlink" href="#estimate-the-energy-resolution" title="Permalink to this heading">#</a></h2>
 <p>The energy resolution is a crucial parameters in this analysis.</p>
-<p>We fit the energy distribution of the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span>, <span class="math notranslate nohighlight">\(^{208}\mathrm{Tl}\)</span> and the <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span> peaks to a gaussian on top of a pedestal modeled as an stragith line</p>
+<p>We fit the energy distribution of the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> peak to a gaussian on top of a pedestal modeled as an stragith line</p>
 <p>Give the relative energy resolution as the percentage of <span class="math notranslate nohighlight">\(\sigma/E\)</span> or FWHM/E (Full Width Have Maximum).</p>
+<p><em>Exercise:</em> Compute the energy resolution of the other MC samples: <span class="math notranslate nohighlight">\(^{208}\mathrm{Tl}\)</span> and the <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eranges</span> <span class="o">=</span> <span class="p">((</span><span class="mf">2420.</span><span class="p">,</span> <span class="mf">2480.</span><span class="p">),</span> <span class="p">(</span><span class="mi">2580</span><span class="p">,</span> <span class="mi">2650</span><span class="p">),</span> <span class="p">(</span><span class="mi">2440</span><span class="p">,</span> <span class="mi">2480</span><span class="p">))</span>
-<span class="n">fitfuns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gausline&#39;</span><span class="p">,</span> <span class="s1">&#39;gausline&#39;</span><span class="p">,</span> <span class="s1">&#39;gausline&#39;</span><span class="p">)</span>
-<span class="n">guesses</span> <span class="o">=</span><span class="p">((</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">2445.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">300.</span><span class="p">),</span> <span class="p">(</span><span class="mf">50e3</span><span class="p">,</span> <span class="mf">2615.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="p">(</span><span class="mf">50e3</span><span class="p">,</span> <span class="mf">2458.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eranges</span> <span class="o">=</span> <span class="p">((</span><span class="mf">2420.</span><span class="p">,</span> <span class="mf">2480.</span><span class="p">),)</span>
+<span class="n">fitfuns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gausline&#39;</span><span class="p">,)</span>
+<span class="n">guesses</span> <span class="o">=</span><span class="p">((</span><span class="mf">10e3</span><span class="p">,</span> <span class="mf">2445.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">300.</span><span class="p">),)</span>
 
 <span class="n">subplot</span> <span class="o">=</span> <span class="n">pltext</span><span class="o">.</span><span class="n">canvas</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
@@ -627,14 +626,12 @@ MC Sample bb, number of simulated events = 47636
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy resolution Bi: sigma   5.25 KeV,   0.50 % FWHM
-Energy resolution Tl: sigma   5.38 KeV,   0.48 % FWHM
-Energy resolution bb: sigma   5.27 KeV,   0.50 % FWHM
 </pre></div>
 </div>
 </div>
 </div>
-<section id="write-out">
-<h3>Write out<a class="headerlink" href="#write-out" title="Permalink to this headline">#</a></h3>
+<div class="section" id="write-out">
+<h3>Write out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h3>
 <p>We write the relevant python variables into a file <em><a class="reference external" href="http://collpars.py">collpars.py</a></em>, which contains the relevant parameters of the analysis and which will be used in the following notebooks.</p>
 <p>WE write out into the parameter file:</p>
 <ul class="simple">
@@ -643,9 +640,10 @@ Energy resolution bb: sigma   5.27 KeV,   0.50 % FWHM
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">collpar_filename</span> <span class="o">=</span> <span class="s2">&quot;collpars.py&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>
-    <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;collpars.py&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+    <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">collpar_filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sample_names</span><span class="p">):</span>
         <span class="n">sigma</span> <span class="o">=</span> <span class="n">resolutions</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;sigma_&#39;</span><span class="o">+</span><span class="n">sample</span><span class="o">+</span><span class="s1">&#39;        = </span><span class="si">{:1.2e}</span><span class="s1"> # keV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sigma</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -654,9 +652,9 @@ Energy resolution bb: sigma   5.27 KeV,   0.50 % FWHM
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
