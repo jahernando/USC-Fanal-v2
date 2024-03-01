@@ -420,8 +420,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-ragne">
-     Number of background events in RoI and E ragne
+    <a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">
+     Number of background events in RoI and E range
     </a>
    </li>
   </ul>
@@ -508,8 +508,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-ragne">
-     Number of background events in RoI and E ragne
+    <a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">
+     Number of background events in RoI and E range
     </a>
    </li>
   </ul>
@@ -808,37 +808,28 @@ Tl blind edd : 70.7461 %
 </div>
 </div>
 </div>
-<div class="section" id="number-of-background-events-in-roi-and-e-ragne">
-<h3>Number of background events in RoI and E ragne<a class="headerlink" href="#number-of-background-events-in-roi-and-e-ragne" title="Permalink to this heading">#</a></h3>
+<div class="section" id="number-of-background-events-in-roi-and-e-range">
+<h3>Number of background events in RoI and E range<a class="headerlink" href="#number-of-background-events-in-roi-and-e-range" title="Permalink to this heading">#</a></h3>
+<p><em>Exercise</em> Compute the number of bkg events for each sample in the Energy range and in RoI</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_Bi_total</span> <span class="o">=</span> <span class="n">n_Bi_blind</span> <span class="o">/</span> <span class="n">eff_Bi_blind</span>
-<span class="n">n_Tl_total</span> <span class="o">=</span> <span class="n">n_Tl_blind</span> <span class="o">/</span> <span class="n">eff_Tl_blind</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#n_Bi_total = n_Bi_blind / eff_Bi_blind</span>
+<span class="c1">#n_Tl_total = n_Tl_blind / eff_Tl_blind</span>
 
-<span class="n">n_Bi_E</span> <span class="o">=</span> <span class="n">n_Bi_total</span> <span class="o">*</span> <span class="n">eff_Bi_E</span>
-<span class="n">n_Tl_E</span> <span class="o">=</span> <span class="n">n_Tl_total</span> <span class="o">*</span> <span class="n">eff_Tl_E</span>
+<span class="c1">#n_Bi_E = n_Bi_total * eff_Bi_E</span>
+<span class="c1">#n_Tl_E = n_Tl_total * eff_Tl_E</span>
 
-<span class="n">n_Bi_RoI</span> <span class="o">=</span> <span class="n">n_Bi_total</span> <span class="o">*</span> <span class="n">eff_Bi_RoI</span>
-<span class="n">n_Tl_RoI</span> <span class="o">=</span> <span class="n">n_Tl_total</span> <span class="o">*</span> <span class="n">eff_Tl_RoI</span>
+<span class="c1">#n_Bi_RoI = n_Bi_total * eff_Bi_RoI</span>
+<span class="c1">#n_Tl_RoI = n_Tl_total * eff_Tl_RoI</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events total Bi      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_total</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events total Tl      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_total</span><span class="p">))</span>
+<span class="c1">#print(&#39; number of events total Bi      : {:6.3f}&#39;.format(n_Bi_total))</span>
+<span class="c1">#print(&#39; number of events total Tl      : {:6.3f}&#39;.format(n_Tl_total))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in E range Bi : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_E</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in E range Tl : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_E</span><span class="p">))</span>
+<span class="c1">#print(&#39; number of events in E range Bi : {:6.3f}&#39;.format(n_Bi_E))</span>
+<span class="c1">#print(&#39; number of events in E range Tl : {:6.3f}&#39;.format(n_Tl_E))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in RoI Bi     : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_RoI</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in RoI Tl     : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_RoI</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of events total Bi      : 1404.842
- number of events total Tl      : 20654.116
- number of events in E range Bi : 25.287
- number of events in E range Tl : 150.775
- number of events in RoI Bi     : 21.775
- number of events in RoI Tl     :  4.007
+<span class="c1">#print(&#39; number of events in RoI Bi     : {:6.3f}&#39;.format(n_Bi_RoI))</span>
+<span class="c1">#print(&#39; number of events in RoI Tl     : {:6.3f}&#39;.format(n_Tl_RoI))</span>
 </pre></div>
 </div>
 </div>
@@ -856,7 +847,7 @@ Tl blind edd : 70.7461 %
 
 <span class="n">exposure</span>   <span class="o">=</span> <span class="n">exposures</span><span class="p">[</span><span class="n">coll</span><span class="p">]</span>
 
-<span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>
     <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;collpars.py&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
     <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;exposure        = </span><span class="si">{:6.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exposure</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; # kg y </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
