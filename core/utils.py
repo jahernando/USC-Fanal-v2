@@ -1,196 +1,280 @@
-import numpy             as np
+"""
+core.utils
+==========
+General-purpose utilities for array manipulation, statistical summaries,
+range-based selections and efficiency calculations over NumPy arrays and
+Pandas DataFrames.
+
+Functions
+---------
+list_transpose        : Transpose a list of lists.
+list_to_df            : Convert a list of lists into a pandas DataFrame.
+remove_nan            : Remove NaN entries from an array.
+in_range              : Boolean mask for values inside an interval.
+centers               : Mid-points between consecutive partition edges.
+stats                 : Basic statistics (mean, std, counts) with optional range.
+str_stats             : Human-readable statistics string.
+efficiency            : Binomial efficiency and its uncertainty.
+selection             : Boolean mask for DataFrame rows satisfying variable ranges.
+selection_efficiency  : Efficiency of a DataFrame selection.
+selection_sample      : Sub-DataFrame of rows that pass a selection.
+"""
+
+import numpy  as np
 import pandas as pd
 
 from functools import reduce
-#from collections.abc import Iterable
 
-#--- with lists
+
+# ---------------------------------------------------------------------------
+# List utilities
+# ---------------------------------------------------------------------------
 
 def list_transpose(ll):
-    """
-    
-    transpose a list m-length with n-length each item
-    returns a list of n-items each of m-lenght
+    """Transpose a list-of-lists (m lists of length n → n lists of length m).
 
     Parameters
     ----------
-    ll : list of lists
+    ll : list[list]
+        Input rectangular list of lists; all inner lists must have the same
+        length.
 
     Returns
     -------
-    lt : list of lists
-
+    list[list]
+        Transposed list of lists.
     """
-    m = len(ll[0])
-    lt = [[x[i] for x in ll] for i in range(m)]
+    m  = len(ll[0])
+    lt = [[row[i] for row in ll] for i in range(m)]
     return lt
 
 
 def list_to_df(ll, names):
-    """
-    
-    Converts a list of list into a pandas DataFrame
+    """Convert a list of columns into a :class:`pandas.DataFrame`.
 
     Parameters
     ----------
-    ll    : list(list), contents of the DF colums
-    names : list(str), name of the DF columnes
+    ll    : list[array-like]
+        One element per column; each element is an iterable of column values.
+    names : list[str]
+        Column names.  Must have the same length as *ll*.
 
     Returns
     -------
-    df    : DataFrame
+    pandas.DataFrame
     """
-
-    assert len(ll) == len(names), 'required same number of lists and names'    
-
-    df     = {}
-    for i, name in enumerate(names): 
-        df[name] = ll[i]
-        
-    df = pd.DataFrame(df)
-    return df
+    assert len(ll) == len(names), \
+        f'required same number of lists ({len(ll)}) and names ({len(names)})'
+    return pd.DataFrame(dict(zip(names, ll)))
 
 
+# ---------------------------------------------------------------------------
+# Array utilities
+# ---------------------------------------------------------------------------
 
-#--- general utilies
+def remove_nan(vals: np.ndarray) -> np.ndarray:
+    """Return *vals* with NaN entries removed.
 
-def remove_nan(vals : np.array) -> np.array:
-    """ returns the np.array without nan
+    Parameters
+    ----------
+    vals : numpy.ndarray
+
+    Returns
+    -------
+    numpy.ndarray
     """
     return vals[~np.isnan(vals)]
 
 
-def in_range(vals : np.array,
-             range : tuple = None,
-             upper_limit_in = False) -> np.array(bool):
-    """ returns a np.array(bool) with the elements of val that are in range
-    inputs:
-        vals : np.array
-        range: None, (x0, x1) or x0: None, all values; (c1, c1): x >= x0, x <xf;
-               x0: x == x0                 
-        upper_limit_int, if True x <= xf
-    returns
-        sel : np.array(bool) where True/False indicates if the elements of vals are
-        in range
-    """
-
-    if (range is None): 
-        return vals >= np.min(vals)
-
-    if (isinstance(range, list) or (isinstance(range, tuple))):
-        sel1 = (vals >= range[0])
-        sel2 = (vals <= range[1]) if upper_limit_in else (vals < range[1])
-        return sel1 & sel2
-    
-    return vals == range
-
-
-def centers(xs : np.array) -> np.array:
-    """ returns the center between the participn
-    inputs:
-        xs: np.array
-    returns:
-        np.array with the centers of xs (dimension len(xs)-1)
-    """
-    return 0.5* ( xs[1: ] + xs[: -1])
-
-
-
-
-def stats(vals : np.array, range : tuple = None):
-    vals = np.array(vals)
-    vals = remove_nan(vals)
-    sel  = in_range(vals, range)
-    vv = vals[sel]
-    mean, std, evts, oevts = np.mean(vv), np.std(vv), len(vv), len(vals) - len(vv)
-    return evts, mean, std, oevts
-
-
-def str_stats(vals, range = None, formate = '6.2f'):
-    evts, mean, std, ovts = stats(vals, range)
-    s  = 'entries '+str(evts)+'\n'
-    s += (('mean {0:'+formate+'}').format(mean))+'\n'
-    s += (('std  {0:'+formate+'}').format(std))
-    return s
-
-
-#-----
-
-def efficiency(sel, n = None):
-    """ compute the efficiency and uncertantie of a selection
-    inputs:
-        sel: np.array(bool), bool array with True/False
-        n  : int, denominator, if n is None, use len(sel)
-    """
-    n    = n if n is not None else len(sel)
-    eff  = np.sum(sel)/n
-    ueff = np.sqrt(eff * (1- eff) / n)
-    return eff, ueff
-
-#-------
-
-def selection(df, varname, varrange, oper = np.logical_and):
-    """ apply the selection on a DataFrame requirend that the variable(s) are in the range
-    
-    inputs:
-        df       : dataFrame
-        varname  : str or list(str), name of list of names of the variable s 
-        varrange : tuple(float, float), range of the selection, all (-np.inf, np.inf)
-        oper     : bool operation, default and
-    returns:
-        sel      : np.array(bool) same same of DF with True/False
-                   if the item fulfull variable value (varname) inside the range (varrange)
-    """
-    
-    _isiter = lambda x: isinstance(x, list) or isinstance(x, tuple)
-    if _isiter(varname):
-        assert len(varname) == len(varrange), \
-            'required same length of variables and ranges'
-        sels = [selection(df, ivar, ivarran) for ivar, ivarran \
-                      in zip(varname, varrange)]
-        return reduce(oper, sels)
-    
-    return in_range(df[varname], varrange)
-    
-
-def selection_efficiency(df, varname, varrange):
-    
-    """
-    Computes the efficiency of a selection in a DataFrame
+def in_range(vals: np.ndarray,
+             val_range=None,
+             upper_limit_in: bool = False) -> np.ndarray:
+    """Boolean mask selecting elements of *vals* that lie inside *val_range*.
 
     Parameters
     ----------
-    df       : DataFrame,
-    varname  : str or list(str), name of list of names of the variables of the selection
-    varrange : (float, float) or list(float, float), range or ranges of the variables of the selection
+    vals         : numpy.ndarray
+    val_range    : None | scalar | tuple(float, float)
+        * ``None``          → all elements selected (True everywhere).
+        * ``(x0, x1)``      → ``x0 <= vals < x1`` (or ``<= x1`` if
+          *upper_limit_in* is True).
+        * scalar *v*        → ``vals == v`` (exact equality).
+    upper_limit_in : bool, optional
+        If True the upper bound is inclusive (``vals <= x1``).  Default False.
 
     Returns
     -------
-    eff      : (float, float), efficiency and uncertanty on the efficiency
+    numpy.ndarray of bool
+    """
+    if val_range is None:
+        return np.ones(len(vals), dtype=bool)
 
+    if isinstance(val_range, (list, tuple)):
+        x0, x1 = val_range[0], val_range[1]
+        sel_lo = vals >= x0
+        sel_hi = vals <= x1 if upper_limit_in else vals < x1
+        return sel_lo & sel_hi
+
+    return vals == val_range
+
+
+def centers(xs: np.ndarray) -> np.ndarray:
+    """Return the mid-points between consecutive elements of *xs*.
+
+    Parameters
+    ----------
+    xs : numpy.ndarray
+        Partition edges (length n).
+
+    Returns
+    -------
+    numpy.ndarray
+        Array of length n-1 with the centres of each interval.
+    """
+    return 0.5 * (xs[1:] + xs[:-1])
+
+
+# ---------------------------------------------------------------------------
+# Statistical summaries
+# ---------------------------------------------------------------------------
+
+def stats(vals: np.ndarray, val_range=None):
+    """Compute basic statistics of *vals*, optionally restricted to *val_range*.
+
+    Parameters
+    ----------
+    vals      : array-like
+    val_range : None | tuple(float, float), optional
+        If given, only elements inside the range are included.
+
+    Returns
+    -------
+    evts  : int   – number of selected elements.
+    mean  : float – mean of selected elements.
+    std   : float – standard deviation of selected elements.
+    oevts : int   – number of elements outside the range.
+    """
+    vals  = np.array(vals)
+    vals  = remove_nan(vals)
+    sel   = in_range(vals, val_range)
+    vv    = vals[sel]
+    mean  = np.mean(vv)
+    std   = np.std(vv)
+    evts  = len(vv)
+    oevts = len(vals) - evts
+    return evts, mean, std, oevts
+
+
+def str_stats(vals, val_range=None, fmt='6.2f'):
+    """Return a multi-line string summarising statistics of *vals*.
+
+    Parameters
+    ----------
+    vals      : array-like
+    val_range : None | tuple(float, float), optional
+    fmt       : str, optional
+        Python format specification for mean and std.  Default ``'6.2f'``.
+
+    Returns
+    -------
+    str
+    """
+    evts, mean, std, _ = stats(vals, val_range)
+    s  = f'entries {evts}\n'
+    s += (f'mean {{0:{fmt}}}').format(mean) + '\n'
+    s += (f'std  {{0:{fmt}}}').format(std)
+    return s
+
+
+# ---------------------------------------------------------------------------
+# Efficiency
+# ---------------------------------------------------------------------------
+
+def efficiency(sel, n=None):
+    """Binomial efficiency and its uncertainty from a boolean selection mask.
+
+    Parameters
+    ----------
+    sel : array-like of bool
+        Boolean array where ``True`` marks selected elements.
+    n   : int or None, optional
+        Denominator.  If None, ``len(sel)`` is used.
+
+    Returns
+    -------
+    eff  : float – efficiency = sum(sel) / n.
+    ueff : float – binomial uncertainty = sqrt(eff * (1 - eff) / n).
+    """
+    n    = n if n is not None else len(sel)
+    eff  = np.sum(sel) / n
+    ueff = np.sqrt(eff * (1.0 - eff) / n)
+    return eff, ueff
+
+
+# ---------------------------------------------------------------------------
+# DataFrame selections
+# ---------------------------------------------------------------------------
+
+def selection(df, varname, varrange, oper=np.logical_and):
+    """Boolean mask selecting rows of *df* where column(s) fall inside range(s).
+
+    Parameters
+    ----------
+    df       : pandas.DataFrame
+    varname  : str | list[str]
+        Column name, or list of column names for a multi-variable selection.
+    varrange : tuple | list[tuple]
+        Range ``(x0, x1)`` for a single variable, or a list of ranges for
+        multiple variables.  Each range is passed to :func:`in_range`.
+    oper     : callable, optional
+        Logical reduction applied when multiple variables are given.
+        Default :func:`numpy.logical_and`.
+
+    Returns
+    -------
+    numpy.ndarray of bool
+        Same length as *df*.
+    """
+    _isiter = lambda x: isinstance(x, (list, tuple))
+
+    if _isiter(varname):
+        assert len(varname) == len(varrange), \
+            'required same length of variables and ranges'
+        sels = [selection(df, ivar, irange)
+                for ivar, irange in zip(varname, varrange)]
+        return reduce(oper, sels)
+
+    return in_range(df[varname].values, varrange)
+
+
+def selection_efficiency(df, varname, varrange):
+    """Efficiency of a selection applied to *df*.
+
+    Parameters
+    ----------
+    df       : pandas.DataFrame
+    varname  : str | list[str]
+    varrange : tuple | list[tuple]
+
+    Returns
+    -------
+    eff  : float – efficiency.
+    ueff : float – binomial uncertainty.
     """
     return efficiency(selection(df, varname, varrange))
 
 
 def selection_sample(df, varname, varrange):
-    """
-    
-    return a sample of a DataFrame with the events that pass the selection
-    
+    """Sub-DataFrame of rows in *df* that pass the selection.
 
     Parameters
     ----------
-    df       : DataFrame 
-    varname  : str or list(str), name of list of names of the variable o f the selection
-        DESCRIPTION.
-    varrange : (float, float) or list(float, float), range or list of ranges of the variable sof the selection
-        DESCRIPTION.
+    df       : pandas.DataFrame
+    varname  : str | list[str]
+    varrange : tuple | list[tuple]
 
     Returns
     -------
-    df      ; DataFrame
-
+    pandas.DataFrame
     """
-    
     return df[selection(df, varname, varrange)]
-
