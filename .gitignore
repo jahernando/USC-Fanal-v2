@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/guide/collpars.py
+notebooks/guide/collpars_save.py
+
+# Generated student notebooks (produced by make_student_nbs.py)
+notebooks/student/
+
+# Jupyter Book build output
+_build/
+
+# Data files (large binaries — distribute separately)
+data/
+
+# macOS
+.DS_Store
+
+# Claude Code internal memory
+memory/
