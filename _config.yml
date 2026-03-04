@@ -28,7 +28,7 @@ bibtex_bibfiles:
 #  branch: master  # Which branch of the repository should be used when creating links (optional)
 
 repository:
-  url: https://github.com/jahernando/USC-Fanal-v2
+  url: https://github.com/jahernando/USC-FPII-Fanal
   branch: teacher
 
 exclude_patterns:
