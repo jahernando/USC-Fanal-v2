@@ -509,15 +509,15 @@ title="Print to PDF"
 </div>
 <div class="section" id="physics">
 <h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
-<p>We estimate the parameters uncertainty using the log likelihood scan.</p>
-<p>We have estimated the parameters as the values where the -2 log likelihood has a minimum</p>
-<p>We estimate the uncertenties at the 68% confidence level using the value where the -2 log likelihood increses by one unit respect the minimum.</p>
+<p>We estimate the parameter uncertainties using the log-likelihood scan.</p>
+<p>We have estimated the parameters as the values where the <span class="math notranslate nohighlight">\(-2\log\)</span> likelihood has a minimum.</p>
+<p>We estimate the uncertainties at the 68% confidence level using the values where the <span class="math notranslate nohighlight">\(-2\log\)</span> likelihood increases by one unit with respect to the minimum:</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta - 2 \log \mathcal{L}( {\bf E} | {\bf n}) = 1
 \]</div>
-<p>where <span class="math notranslate nohighlight">\({\bf n} = {n^{Bi}_b, n^{Tl}_b}\)</span> are the number of background events for Bi, Tl respectively.</p>
-<p>To be precise, to compute the uncertainty on <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span> we scan the likelihood along the <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span>, but we estimate the other parameter <span class="math notranslate nohighlight">\(\hat{n}^{Tl}_b(n^{Bi}_b)\)</span> as the value that minimizes the -2 log likelihood, <span class="math notranslate nohighlight">\(-2 \log \mathcal{L}({\bf E} | {\bf n})\)</span> for a fix <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span>.</p>
+<p>where <span class="math notranslate nohighlight">\({\bf n} = \{n^{Bi}_b, n^{Tl}_b\}\)</span> are the number of background events for Bi and Tl respectively.</p>
+<p>To be precise, to compute the uncertainty on <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span> we scan the likelihood along <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span>, but we estimate the other parameter <span class="math notranslate nohighlight">\(\hat{n}^{Tl}_b(n^{Bi}_b)\)</span> as the value that minimises the <span class="math notranslate nohighlight">\(-2\log\)</span> likelihood for a fixed <span class="math notranslate nohighlight">\(n^{Bi}_b\)</span>.</p>
 </div>
 <div class="section" id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
@@ -560,7 +560,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2/
 </pre></div>
 </div>
 </div>
@@ -607,13 +607,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration         : new_beta
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration         : new_gamma
 Energy range          : ( 2.400,  2.700) MeV
 RoI    range          : ( 2.430,  2.480) MeV
-Bi eff in E range     : 1.8000 %
-Tl eff in E range     : 0.7300 %
-Bi eff in RoI         : 1.5500 %
-Tl eff in RoI         : 0.0194 %
+Bi eff in E range     : 1.8100 %
+Tl eff in E range     : 0.7280 %
+Bi eff in RoI         : 1.5300 %
+Tl eff in RoI         : 0.0195 %
 </pre></div>
 </div>
 </div>
@@ -629,7 +629,7 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of bkg events in blind data : Bi = 1102.80, Tl = 14602.46.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of bkg events in blind data : Bi = 509.93, Tl = 3304.42.
 </pre></div>
 </div>
 </div>
@@ -654,7 +654,7 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_beta.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2//data/fanal_new_gamma.h5
 </pre></div>
 </div>
 </div>
@@ -683,8 +683,8 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial   number of events : 1102.80,  14602.46, 
-Estimated number of events : 1102.80,  14602.46, 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial   number of events : 509.93,  3304.42, 
+Estimated number of events : 509.93,  3304.42, 
 </pre></div>
 </div>
 <img alt="../../_images/fanal_bkg_uncertanties_16_1.png" src="../../_images/fanal_bkg_uncertanties_16_1.png" />
@@ -693,14 +693,14 @@ Estimated number of events : 1102.80,  14602.46,
 </div>
 <div class="section" id="profile-likelihood-scan">
 <h3>Profile Likelihood Scan<a class="headerlink" href="#profile-likelihood-scan" title="Permalink to this heading">#</a></h3>
-<p>We compute the uncertainties usign the log Likelihood scan</p>
-<p>The uncertainties on <span class="math notranslate nohighlight">\(\mu\)</span>, in the gaussian domain, when there are two parameters <span class="math notranslate nohighlight">\(\mu, \nu\)</span>, are defined as the <span class="math notranslate nohighlight">\(\mu\)</span> values where:</p>
+<p>We compute the uncertainties using the log-likelihood scan.</p>
+<p>The uncertainties on <span class="math notranslate nohighlight">\(\mu\)</span>, in the Gaussian approximation, when there are two parameters <span class="math notranslate nohighlight">\(\mu, \nu\)</span>, are defined as the <span class="math notranslate nohighlight">\(\mu\)</span> values where:</p>
 <div class="math notranslate nohighlight">
 \[
 t_\mu(x) \equiv \Delta - 2 \mathrm{log} \mathcal{L}(x | \mu, \nu) = 
 -2 \, \mathrm{log} \frac{\mathcal{L}(x | \mu, \hat{\nu}(\mu))}{\mathcal{L}(x | \hat{\mu}, \hat{\nu})}  = 1
 \]</div>
-<p>In the plot, the cover intervals at 68% CL of a parameter corresponds to the segment defined by the points where the  <span class="math notranslate nohighlight">\(\Delta -2 \log \mathcal{L} = 1\)</span> line crosses the likelihood parabola.</p>
+<p>In the plot, the confidence intervals at 68% CL of a parameter correspond to the segment defined by the points where the <span class="math notranslate nohighlight">\(\Delta -2 \log \mathcal{L} = 1\)</span> line crosses the likelihood parabola.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">tmu_scan</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">n_est</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">))</span>
@@ -722,8 +722,8 @@ t_\mu(x) \equiv \Delta - 2 \mathrm{log} \mathcal{L}(x | \mu, \nu) =
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (1056.04, 1153.63)
-Number of Tl events CI at   68 % CL = (14506.28, 14743.03)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (478.13, 541.72)
+Number of Tl events CI at   68 % CL = (3244.59, 3364.25)
 </pre></div>
 </div>
 </div>
@@ -738,8 +738,8 @@ Number of Tl events CI at   68 % CL = (14506.28, 14743.03)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 1102.80  -46.76 +50.83
-Number of Tl events CI at   68 % CL = 14602.46  -96.18 +140.57
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 509.93  -31.80 +31.80
+Number of Tl events CI at   68 % CL = 3304.42  -59.83 +59.83
 </pre></div>
 </div>
 </div>
@@ -752,7 +752,7 @@ Number of Tl events CI at   68 % CL = 14602.46  -96.18 +140.57
 \[
 \sigma_{n^k_{RoI}} = \frac{\epsilon^k_{RoI}}{\epsilon^k_b}\sigma_{n^k_{b}}, \;\; k = \mathrm{Bi}, \mathrm{Tl}
  \]</div>
-<div class="cell docutils container">
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">un_blind</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">mucis</span><span class="p">])</span>
 <span class="n">effs_blind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">collpars</span><span class="o">.</span><span class="n">eff_Bi_blind</span><span class="p">,</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_Tl_blind</span><span class="p">))</span>
@@ -767,10 +767,10 @@ Number of Tl events CI at   68 % CL = 14602.46  -96.18 +140.57
 </div>
 <div class="section" id="write-out">
 <h2>Write Out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h2>
-<p><strong>Exercise</strong> Compute the total, blind, in energy range, and in RoI energy uncertienties efficiencies and store those values in the <em>colaboration</em> parameter file.</p>
+<p><strong>Exercise</strong>: Compute the uncertainties on the total, blind, energy-range, and RoI efficiencies, and store those values in the <em>collaboration</em> parameter file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="n">collpar_filename</span> <span class="o">=</span> <span class="s2">&quot;collpars.py&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>

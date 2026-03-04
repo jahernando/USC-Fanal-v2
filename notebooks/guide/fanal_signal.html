@@ -363,8 +363,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objective">
-   Objective
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -410,18 +410,18 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameter-uncertanties-estimation">
-   Parameter uncertanties estimation
+  <a class="reference internal nav-link" href="#parameter-uncertainty-estimation">
+   Parameter uncertainty estimation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-the-p-value-in-the-case-of-no-signal">
-     Compute the p-value in the case of no-signal
+    <a class="reference internal nav-link" href="#compute-the-p-value-under-the-no-signal-hypothesis">
+     Compute the p-value under the no-signal hypothesis
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimate-the-half-time-of-the-simulated-experiment">
-     Estimate the half-time of the simulated experiment
+    <a class="reference internal nav-link" href="#estimate-the-half-life-of-the-simulated-experiment">
+     Estimate the half-life of the simulated experiment
     </a>
    </li>
   </ul>
@@ -446,8 +446,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objective">
-   Objective
+  <a class="reference internal nav-link" href="#objectives">
+   Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -493,18 +493,18 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parameter-uncertanties-estimation">
-   Parameter uncertanties estimation
+  <a class="reference internal nav-link" href="#parameter-uncertainty-estimation">
+   Parameter uncertainty estimation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-the-p-value-in-the-case-of-no-signal">
-     Compute the p-value in the case of no-signal
+    <a class="reference internal nav-link" href="#compute-the-p-value-under-the-no-signal-hypothesis">
+     Compute the p-value under the no-signal hypothesis
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimate-the-half-time-of-the-simulated-experiment">
-     Estimate the half-time of the simulated experiment
+    <a class="reference internal nav-link" href="#estimate-the-half-life-of-the-simulated-experiment">
+     Estimate the half-life of the simulated experiment
     </a>
    </li>
   </ul>
@@ -521,21 +521,21 @@ title="Print to PDF"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="estimate-the-number-of-signal-events">
 <h1>Estimate the number of signal events<a class="headerlink" href="#estimate-the-number-of-signal-events" title="Permalink to this heading">#</a></h1>
-<div class="section" id="objective">
-<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h2>
+<div class="section" id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Estimate the number of signal events</strong> using the extended maximum likelihood fit and <strong>simulated experiments</strong>.</p></li>
-<li><p><strong>Estimate the p-value of the null hypothesis</strong> (there is no signal)</p></li>
+<li><p><strong>Estimate the p-value of the null hypothesis</strong> (no signal present).</p></li>
 </ul>
 </div>
 <div class="section" id="physics">
 <h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
 <p>We are going to estimate the number of signal events using an extended maximum likelihood fit.</p>
-<p>We will test the method here with the <strong>simulated data</strong>!</p>
-<p>Similar to how we computed the number of bkg events in a blind sample, we fit the energy distribution in the energy enlarged window to the energy template distributions of the signal and the backgrounds whose pdfs, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}, \beta\beta0\nu\)</span>, we obtain from simulated data.</p>
-<p>We test the fitting method generating an experiment with a number of background events compatible with our estimations based on the blind data and a guess number of signal events.</p>
-<p>We can vary the number of signal events to test the performance of the fit.</p>
-<p>Finally, we test the p-value of the null hypothesis, for a given simulated experiment.</p>
+<p>We will test the method here with <strong>simulated data</strong>.</p>
+<p>Similarly to how we computed the number of background events in the blind sample, we fit the energy distribution in the enlarged energy window to the energy template distributions of the signal and background samples. Their PDFs, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}, \beta\beta0\nu\)</span>, are obtained from simulated data.</p>
+<p>We test the fitting method by generating an experiment with a number of background events compatible with our estimates from the blind data, and a trial number of signal events.</p>
+<p>We can vary the number of signal events to study the performance of the fit.</p>
+<p>Finally, we test the p-value of the null hypothesis for a given simulated experiment.</p>
 </div>
 <div class="section" id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
@@ -579,7 +579,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2/
 </pre></div>
 </div>
 </div>
@@ -618,7 +618,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration             : new_beta
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration             : new_gamma
 number of tracks range    :      1
 Blob-2 energy range       :  0.400  MeV
 Energy range              : ( 2.400,  2.700) MeV
@@ -669,7 +669,7 @@ ref varranges :  [(1, 1.1), (2.4, 2.7)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of bkg events in full data : Bi = 1404.84, Tl = 20654.12.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of bkg events in full data : Bi = 651.25, Tl = 4687.13.
 </pre></div>
 </div>
 </div>
@@ -701,7 +701,7 @@ ref varranges :  [(1, 1.1), (2.4, 2.7)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_beta.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2//data/fanal_new_gamma.h5
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MC Sample Bi, number of simulated events = 60184
@@ -716,16 +716,16 @@ MC Sample bb, number of simulated events = 47636
 <div class="section" id="check-the-method-to-extract-n-beta-beta-e">
 <h2>Check the method to extract <span class="math notranslate nohighlight">\(n^{\beta\beta}_E\)</span><a class="headerlink" href="#check-the-method-to-extract-n-beta-beta-e" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>We generate a MC experiments with number of events compatible with the estimated number of bkg events and an hipothetical number of signal events.</p></li>
-<li><p>We fit the energy distribution of the selected events to the samples pdfs: Bi, Tl, bb</p></li>
-<li><p>We do a profile scan to estimate the confidence interval</p></li>
-<li><p>We computeh the p0-value using the ration of the likelihood of the best estimation and the case where we estimate only the bkg events forcing the signal to be null.</p></li>
+<li><p>We generate a MC experiment with a number of events compatible with the estimated number of background events and a hypothetical number of signal events.</p></li>
+<li><p>We fit the energy distribution of the selected events to the sample PDFs: Bi, Tl, bb.</p></li>
+<li><p>We perform a profile scan to estimate the confidence interval.</p></li>
+<li><p>We compute the p-value using the ratio of the likelihood at the best estimate versus the case where the signal is forced to zero.</p></li>
 </ul>
 <p><strong>Exercise</strong></p>
 <ul class="simple">
 <li><p>Generate other experiments with different number of signal events to study the performance of the fit</p></li>
 </ul>
-<div class="cell docutils container">
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nevts_total</span><span class="p">(</span><span class="n">factor</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; returns the total number of events (Bi, Tl, bb), </span>
@@ -756,10 +756,10 @@ MC Sample bb, number of simulated events = 47636
 <div class="section" id="simulate-fit-the-data-of-an-experiment">
 <h3>Simulate &amp; Fit the data of an experiment<a class="headerlink" href="#simulate-fit-the-data-of-an-experiment" title="Permalink to this heading">#</a></h3>
 <p>The simulated experiment expect the same number of bkg events that our experiment and a certain number of signal events</p>
-<div class="cell docutils container">
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the number of events</span>
-<span class="n">factor</span>      <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">factor</span>      <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">n_total</span>     <span class="o">=</span> <span class="n">nevts_total</span><span class="p">(</span><span class="n">factor</span><span class="p">)</span>
 <span class="n">n_E</span>         <span class="o">=</span> <span class="n">nevts_in_E</span><span class="p">(</span><span class="n">n_total</span><span class="p">)</span>
 
@@ -795,25 +795,25 @@ MC Sample bb, number of simulated events = 47636
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi total events = 1404.842
-Number of Tl total events = 20654.116
-Number of bb total events = 41.956
-Number of Bi expected events in E window = 25.287
-Number of Tl expected events in E window = 150.775
-Number of bb expected events in E window = 21.775
-Number of Bi estimated events in E window = 16.107
-Number of Tl estimated events in E window = 149.081
-Number of bb estimated events in E window = 30.818
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi total events = 651.247
+Number of Tl total events = 4687.127
+Number of bb total events =  9.618
+Number of Bi expected events in E window = 11.788
+Number of Tl expected events in E window = 34.122
+Number of bb expected events in E window =  4.992
+Number of Bi estimated events in E window = 20.699
+Number of Tl estimated events in E window = 32.506
+Number of bb estimated events in E window =  4.794
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="parameter-uncertanties-estimation">
-<h2>Parameter uncertanties estimation<a class="headerlink" href="#parameter-uncertanties-estimation" title="Permalink to this heading">#</a></h2>
-<p>We perform a likelihood scan to estimate the parameter uncerstainties</p>
-<p>We estimate the 60% C.L intervals</p>
+<div class="section" id="parameter-uncertainty-estimation">
+<h2>Parameter uncertainty estimation<a class="headerlink" href="#parameter-uncertainty-estimation" title="Permalink to this heading">#</a></h2>
+<p>We perform a likelihood scan to estimate the parameter uncertainties.</p>
+<p>We estimate the 68% C.L. intervals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">tmu_scan</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">n_est</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">))</span>
@@ -835,9 +835,9 @@ Number of bb estimated events in E window = 30.818
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (10.37, 22.50)
-Number of Tl events CI at   68 % CL = (137.62, 161.54)
-Number of bb events CI at   68 % CL = (24.70, 37.84)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = (15.31, 26.83)
+Number of Tl events CI at   68 % CL = (27.15, 38.32)
+Number of bb events CI at   68 % CL = ( 1.49,  8.82)
 </pre></div>
 </div>
 </div>
@@ -852,16 +852,16 @@ Number of bb events CI at   68 % CL = (24.70, 37.84)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 16.11  -5.73 + 6.39
-Number of Tl events CI at   68 % CL = 149.08  -11.46 +12.46
-Number of bb events CI at   68 % CL = 30.82  -6.12 + 7.02
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of Bi events CI at   68 % CL = 20.70  -5.39 + 6.13
+Number of Tl events CI at   68 % CL = 32.51  -5.35 + 5.82
+Number of bb events CI at   68 % CL =  4.79  -3.31 + 4.02
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="compute-the-p-value-in-the-case-of-no-signal">
-<h3>Compute the p-value in the case of no-signal<a class="headerlink" href="#compute-the-p-value-in-the-case-of-no-signal" title="Permalink to this heading">#</a></h3>
-<p>We compute the p-value of the null hypothesis (that there is no signal)</p>
+<div class="section" id="compute-the-p-value-under-the-no-signal-hypothesis">
+<h3>Compute the p-value under the no-signal hypothesis<a class="headerlink" href="#compute-the-p-value-under-the-no-signal-hypothesis" title="Permalink to this heading">#</a></h3>
+<p>We compute the p-value of the null hypothesis (that there is no signal).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test the 0 value in the 2-position of the parameters (that is the number of bb events)</span>
@@ -874,37 +874,36 @@ Number of bb events CI at   68 % CL = 30.82  -6.12 + 7.02
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis p-value 3.26e-13, 7.19 sigmas
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>null hypothesis p-value 6.75e-02, 1.49 sigmas
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="estimate-the-half-time-of-the-simulated-experiment">
-<h3>Estimate the half-time of the simulated experiment<a class="headerlink" href="#estimate-the-half-time-of-the-simulated-experiment" title="Permalink to this heading">#</a></h3>
-<p>We estimate the value of the half-time, <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span>.</p>
-<p>We use as inputs:</p>
+<div class="section" id="estimate-the-half-life-of-the-simulated-experiment">
+<h3>Estimate the half-life of the simulated experiment<a class="headerlink" href="#estimate-the-half-life-of-the-simulated-experiment" title="Permalink to this heading">#</a></h3>
+<p>We estimate the value of the half-life, <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span>, using as inputs:</p>
 <ul class="simple">
-<li><p>the estimated number of signal events in the enlarged energy windows (from the fit)</p></li>
-<li><p>the total efficiency of selecting signal events</p></li>
-<li><p>the exposure (kg y)</p></li>
+<li><p>the estimated number of signal events in the enlarged energy window (from the fit)</p></li>
+<li><p>the total efficiency for selecting signal events</p></li>
+<li><p>the exposure (kg·y)</p></li>
 </ul>
-<p>The formula relating is:</p>
+<p>The formula relating the half-life to the number of signal events is:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{T}_{1/2}^{\beta\beta2\nu} = \frac{\delta \, \epsilon^{\beta\beta}_E \, M \, t }{n^{\beta\beta}_E} \frac{N_A \, \log(2)}{W}
+\mathcal{T}_{1/2}^{\beta\beta0\nu} = \frac{\delta \, \epsilon^{\beta\beta}_E \, M \, t }{n^{\beta\beta}_E} \frac{N_A \, \log(2)}{W}
 \]</div>
 <p>Where:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\delta\)</span> abundance of the <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span> isotope (in our detector is 0.9)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\epsilon^{\beta\beta}_E\)</span> is the efficiency of selecting signal events in the E window (in fraction, computed using the mc)</p></li>
-<li><p><span class="math notranslate nohighlight">\(M\)</span> the mass of the detector (g)</p></li>
-<li><p><span class="math notranslate nohighlight">\(t\)</span> the time of the exposure (y)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta\)</span> is the abundance of <span class="math notranslate nohighlight">\(^{136}\mathrm{Xe}\)</span> (in our detector, 0.9)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon^{\beta\beta}_E\)</span> is the efficiency of selecting signal events in the energy window (as a fraction, computed using MC)</p></li>
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is the mass of the detector (kg)</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is the exposure time (y)</p></li>
 <li><p><span class="math notranslate nohighlight">\(N_A\)</span> is the Avogadro number</p></li>
-<li><p><span class="math notranslate nohighlight">\(W\)</span> is the atomic mass in (g)</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> is the atomic mass (g/mol)</p></li>
 </ul>
-<p><strong>Exsercise</strong> Compute the lifetime and its uncertainty!</p>
-<div class="cell docutils container">
+<p><strong>Exercise</strong>: Compute the half-life and its uncertainty!</p>
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collpars</span> <span class="kn">import</span> <span class="n">exposure</span>
 
@@ -920,7 +919,7 @@ Number of bb events CI at   68 % CL = 30.82  -6.12 + 7.02
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events in E  : 30.818
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of bb0nu events in E  :  4.794
 exposure                     : 1000.00 kg y
 total signal efficiency      :  1.000
 bb0nu half-life              : 1.00e+25 y 

@@ -474,7 +474,7 @@ title="Print to PDF"
 <div class="section" id="physics">
 <h2>Physics<a class="headerlink" href="#physics" title="Permalink to this heading">#</a></h2>
 <p>The energy resolution of the <span class="math notranslate nohighlight">\(Q_{\beta\beta}\)</span> peak is one of the key parameters of the analysis.</p>
-<p>The resolution in fact degfines the width of the RoI and therefore the possible number of background events.</p>
+<p>The resolution in fact defines the width of the RoI and therefore the possible number of background events.</p>
 </div>
 <div class="section" id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
@@ -516,7 +516,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2/
 </pre></div>
 </div>
 </div>
@@ -544,7 +544,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration             : new_beta
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration             : new_gamma
 </pre></div>
 </div>
 </div>
@@ -579,7 +579,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_beta.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2//data/fanal_new_gamma.h5
 MC Sample Bi, number of simulated events = 60184
 </pre></div>
 </div>
@@ -588,11 +588,11 @@ MC Sample Bi, number of simulated events = 60184
 </div>
 <div class="section" id="estimate-the-energy-resolution">
 <h2>Estimate the energy resolution<a class="headerlink" href="#estimate-the-energy-resolution" title="Permalink to this heading">#</a></h2>
-<p>The energy resolution is a crucial parameters in this analysis.</p>
-<p>We fit the energy distribution of the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> peak to a gaussian on top of a pedestal modeled as an stragith line</p>
-<p>Give the relative energy resolution as the percentage of <span class="math notranslate nohighlight">\(\sigma/E\)</span> or FWHM/E (Full Width Have Maximum).</p>
+<p>The energy resolution is a crucial parameter in this analysis.</p>
+<p>We fit the energy distribution of the <span class="math notranslate nohighlight">\(^{214}\mathrm{Bi}\)</span> peak to a Gaussian on top of a pedestal modelled as a straight line.</p>
+<p>Give the relative energy resolution as the percentage of <span class="math notranslate nohighlight">\(\sigma/E\)</span> or FWHM/E (Full Width at Half Maximum).</p>
 <p><em>Exercise:</em> Compute the energy resolution of the other MC samples: <span class="math notranslate nohighlight">\(^{208}\mathrm{Tl}\)</span> and the <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>.</p>
-<div class="cell docutils container">
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eranges</span> <span class="o">=</span> <span class="p">((</span><span class="mf">2420.</span><span class="p">,</span> <span class="mf">2480.</span><span class="p">),)</span>
 <span class="n">fitfuns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;gausline&#39;</span><span class="p">,)</span>
@@ -616,7 +616,7 @@ MC Sample Bi, number of simulated events = 60184
 <img alt="../../_images/fanal_energy_resolution_16_0.png" src="../../_images/fanal_energy_resolution_16_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pars</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">resolutions</span><span class="p">):</span>
     <span class="n">sigma</span><span class="p">,</span> <span class="n">fwhm</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">100</span> <span class="o">*</span> <span class="mf">2.35</span> <span class="o">*</span> <span class="n">pars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">pars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -625,22 +625,21 @@ MC Sample Bi, number of simulated events = 60184
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy resolution Bi: sigma   5.25 KeV,   0.50 % FWHM
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energy resolution Bi: sigma   7.93 KeV,   0.76 % FWHM
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="write-out">
 <h3>Write out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h3>
-<p>We write the relevant python variables into a file <em><a class="reference external" href="http://collpars.py">collpars.py</a></em>, which contains the relevant parameters of the analysis and which will be used in the following notebooks.</p>
-<p>WE write out into the parameter file:</p>
+<p>We write the relevant python variables into the file <em><a class="reference external" href="http://collpars.py">collpars.py</a></em>, which contains the relevant parameters of the analysis and which will be used in the following notebooks.</p>
+<p>We write out into the parameter file:</p>
 <ul class="simple">
-<li><p>The selection cuts</p></li>
-<li><p>The efficiencies of the selection for each sample</p></li>
+<li><p>The energy resolution of each sample</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">collpar_filename</span> <span class="o">=</span> <span class="s2">&quot;collpars.py&quot;</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>
     <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">collpar_filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>

@@ -373,8 +373,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimation-of-the-bkg-events-in-the-blind-sample">
-   Estimation of the bkg events in the blind sample
+  <a class="reference internal nav-link" href="#estimation-of-the-background-events-in-the-blind-sample">
+   Estimation of the background events in the blind sample
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -461,8 +461,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimation-of-the-bkg-events-in-the-blind-sample">
-   Estimation of the bkg events in the blind sample
+  <a class="reference internal nav-link" href="#estimation-of-the-background-events-in-the-blind-sample">
+   Estimation of the background events in the blind sample
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -540,21 +540,21 @@ title="Print to PDF"
 </div>
 <div class="section" id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
-<p>We will use a <em>blind</em> data sample, data where the signal events have been removed by an selection, which we called <em>blind</em> selection.</p>
-<p>The blind selection removes from the full data the signal events while maintains most of the bkg events.</p>
-<p>We will compute the efficiency of the <em>blid</em> selection on <em>simulated background samples</em>, that is: <span class="math notranslate nohighlight">\(\epsilon^k_b\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span></p>
-<p>We sill estimate the number of background events in the <em>blind</em> sample, <span class="math notranslate nohighlight">\(n_b^k\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span>.</p>
-<p>We estimate the number of background events in the RoI, given the selection efficiency in the RoI <span class="math notranslate nohighlight">\(\epsilon^k_{RoI}\)</span></p>
+<p>We will use a <em>blind</em> data sample: data where the signal events have been removed by a selection, which we call the <em>blind</em> selection.</p>
+<p>The blind selection removes from the full data the signal events while retaining most of the background events.</p>
+<p>We will compute the efficiency of the <em>blind</em> selection on <em>simulated background samples</em>, that is: <span class="math notranslate nohighlight">\(\epsilon^k_b\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span>.</p>
+<p>We will estimate the number of background events in the <em>blind</em> sample, <span class="math notranslate nohighlight">\(n_b^k\)</span> with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span>.</p>
+<p>We estimate the number of background events in the RoI given the selection efficiency in the RoI, <span class="math notranslate nohighlight">\(\epsilon^k_{RoI}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ 
 n^k_{RoI} = \frac{\epsilon^k_{RoI}}{\epsilon^k_{b}} n^k_b
 \]</div>
-<p>We estimate also the number of background events in the enlarged energy window, <span class="math notranslate nohighlight">\(\epsilon^k_E\)</span></p>
+<p>We also estimate the number of background events in the enlarged energy window, <span class="math notranslate nohighlight">\(\epsilon^k_E\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ 
 n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 \]</div>
-<p>with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span></p>
+<p>with <span class="math notranslate nohighlight">\(k = \mathrm{Bi}, \mathrm{Tl}\)</span>.</p>
 <p>Remember the selection in the RoI region has the following cuts:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * sel_ntracks, sel_eblob2, sel_eroi
 </pre></div>
@@ -564,17 +564,17 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </pre></div>
 </div>
 </div>
-<div class="section" id="estimation-of-the-bkg-events-in-the-blind-sample">
-<h2>Estimation of the bkg events in the blind sample<a class="headerlink" href="#estimation-of-the-bkg-events-in-the-blind-sample" title="Permalink to this heading">#</a></h2>
-<p>We estimate the number of bkg events <span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b, \, n^{\mathrm{Tl}}_b\)</span> as those values that minimized the -2 log extended maximum likelihood.</p>
-<p>We define first the pdf of the energy, <span class="math notranslate nohighlight">\(E\)</span>, of each bkg sample, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}\)</span>, using <em>simulated data</em></p>
-<p>We combine the pdfs int an extended likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}({\bf E} |{\bf n}_n)\)</span>, where <span class="math notranslate nohighlight">\({\bf n}_b = (n^{\mathrm{Bi}}_b, n^{\mathrm{Tl}}_b)\)</span>, <span class="math notranslate nohighlight">\(n_b = n^{\mathrm{Bi}}_b + n^{\mathrm{Tl}}_b\)</span>, and <span class="math notranslate nohighlight">\({\bf E}\)</span> are the energies of the <span class="math notranslate nohighlight">\(m\)</span> events in the blind sample, <span class="math notranslate nohighlight">\(E_i, \;\, i= 1, \dots, m\)</span>.</p>
+<div class="section" id="estimation-of-the-background-events-in-the-blind-sample">
+<h2>Estimation of the background events in the blind sample<a class="headerlink" href="#estimation-of-the-background-events-in-the-blind-sample" title="Permalink to this heading">#</a></h2>
+<p>We estimate the number of background events <span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b, \, n^{\mathrm{Tl}}_b\)</span> as the values that minimise the <span class="math notranslate nohighlight">\(-2 \log\)</span> extended maximum likelihood.</p>
+<p>We first define the PDF of the energy, <span class="math notranslate nohighlight">\(E\)</span>, for each background sample, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}\)</span>, using <em>simulated data</em>.</p>
+<p>We combine the PDFs into an extended likelihood, <span class="math notranslate nohighlight">\(\mathcal{L}({\bf E} |{\bf n}_b)\)</span>, where <span class="math notranslate nohighlight">\({\bf n}_b = (n^{\mathrm{Bi}}_b, n^{\mathrm{Tl}}_b)\)</span>, <span class="math notranslate nohighlight">\(n_b = n^{\mathrm{Bi}}_b + n^{\mathrm{Tl}}_b\)</span>, and <span class="math notranslate nohighlight">\({\bf E}\)</span> are the energies of the <span class="math notranslate nohighlight">\(m\)</span> events in the blind sample, <span class="math notranslate nohighlight">\(E_i, \;\, i= 1, \dots, m\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}({\bf E} | {\bf n}_b) =  g(m | n_b) \, \Pi_{i=1}^m \sum_k \frac{n^k_b}{n_b}  \, g_k(E_i)
 \]</div>
-<p>Where <span class="math notranslate nohighlight">\(g(m | n_b)\)</span> is the value of the poisson of the <span class="math notranslate nohighlight">\(m\)</span> events in the blind sample given a mean of <span class="math notranslate nohighlight">\(n_b\)</span> blind events.</p>
-<p>Finally, we estimate the parameters, <span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b, \, n^{\mathrm{Tl}}_b\)</span>, minimizing</p>
+<p>where <span class="math notranslate nohighlight">\(g(m | n_b)\)</span> is the Poisson probability of observing <span class="math notranslate nohighlight">\(m\)</span> events given a mean of <span class="math notranslate nohighlight">\(n_b\)</span> blind events.</p>
+<p>Finally, we estimate the parameters <span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b, \, n^{\mathrm{Tl}}_b\)</span> by minimising:</p>
 <div class="math notranslate nohighlight">
 \[
 - 2 \log \mathcal{L}({\bf E} | {\bf n}_b).
@@ -621,7 +621,7 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2/
 </pre></div>
 </div>
 </div>
@@ -665,13 +665,13 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration         : new_beta
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collaboration         : new_gamma
 Energy range          : ( 2.400,  2.700) MeV
 RoI    range          : ( 2.430,  2.480) MeV
-Bi eff in E range     : 1.8000 %
-Tl eff in E range     : 0.7300 %
-Bi eff in RoI         : 1.5500 %
-Tl eff in RoI         : 0.0194 %
+Bi eff in E range     : 1.8100 %
+Tl eff in E range     : 0.7280 %
+Bi eff in RoI         : 1.5300 %
+Tl eff in RoI         : 0.0195 %
 </pre></div>
 </div>
 </div>
@@ -696,7 +696,7 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_beta.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2//data/fanal_new_gamma.h5
 </pre></div>
 </div>
 </div>
@@ -725,8 +725,8 @@ Tl eff in RoI         : 0.0194 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bi blind eff : 78.5375 %
-Tl blind edd : 70.7461 %
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bi blind eff : 78.2949 %
+Tl blind edd : 70.4775 %
 </pre></div>
 </div>
 </div>
@@ -801,8 +801,8 @@ Tl blind edd : 70.7461 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of blind events Bi : 1103.328
- number of blind events Tl : 14611.987
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of blind events Bi : 509.893
+ number of blind events Tl : 3303.372
 </pre></div>
 </div>
 </div>
@@ -811,25 +811,40 @@ Tl blind edd : 70.7461 %
 <div class="section" id="number-of-background-events-in-roi-and-e-range">
 <h3>Number of background events in RoI and E range<a class="headerlink" href="#number-of-background-events-in-roi-and-e-range" title="Permalink to this heading">#</a></h3>
 <p><em>Exercise</em> Compute the number of bkg events for each sample in the Energy range and in RoI</p>
-<div class="cell docutils container">
+<div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#n_Bi_total = n_Bi_blind / eff_Bi_blind</span>
-<span class="c1">#n_Tl_total = n_Tl_blind / eff_Tl_blind</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_Bi_total</span> <span class="o">=</span> <span class="n">n_Bi_blind</span><span class="o">/</span><span class="n">eff_Bi_blind</span>
+<span class="n">n_Tl_total</span> <span class="o">=</span> <span class="n">n_Tl_blind</span><span class="o">/</span><span class="n">eff_Tl_blind</span>
 
-<span class="c1">#n_Bi_E = n_Bi_total * eff_Bi_E</span>
-<span class="c1">#n_Tl_E = n_Tl_total * eff_Tl_E</span>
+<span class="n">n_Bi_E</span> <span class="o">=</span> <span class="n">n_Bi_total</span> <span class="o">*</span> <span class="n">eff_Bi_E</span>
+<span class="n">n_Tl_E</span> <span class="o">=</span> <span class="n">n_Tl_total</span> <span class="o">*</span> <span class="n">eff_Bi_E</span>
 
-<span class="c1">#n_Bi_RoI = n_Bi_total * eff_Bi_RoI</span>
-<span class="c1">#n_Tl_RoI = n_Tl_total * eff_Tl_RoI</span>
+<span class="n">n_Bi_RoI</span> <span class="o">=</span> <span class="n">n_Bi_total</span> <span class="o">*</span> <span class="n">eff_Bi_RoI</span>
+<span class="n">n_Tl_RoI</span> <span class="o">=</span> <span class="n">n_Tl_total</span> <span class="o">*</span> <span class="n">eff_Bi_RoI</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events total Bi      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_total</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events total Tl      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_total</span><span class="p">))</span>
 
-<span class="c1">#print(&#39; number of events total Bi      : {:6.3f}&#39;.format(n_Bi_total))</span>
-<span class="c1">#print(&#39; number of events total Tl      : {:6.3f}&#39;.format(n_Tl_total))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in E range Bi : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_E</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in E range Tl : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_E</span><span class="p">))</span>
 
-<span class="c1">#print(&#39; number of events in E range Bi : {:6.3f}&#39;.format(n_Bi_E))</span>
-<span class="c1">#print(&#39; number of events in E range Tl : {:6.3f}&#39;.format(n_Tl_E))</span>
-
-<span class="c1">#print(&#39; number of events in RoI Bi     : {:6.3f}&#39;.format(n_Bi_RoI))</span>
-<span class="c1">#print(&#39; number of events in RoI Tl     : {:6.3f}&#39;.format(n_Tl_RoI))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in RoI Bi     : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_RoI</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in RoI Tl     : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_RoI</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of events total Bi      : 651.247
+ number of events total Tl      : 4687.127
+ number of events in E range Bi : 11.788
+ number of events in E range Tl : 84.837
+ number of events in RoI Bi     :  9.964
+ number of events in RoI Tl     : 71.713
 </pre></div>
 </div>
 </div>
@@ -847,7 +862,7 @@ Tl blind edd : 70.7461 %
 
 <span class="n">exposure</span>   <span class="o">=</span> <span class="n">exposures</span><span class="p">[</span><span class="n">coll</span><span class="p">]</span>
 
-<span class="n">write</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>
     <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;collpars.py&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
     <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;exposure        = </span><span class="si">{:6.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exposure</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; # kg y </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
