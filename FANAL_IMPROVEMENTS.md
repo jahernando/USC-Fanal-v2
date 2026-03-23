@@ -13,7 +13,7 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 - [ ] **Add a notation-to-code table** in `fanal_bkg.ipynb` connecting LaTeX symbols ($\epsilon^k_b$, $n^k_b$, ...) to Python variable names (`eff_Bi_blind`, `n_Bi_blind`, ...).
 - [ ] **Add sanity checks** after exercise cells. E.g. `assert 10 < n_Bi_total < 50000` so students catch errors before they propagate through `collpars.py`.
 - [ ] **Add "expected output" guidance** in the harder notebooks. Not the solution, but the expected format/order of magnitude: "you should see a plot with two curves", "n_Bi_total should be O(600)".
-- [ ] **Smooth the difficulty curve** in `fanal_signal_countexp.ipynb` and `fanal_signal.ipynb`: include a worked example before asking students to generalise (e.g. build the FC belt for nbkg=0 first).
+- [x] **Smooth the difficulty curve** in `fanal_signal_countexp.ipynb` and `fanal_signal.ipynb`: worked examples added before exercises (FC belt with nbkg=0, tau function, full generate→fit→profile pipeline with large signal).
 
 ## Structural improvements
 
@@ -28,3 +28,5 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 - [x] Fixed `^{108}Tl` → `^{208}Tl` in `fanal.ipynb`.
 - [x] Fixed step numbering (duplicate step 5) in `fanal.ipynb`.
 - [x] Added scaffolding hints to all `# YOUR CODE HERE` cells across all guide notebooks.
+- [x] Reorganised branch workflow: guide NBs identical on main and teacher; solutions in separate `*_sols.ipynb` (teacher-only). `git merge main` into teacher is now conflict-free.
+- [x] Added worked examples in `fanal_signal_countexp.ipynb` (FC belt nbkg=0, tau function) and `fanal_signal.ipynb` (full generate→fit→profile with large signal).
