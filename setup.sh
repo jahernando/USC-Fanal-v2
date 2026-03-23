@@ -1,4 +1,5 @@
 #!/usr/bin/bash
-export USCFANALDIR=$PWD
-export PYTHONPATH=$USCFANALDIR:$PYTHONPATH
-export PATH=$USCFANALDIR/bin:$PATH
+export FANAL_ROOT=$PWD
+export USCFANALDIR=$PWD          # kept for backwards compatibility
+export PYTHONPATH=$FANAL_ROOT:$PYTHONPATH
+export PATH=$FANAL_ROOT/bin:$PATH
