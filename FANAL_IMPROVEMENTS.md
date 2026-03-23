@@ -17,7 +17,7 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 
 ## Structural improvements
 
-- [ ] **Flesh out `fanal_data_access.ipynb`** ("open the box"). Add clear sections: count events in RoI, do the fit, compute p-value, estimate half-life or set limit. Currently nearly empty.
+- [x] **Flesh out `fanal_data_access.ipynb`** ("open the box"). Added: "stop and think" planning cell, progressive selection plots, counting experiment with FC CI, extended likelihood fit, profile likelihood, p-value, half-life estimation, summary table.
 - [ ] **Add an introductory section** (either a new notebook or at the start of `fanal_selection.ipynb`) covering: loading HDF5 data, pandas DataFrame basics, boolean masks, `pltext.hist` usage.
 - [ ] **Add a presentation/article guide**: checklist of required sections, key figures, how to present a limit vs. a measurement.
 - [ ] **Consider `nbgrader`** for automated validation of student solutions.
