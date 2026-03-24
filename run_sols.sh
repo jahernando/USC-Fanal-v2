@@ -4,9 +4,20 @@
 #
 # Usage:
 #   source setup.sh
-#   bash run_sols.sh
+#   bash run_sols.sh [collaboration]
+#
+# If no collaboration is given, defaults to "new_gamma".
+# Available collaborations: new_alpha, new_beta, new_gamma, new_delta, new_epsilon
+#
+# Output: notebooks/guide/collpars_<collaboration>.py
 
 set -e
+
+COLL="${1:-new_gamma}"
+export FANAL_COLLABORATION="$COLL"
+
+echo "=== Running full analysis for collaboration: $COLL ==="
+echo ""
 
 cd notebooks/guide
 
@@ -31,7 +42,10 @@ jupyter nbconvert --to notebook --execute fanal_data_access_sols.ipynb
 # Clean up generated files
 rm -f *_sols.nbconvert.ipynb
 
+# Rename to collaboration-specific file
+mv collpars.py "collpars_${COLL}.py"
+
 echo ""
-echo "All solution notebooks executed successfully."
-echo "Generated collpars.py:"
-cat collpars.py
+echo "All solution notebooks executed successfully for collaboration: $COLL"
+echo "Generated collpars_${COLL}.py:"
+cat "collpars_${COLL}.py"
