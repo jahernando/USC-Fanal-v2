@@ -17,4 +17,5 @@ chapters:
   chapters:
   - file: notebooks/guide/crib_pandas.ipynb
   - file: notebooks/guide/crib_fit.ipynb
+  - file: notebooks/guide/guide_dynamics
   - file: notebooks/guide/guide_presentation
