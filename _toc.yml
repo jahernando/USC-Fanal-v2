@@ -3,22 +3,24 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: notebooks/fanal.ipynb
-- file: notebooks/guide/fanal_selection.ipynb
-- file: notebooks/guide/fanal_energy_resolution.ipynb
-- file: notebooks/guide/fanal_bkg.ipynb
-- file: notebooks/guide/fanal_bkg_uncertainties.ipynb
-- file: notebooks/guide/fanal_signal_countexp.ipynb
-- file: notebooks/guide/fanal_signal.ipynb
-- file: notebooks/guide/fanal_data_access.ipynb
+parts:
+- caption: Exercise notebooks
+  chapters:
+  - file: notebooks/fanal.ipynb
+  - file: notebooks/guide/fanal_selection.ipynb
+  - file: notebooks/guide/fanal_energy_resolution.ipynb
+  - file: notebooks/guide/fanal_bkg.ipynb
+  - file: notebooks/guide/fanal_bkg_uncertainties.ipynb
+  - file: notebooks/guide/fanal_signal_countexp.ipynb
+  - file: notebooks/guide/fanal_signal.ipynb
+  - file: notebooks/guide/fanal_data_access.ipynb
 
-- part: Reference material
+- caption: Reference material
   chapters:
   - file: notebooks/guide/crib_pandas.ipynb
   - file: notebooks/guide/crib_fit.ipynb
 
-- part: Course structure
+- caption: Course structure
   chapters:
   - file: notebooks/guide/guide_dynamics
   - file: notebooks/guide/guide_presentation
