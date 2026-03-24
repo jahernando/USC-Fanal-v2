@@ -8,4 +8,4 @@ dependencies:
   - matplotlib
   - scipy
   - pandas
-  - tables
+  - tables>=3.10.1
