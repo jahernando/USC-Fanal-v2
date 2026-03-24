@@ -33,8 +33,8 @@ repository:
 
 exclude_patterns:
   - README.md
-  - TEACHER_WORKFLOW.md
   - FANAL_IMPROVEMENTS.md
+  - checklist_student.md
   - memory/**
   - _build/**
 
