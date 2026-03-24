@@ -1,0 +1,1090 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Crib sheet: fitting tools &#8212; Fanal - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/guide/crib_fit';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting started" href="../../deployment.html" />
+    <link rel="prev" title="Crib sheet: data access, pandas and plotting" href="crib_pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Fanal - USC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Fanal - USC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Fanal - USC
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fanal.html">Fanal, a neutrino-less beta double decay search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_selection.html">Signal selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg.html">Expected number of background events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal_countexp.html">Sensitivity of a counting experiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference material</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="crib_pandas.html">Crib sheet: data access, pandas and plotting</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crib sheet: fitting tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course structure</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../deployment.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_dynamics.html">Course dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_presentation.html">Guide: presenting your results</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/USC-FPII-Fanal/teacher?urlpath=tree/notebooks/guide/crib_fit.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/crib_fit.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/guide/crib_fit.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Crib sheet: fitting tools</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-fitting-with-hfit">1. Histogram fitting with <code class="docutils literal notranslate"><span class="pre">hfit</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-fit-models">Available fit models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-fit-a-gaussian-to-the-214-bi-peak">Example: fit a Gaussian to the <span class="math notranslate nohighlight">\(^{214}\)</span>Bi peak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-fit-results">Reading the fit results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpler-variant-hfit-hfit">Simpler variant: <code class="docutils literal notranslate"><span class="pre">hfit.hfit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-str-parameters-for-formatted-output">Using <code class="docutils literal notranslate"><span class="pre">str_parameters()</span></code> for formatted output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-likelihood-fitting">2. Extended likelihood fitting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-prepare-the-fit">Step 1: prepare the fit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-run-the-fit-on-data">Step 2: run the fit on data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-plot-the-fit">Step 3: plot the fit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-fit-function-returns">What the fit function returns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-likelihood-scan-and-uncertainties">3. Profile likelihood scan and uncertainties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-scan">Run the scan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-scan">Plot the scan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-confidence-intervals">Extract confidence intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-scan-with-efit-llike-scan">Manual scan with <code class="docutils literal notranslate"><span class="pre">efit.llike_scan()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-a-signal-hypothesis">4. Testing a signal hypothesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-statistic-q-0">Test statistic <span class="math notranslate nohighlight">\(q_0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-life-from-the-signal-count">Half-life from the signal count</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-fitting-workflow">Summary of the fitting workflow</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="crib-sheet-fitting-tools">
+<h1>Crib sheet: fitting tools<a class="headerlink" href="#crib-sheet-fitting-tools" title="Permalink to this heading">#</a></h1>
+<p>A quick reference for the fitting functions used in the Fanal exercise.<br />
+Covers histogram fitting (<code class="docutils literal notranslate"><span class="pre">hfit</span></code>), extended likelihood fitting (<code class="docutils literal notranslate"><span class="pre">efit</span></code>),
+profile likelihood scans, and confidence intervals.</p>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FANAL_ROOT&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USCFANALDIR&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">_env</span> <span class="ow">and</span> <span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;ana&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()))</span>
+<span class="k">if</span> <span class="n">rootpath</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.pltext</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">pltext</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.hfit</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">hfit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.efit</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">efit</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ana.fanal</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">fn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ana.pltfanal</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pltfn</span>
+<span class="n">pltext</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fanal root:&#39;</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data for the examples</span>
+<span class="n">dirpath</span>  <span class="o">=</span> <span class="n">rootpath</span> <span class="o">+</span> <span class="s1">&#39;/data/&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;fanal_new_gamma.h5&#39;</span>
+
+<span class="n">mcbi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">mctl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">mcbb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bb0nu&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">data_blind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;data/blind&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+
+<span class="n">sel_erange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">2.4</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">)</span>  <span class="c1"># MeV</span>
+<span class="n">sel_eroi</span>   <span class="o">=</span> <span class="p">(</span><span class="mf">2.43</span><span class="p">,</span> <span class="mf">2.48</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bi: </span><span class="si">{:d}</span><span class="s1">, Tl: </span><span class="si">{:d}</span><span class="s1">, bb: </span><span class="si">{:d}</span><span class="s1">, blind data: </span><span class="si">{:d}</span><span class="s1"> events&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">mcbi</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">mctl</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">mcbb</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_blind</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="histogram-fitting-with-hfit">
+<h2>1. Histogram fitting with <code class="docutils literal notranslate"><span class="pre">hfit</span></code><a class="headerlink" href="#histogram-fitting-with-hfit" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">hfit</span></code> fits analytic functions to binned data using least-squares.
+The main function is <code class="docutils literal notranslate"><span class="pre">hfit.hfitres()</span></code> which fits <strong>and</strong> computes residuals.</p>
+<section id="available-fit-models">
+<h3>Available fit models<a class="headerlink" href="#available-fit-models" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Function</p></th>
+<th class="head"><p>Parameters</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Gaussian</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hfit.fgaus</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \mu, \sigma\)</span></p></td>
+<td><p>Pure Gaussian peak</p></td>
+</tr>
+<tr class="row-odd"><td><p>Line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hfit.fline</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(a, b\)</span></p></td>
+<td><p>Linear: <span class="math notranslate nohighlight">\(a x + b\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Exponential</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hfit.fexp</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \tau\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(N e^{-\tau x}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Gaussian + line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hfit.fgausline</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \mu, \sigma, a, b\)</span></p></td>
+<td><p>Peak on linear background</p></td>
+</tr>
+<tr class="row-even"><td><p>Gaussian + exp</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hfit.fgausexp</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(N, \mu, \sigma, N_\tau, \tau\)</span></p></td>
+<td><p>Peak on exponential background</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Initial guesses are generated automatically for these built-in models.</p>
+</section>
+<section id="example-fit-a-gaussian-to-the-214-bi-peak">
+<h3>Example: fit a Gaussian to the <span class="math notranslate nohighlight">\(^{214}\)</span>Bi peak<a class="headerlink" href="#example-fit-a-gaussian-to-the-214-bi-peak" title="Permalink to this heading">#</a></h3>
+<p>The Bi energy spectrum in the analysis window has a peak on a background.
+We fit a Gaussian + line model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select Bi events with 1 track in the energy range</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">num_tracks</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span> <span class="o">&gt;=</span> <span class="n">sel_erange</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span> <span class="o">&lt;</span> <span class="n">sel_erange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="mi">60</span>
+
+<span class="c1"># Fit: returns (parameters, uncertainties, chi2, ndf)</span>
+<span class="n">par</span><span class="p">,</span> <span class="n">epar</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">ndf</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">hfitres</span><span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span>
+                                     <span class="nb">range</span> <span class="o">=</span> <span class="n">sel_erange</span><span class="p">,</span>
+                                     <span class="n">fun</span>   <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">fgausline</span><span class="p">)</span>
+
+<span class="c1"># Plot the histogram and overlay the fit curve</span>
+<span class="n">pltext</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">sel_erange</span><span class="p">,</span> <span class="n">stats</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">xfit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">sel_erange</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span> <span class="n">hfit</span><span class="o">.</span><span class="n">fgausline</span><span class="p">(</span><span class="n">xfit</span><span class="p">,</span> <span class="o">*</span><span class="n">par</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Energy (MeV)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi: Gaussian + line fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="reading-the-fit-results">
+<h3>Reading the fit results<a class="headerlink" href="#reading-the-fit-results" title="Permalink to this heading">#</a></h3>
+<p>For <code class="docutils literal notranslate"><span class="pre">hfit.fgausline</span></code>, the 5 parameters are:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><span class="math notranslate nohighlight">\(N\)</span></p></td>
+<td><p>Normalization of the Gaussian</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu\)</span></p></td>
+<td><p>Mean of the Gaussian</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma\)</span></p></td>
+<td><p>Standard deviation (width)</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><span class="math notranslate nohighlight">\(a\)</span></p></td>
+<td><p>Slope of the line</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><span class="math notranslate nohighlight">\(b\)</span></p></td>
+<td><p>Intercept of the line</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract parameters and uncertainties</span>
+<span class="n">mu</span>    <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fit parameters:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">epar</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  par[</span><span class="si">{:d}</span><span class="s1">] = </span><span class="si">{:8.4f}</span><span class="s1"> +/- </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">e</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Peak position : </span><span class="si">{:.4f}</span><span class="s1"> +/- </span><span class="si">{:.4f}</span><span class="s1"> MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">epar</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Peak width    : </span><span class="si">{:.4f}</span><span class="s1"> +/- </span><span class="si">{:.4f}</span><span class="s1"> MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">epar</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resolution    : </span><span class="si">{:.2f}</span><span class="s1"> keV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1000</span> <span class="o">*</span> <span class="n">sigma</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Chi2 / ndf    : </span><span class="si">{:.1f}</span><span class="s1"> / </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">ndf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simpler-variant-hfit-hfit">
+<h3>Simpler variant: <code class="docutils literal notranslate"><span class="pre">hfit.hfit()</span></code><a class="headerlink" href="#simpler-variant-hfit-hfit" title="Permalink to this heading">#</a></h3>
+<p>If you only need the parameters (no residuals or <span class="math notranslate nohighlight">\(\chi^2\)</span>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># hfit.hfit returns just (pars, epars) — no chi2, no residual plot</span>
+<span class="n">par2</span><span class="p">,</span> <span class="n">epar2</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">hfit</span><span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">sel_erange</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">fgausline</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sigma = </span><span class="si">{:.4f}</span><span class="s1"> +/- </span><span class="si">{:.4f}</span><span class="s1"> MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">par2</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">epar2</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-str-parameters-for-formatted-output">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">str_parameters()</span></code> for formatted output<a class="headerlink" href="#using-str-parameters-for-formatted-output" title="Permalink to this heading">#</a></h3>
+<p>Each model has a list of parameter names for display.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pretty-print with LaTeX names</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hfit</span><span class="o">.</span><span class="n">str_parameters</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">epar</span><span class="p">,</span> <span class="n">parnames</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">ngausline</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="extended-likelihood-fitting">
+<h2>2. Extended likelihood fitting<a class="headerlink" href="#extended-likelihood-fitting" title="Permalink to this heading">#</a></h2>
+<p>When you have multiple overlapping components (e.g. Bi + Tl backgrounds),
+you can estimate how many events of each type are present using an
+<strong>extended maximum likelihood fit</strong>.</p>
+<p>The idea:</p>
+<ol class="arabic simple">
+<li><p>Build a PDF template for each component from MC simulation.</p></li>
+<li><p>Combine them into an extended likelihood.</p></li>
+<li><p>Minimize <span class="math notranslate nohighlight">\(-2 \log \mathcal{L}\)</span> to find the best-fit event counts.</p></li>
+</ol>
+<section id="step-1-prepare-the-fit">
+<h3>Step 1: prepare the fit<a class="headerlink" href="#step-1-prepare-the-fit" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fn.prepare_fit_ell()</span></code> builds the likelihood from MC templates and returns
+a <strong>fit function</strong> that you can call on any data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the blind selection to MC samples</span>
+<span class="n">mask_bi</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">selection_blind</span><span class="p">(</span><span class="n">mcbi</span><span class="p">)</span>
+<span class="n">mask_tl</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">selection_blind</span><span class="p">(</span><span class="n">mctl</span><span class="p">)</span>
+<span class="n">mc_blind</span> <span class="o">=</span> <span class="p">[</span><span class="n">mcbi</span><span class="p">[</span><span class="n">mask_bi</span><span class="p">],</span> <span class="n">mctl</span><span class="p">[</span><span class="n">mask_tl</span><span class="p">]]</span>
+
+<span class="c1"># Initial guess for the number of events</span>
+<span class="n">nguess</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1000.</span><span class="p">,</span> <span class="mf">1000.</span><span class="p">)</span>
+
+<span class="c1"># Selection variables and ranges (required by prepare_fit_ell)</span>
+<span class="n">varnames</span>  <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,)</span>
+<span class="n">varranges</span> <span class="o">=</span> <span class="p">(</span><span class="n">sel_erange</span><span class="p">,)</span>
+
+<span class="c1"># Prepare the fit: returns a callable</span>
+<span class="n">fit</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">prepare_fit_ell</span><span class="p">(</span><span class="n">mc_blind</span><span class="p">,</span> <span class="n">nguess</span><span class="p">,</span> <span class="n">varnames</span><span class="p">,</span> <span class="n">varranges</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fit is a callable:&#39;</span><span class="p">,</span> <span class="nb">callable</span><span class="p">(</span><span class="n">fit</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-run-the-fit-on-data">
+<h3>Step 2: run the fit on data<a class="headerlink" href="#step-2-run-the-fit-on-data" title="Permalink to this heading">#</a></h3>
+<p>Call the fit function with a DataFrame.<br />
+It returns <code class="docutils literal notranslate"><span class="pre">(result,</span> <span class="pre">values,</span> <span class="pre">ell,</span> <span class="pre">nevts_expected)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the blind data</span>
+<span class="n">result</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">data_blind</span><span class="p">)</span>
+
+<span class="c1"># result.x contains the best-fit event counts</span>
+<span class="n">n_Bi_blind</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">n_Tl_blind</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fitted number of Bi events: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_blind</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fitted number of Tl events: </span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_blind</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Total                     : </span><span class="si">{:.1f}</span><span class="s1"> (observed: </span><span class="si">{:d}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">n_Bi_blind</span> <span class="o">+</span> <span class="n">n_Tl_blind</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_blind</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-plot-the-fit">
+<h3>Step 3: plot the fit<a class="headerlink" href="#step-3-plot-the-fit" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pltfn.plot_fit_ell()</span></code> shows the data histogram, the total fit, and
+individual component contributions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names_latex</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">$Tl&#39;</span><span class="p">]</span>
+
+<span class="n">pltfn</span><span class="o">.</span><span class="n">plot_fit_ell</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">parnames</span> <span class="o">=</span> <span class="n">sample_names_latex</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-the-fit-function-returns">
+<h3>What the fit function returns<a class="headerlink" href="#what-the-fit-function-returns" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Return value</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Content</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">result</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OptimizeResult</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.x</span></code> = best-fit counts per component</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">values</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p></td>
+<td><p>Data values used in the fit (e.g. energies)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ell</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ExtComPDF</span></code></p></td>
+<td><p>The likelihood object (needed for scans)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nevts_exp</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p></td>
+<td><p>Expected counts after selection efficiency</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="profile-likelihood-scan-and-uncertainties">
+<h2>3. Profile likelihood scan and uncertainties<a class="headerlink" href="#profile-likelihood-scan-and-uncertainties" title="Permalink to this heading">#</a></h2>
+<p>The uncertainty on a fitted parameter is obtained by scanning
+<span class="math notranslate nohighlight">\(-2 \Delta \log \mathcal{L}\)</span> around the minimum.<br />
+The 68% CL interval corresponds to where <span class="math notranslate nohighlight">\(\Delta(-2 \log \mathcal{L}) = 1\)</span>.</p>
+<section id="run-the-scan">
+<h3>Run the scan<a class="headerlink" href="#run-the-scan" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan all parameters: returns (list of scan points, list of tmu values)</span>
+<span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">tmu_scan</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">))</span>
+
+<span class="c1"># nis[0] = scan points for parameter 0 (Bi)</span>
+<span class="c1"># tmus[0] = corresponding -2 Delta log L values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Scan points for Bi: </span><span class="si">{:d}</span><span class="s1"> values from </span><span class="si">{:.0f}</span><span class="s1"> to </span><span class="si">{:.0f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">nis</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">nis</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">nis</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-the-scan">
+<h3>Plot the scan<a class="headerlink" href="#plot-the-scan" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pltfn</span><span class="o">.</span><span class="n">plot_tmu_scan</span><span class="p">(</span><span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span><span class="p">,</span> <span class="n">titles</span> <span class="o">=</span> <span class="n">sample_names_latex</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extract-confidence-intervals">
+<h3>Extract confidence intervals<a class="headerlink" href="#extract-confidence-intervals" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">efit.tmu_conf_int()</span></code> finds the parameter values where the scan crosses
+a given confidence level.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="mf">0.68</span>  <span class="c1"># 68% CL = 1 sigma</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sample_names_latex</span><span class="p">):</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">tmu_conf_int</span><span class="p">(</span><span class="n">nis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tmus</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cl</span><span class="p">)</span>
+    <span class="n">n_est</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1">: </span><span class="si">{:.1f}</span><span class="s1">  (</span><span class="si">{:.1f}</span><span class="s1">, +</span><span class="si">{:.1f}</span><span class="s1">)  at </span><span class="si">{:d}</span><span class="s1">% CL&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">n_est</span><span class="p">,</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">n_est</span><span class="p">,</span> <span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">n_est</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">cl</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="manual-scan-with-efit-llike-scan">
+<h3>Manual scan with <code class="docutils literal notranslate"><span class="pre">efit.llike_scan()</span></code><a class="headerlink" href="#manual-scan-with-efit-llike-scan" title="Permalink to this heading">#</a></h3>
+<p>If you need finer control, you can scan one parameter yourself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan parameter 0 (Bi) over a custom range</span>
+<span class="n">mu_scan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">620</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">tmu_vals</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">llike_scan</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mu_scan</span><span class="p">,</span> <span class="n">ipos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mu_scan</span><span class="p">,</span> <span class="n">tmu_vals</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\Delta(-2\log L) = 1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n^{\mathrm</span><span class="si">{Bi}</span><span class="s1">}_b$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$-2\Delta\log\mathcal</span><span class="si">{L}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+
+<span class="c1"># Extract CI from this scan</span>
+<span class="n">ci_bi</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">tmu_conf_int</span><span class="p">(</span><span class="n">mu_scan</span><span class="p">,</span> <span class="n">tmu_vals</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bi 68% CI: (</span><span class="si">{:.1f}</span><span class="s1">, </span><span class="si">{:.1f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ci_bi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="testing-a-signal-hypothesis">
+<h2>4. Testing a signal hypothesis<a class="headerlink" href="#testing-a-signal-hypothesis" title="Permalink to this heading">#</a></h2>
+<p>In the signal notebooks, you fit 3 components (Bi + Tl + signal).
+The test statistic <span class="math notranslate nohighlight">\(q_0\)</span> tests the null hypothesis (no signal).</p>
+<section id="test-statistic-q-0">
+<h3>Test statistic <span class="math notranslate nohighlight">\(q_0\)</span><a class="headerlink" href="#test-statistic-q-0" title="Permalink to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[q_0 = -2 \log \frac{\mathcal{L}(n_{bb} = 0)}{\mathcal{L}(\hat{n}_{bb})}\]</div>
+<p>The <strong>discovery significance</strong> is <span class="math notranslate nohighlight">\(Z_0 = \sqrt{q_0}\)</span>,
+and the <strong>p-value</strong> is <span class="math notranslate nohighlight">\(p_0 = 1 - \Phi(Z_0)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># When fitting 3 components (Bi + Tl + signal), the signal is parameter index 2:</span>
+<span class="c1">#   result.x = [n_Bi, n_Tl, n_bb]</span>
+<span class="c1">#                 0      1     2</span>
+<span class="c1">#</span>
+<span class="c1"># q0 = efit.tmu(values, ell, result.x, 0, ipos = 2)  # test n_bb = 0</span>
+<span class="c1"># z0 = np.sqrt(q0)</span>
+<span class="c1"># p0 = 1 - stats.norm.cdf(z0)</span>
+<span class="c1">#</span>
+<span class="c1"># print(&#39;q0 = {:.2f}&#39;.format(q0))</span>
+<span class="c1"># print(&#39;Z0 = {:.2f} sigma&#39;.format(z0))</span>
+<span class="c1"># print(&#39;p0 = {:.2e}&#39;.format(p0))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(uncomment and adapt when you have a 3-component fit)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="half-life-from-the-signal-count">
+<h3>Half-life from the signal count<a class="headerlink" href="#half-life-from-the-signal-count" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">fn.half_life()</span></code> converts a fitted number of signal events to a half-life.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># fn.half_life(n_signal, exposure_kg_y, efficiency, abundance=0.9, W=135.9)</span>
+<span class="c1">#</span>
+<span class="c1"># Example:</span>
+<span class="c1"># tau = fn.half_life(n_bb_est, exposure, eff_bb_E)</span>
+<span class="c1"># print(&#39;Half-life: {:.2e} years&#39;.format(tau))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(use with your fitted signal count, exposure, and efficiency)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary-of-the-fitting-workflow">
+<h2>Summary of the fitting workflow<a class="headerlink" href="#summary-of-the-fitting-workflow" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">Histogram</span> <span class="n">fit</span> <span class="p">(</span><span class="n">energy</span> <span class="n">resolution</span><span class="p">)</span>
+   <span class="n">par</span><span class="p">,</span> <span class="n">epar</span><span class="p">,</span> <span class="n">chi2</span><span class="p">,</span> <span class="n">ndf</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">hfitres</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span><span class="o">=...</span><span class="p">,</span> <span class="n">fun</span><span class="o">=</span><span class="n">hfit</span><span class="o">.</span><span class="n">fgausline</span><span class="p">)</span>
+   <span class="n">sigma</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="mf">2.</span> <span class="n">Extended</span> <span class="n">likelihood</span> <span class="n">fit</span> <span class="p">(</span><span class="n">background</span> <span class="n">estimation</span><span class="p">)</span>
+   <span class="n">fit</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">prepare_fit_ell</span><span class="p">(</span><span class="n">mc_samples</span><span class="p">,</span> <span class="n">nguess</span><span class="p">,</span> <span class="n">varnames</span><span class="p">,</span> <span class="n">varranges</span><span class="p">)</span>
+   <span class="n">result</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+   <span class="n">n_est</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>          <span class="c1"># fitted event counts</span>
+
+<span class="mf">3.</span> <span class="n">Profile</span> <span class="n">likelihood</span> <span class="n">scan</span> <span class="p">(</span><span class="n">uncertainties</span><span class="p">)</span>
+   <span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">tmu_scan</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">n_est</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">))</span>
+   <span class="n">ci</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">tmu_conf_int</span><span class="p">(</span><span class="n">nis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tmus</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.68</span><span class="p">)</span>
+
+<span class="mf">4.</span> <span class="n">Visualisation</span>
+   <span class="n">pltfn</span><span class="o">.</span><span class="n">plot_fit_ell</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">n_est</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">parnames</span><span class="o">=...</span><span class="p">)</span>
+   <span class="n">pltfn</span><span class="o">.</span><span class="n">plot_tmu_scan</span><span class="p">(</span><span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span><span class="p">,</span> <span class="n">titles</span><span class="o">=...</span><span class="p">)</span>
+
+<span class="mf">5.</span> <span class="n">Signal</span> <span class="n">hypothesis</span>
+   <span class="n">q0</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">tmu</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ipos</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># test n_bb = 0</span>
+   <span class="n">z0</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">q0</span><span class="p">)</span>              <span class="c1"># discovery significance</span>
+   <span class="n">tau</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">half_life</span><span class="p">(</span><span class="n">n_bb</span><span class="p">,</span> <span class="n">exposure</span><span class="p">,</span> <span class="n">eff</span><span class="p">)</span>  <span class="c1"># half-life</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="crib_pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crib sheet: data access, pandas and plotting</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../deployment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting started</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-fitting-with-hfit">1. Histogram fitting with <code class="docutils literal notranslate"><span class="pre">hfit</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-fit-models">Available fit models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-fit-a-gaussian-to-the-214-bi-peak">Example: fit a Gaussian to the <span class="math notranslate nohighlight">\(^{214}\)</span>Bi peak</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-the-fit-results">Reading the fit results</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simpler-variant-hfit-hfit">Simpler variant: <code class="docutils literal notranslate"><span class="pre">hfit.hfit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-str-parameters-for-formatted-output">Using <code class="docutils literal notranslate"><span class="pre">str_parameters()</span></code> for formatted output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-likelihood-fitting">2. Extended likelihood fitting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-prepare-the-fit">Step 1: prepare the fit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-run-the-fit-on-data">Step 2: run the fit on data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-plot-the-fit">Step 3: plot the fit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-fit-function-returns">What the fit function returns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profile-likelihood-scan-and-uncertainties">3. Profile likelihood scan and uncertainties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-scan">Run the scan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-scan">Plot the scan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-confidence-intervals">Extract confidence intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manual-scan-with-efit-llike-scan">Manual scan with <code class="docutils literal notranslate"><span class="pre">efit.llike_scan()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-a-signal-hypothesis">4. Testing a signal hypothesis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-statistic-q-0">Test statistic <span class="math notranslate nohighlight">\(q_0\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#half-life-from-the-signal-count">Half-life from the signal count</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-the-fitting-workflow">Summary of the fitting workflow</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023-2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

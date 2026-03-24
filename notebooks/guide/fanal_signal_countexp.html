@@ -1,34 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sensitivity of a counting experiment &#8212; Fanal - USC</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Sensitivity of a counting experiment &#8212; Fanal - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -37,12 +49,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,61 +64,109 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/guide/fanal_signal_countexp';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Estimate the number of signal events" href="fanal_signal.html" />
-    <link rel="prev" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertanties.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="prev" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertainties.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Fanal - USC</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Fanal - USC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Fanal - USC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,382 +175,291 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta double decay search
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_selection.html">
-   Signal selection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_energy_resolution.html">
-   Energy resolution
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_bkg.html">
-   Expected number of background events
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_bkg_uncertanties.html">
-   Uncertainties on the number of backgrounds events
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Sensitivity of a counting experiment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_data_access.html">
-   Open the box
-  </a>
- </li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise notebooks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fanal.html">Fanal, a neutrino-less beta double decay search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_selection.html">Signal selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg.html">Expected number of background events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sensitivity of a counting experiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="crib_pandas.html">Crib sheet: data access, pandas and plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crib_fit.html">Crib sheet: fitting tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course structure</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../deployment.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_dynamics.html">Course dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_presentation.html">Guide: presenting your results</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jahernando/USC-FPII-Fanal/teacher?urlpath=tree/notebooks/guide/fanal_signal_countexp.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/USC-FPII-Fanal/teacher?urlpath=tree/notebooks/guide/fanal_signal_countexp.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_signal_countexp.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/guide/fanal_signal_countexp.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jahernando/USC-FPII-Fanal"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/jahernando/USC-FPII-Fanal/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_signal_countexp.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/notebooks/guide/fanal_signal_countexp.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analysis">
-   Analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-modules">
-     Importing modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-half-life-relation">
-     The half-life relation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#main-parameters">
-   Main parameters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data">
-     Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confidence-intervals">
-     Confidence Intervals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-the-p-value-of-the-null-hypothesis">
-     Compute the p-value of the null hypothesis
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Sensitivity of a counting experiment</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analysis">
-   Analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-modules">
-     Importing modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-half-life-relation">
-     The half-life relation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#main-parameters">
-   Main parameters
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data">
-     Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#confidence-intervals">
-     Confidence Intervals
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-the-p-value-of-the-null-hypothesis">
-     Compute the p-value of the null hypothesis
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sensitivity of a counting experiment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules">Importing modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-half-life-relation">The half-life relation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-parameters">Main parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-feldman-cousins-with-zero-background">Worked example: Feldman-Cousins with zero background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-the-half-life-function">Worked example: the half-life function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-it-is-your-turn">Now it is your turn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-p-value-of-the-null-hypothesis">Compute the p-value of the null hypothesis</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="sensitivity-of-a-counting-experiment">
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sensitivity-of-a-counting-experiment">
 <h1>Sensitivity of a counting experiment<a class="headerlink" href="#sensitivity-of-a-counting-experiment" title="Permalink to this heading">#</a></h1>
-<div class="section" id="objectives">
+<section id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Estimate the sensitivity of the counting experiment</strong></p></li>
 <li><p>Given a number of background events in the RoI, what is the most probable limit that we set on <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span> in the case of no signal?</p></li>
 </ul>
-</div>
-<div class="section" id="analysis">
+</section>
+<section id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
-<div class="section" id="importing-modules">
+<section id="importing-modules">
 <h3>Importing modules<a class="headerlink" href="#importing-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,16 +472,16 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">tables</span> <span class="k">as</span> <span class="nn">tb</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tables</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">scipy.constants</span> <span class="k">as</span> <span class="nn">constants</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span>     <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">scipy.optimize</span>  <span class="k">as</span> <span class="nn">optimize</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.constants</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">constants</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w">     </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">optimize</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -520,37 +489,44 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># REMEMBER TO ADD Your Fanal FOLDER TO PYTHONPATH</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">rootpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()[:</span><span class="o">-</span><span class="mi">15</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;add path to PYTHONPATH : &#39;</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">rootpath</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Find the project root: honours FANAL_ROOT env-var, otherwise walks up from cwd</span>
+<span class="n">_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FANAL_ROOT&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USCFANALDIR&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">_env</span> <span class="ow">and</span> <span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;ana&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()))</span>
+<span class="k">if</span> <span class="n">rootpath</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fanal root : &#39;</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">core.pltext</span>  <span class="k">as</span> <span class="nn">pltext</span>   <span class="c1"># extensions for plotting histograms</span>
-<span class="kn">import</span> <span class="nn">core.hfit</span>    <span class="k">as</span> <span class="nn">hfit</span>     <span class="c1"># extension to fit histograms</span>
-<span class="kn">import</span> <span class="nn">core.efit</span>    <span class="k">as</span> <span class="nn">efit</span>     <span class="c1"># Fit Utilites - Includes Extend Likelihood Fit with composite PDFs</span>
-<span class="kn">import</span> <span class="nn">core.confint</span> <span class="k">as</span> <span class="nn">confint</span>  <span class="c1"># Confidence Intervals </span>
-<span class="kn">import</span> <span class="nn">core.utils</span>   <span class="k">as</span> <span class="nn">ut</span>       <span class="c1"># generic utilities</span>
-<span class="kn">import</span> <span class="nn">ana.fanal</span>    <span class="k">as</span> <span class="nn">fn</span>       <span class="c1"># analysis functions specific to fanal</span>
-<span class="kn">import</span>     <span class="nn">collpars</span> <span class="k">as</span> <span class="nn">collpars</span> <span class="c1"># collaboration specific parameters</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">core.pltext</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">pltext</span>   <span class="c1"># extensions for plotting histograms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.hfit</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">hfit</span>     <span class="c1"># extension to fit histograms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.efit</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">efit</span>     <span class="c1"># Fit Utilites - Includes Extend Likelihood Fit with composite PDFs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.confint</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">confint</span>  <span class="c1"># Confidence Intervals </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.utils</span><span class="w">   </span><span class="k">as</span><span class="w"> </span><span class="nn">ut</span>       <span class="c1"># generic utilities</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ana.fanal</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">fn</span>       <span class="c1"># analysis functions specific to fanal</span>
+<span class="kn">import</span><span class="w">     </span><span class="nn">collpars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">collpars</span> <span class="c1"># collaboration specific parameters</span>
 <span class="n">pltext</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-half-life-relation">
+</section>
+<section id="the-half-life-relation">
 <h3>The half-life relation<a class="headerlink" href="#the-half-life-relation" title="Permalink to this heading">#</a></h3>
 <p>The relation between <span class="math notranslate nohighlight">\(\mathcal{T}_{1/2}^{\beta\beta0\nu}\)</span> and the estimated number of signal events <span class="math notranslate nohighlight">\(n^{\beta\beta}_{RoI}\)</span> in the RoI is:</p>
 <div class="math notranslate nohighlight">
@@ -566,9 +542,9 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(N_A\)</span> is the Avogadro number</p></li>
 <li><p><span class="math notranslate nohighlight">\(W\)</span> is the atomic mass (g/mol)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="main-parameters">
+</section>
+</section>
+<section id="main-parameters">
 <h2>Main parameters<a class="headerlink" href="#main-parameters" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -594,7 +570,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="section" id="data">
+<section id="data">
 <h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -606,11 +582,10 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data path and filename : &#39;</span><span class="p">,</span> <span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
 
 <span class="c1"># access the simulated data (DataFrames) for the different samples (Bi, Tl, bb) located in the data file</span>
-<span class="n">mcbi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span>
-<span class="n">mctl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span>
-<span class="n">mcbb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bb0nu&#39;</span><span class="p">)</span>
+<span class="n">mcbi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">mctl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
+<span class="n">mcbb</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">dirpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bb0nu&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
 
-<span class="c1"># set the names of the samples</span>
 <span class="c1"># set the names of the samples</span>
 <span class="n">mc_samples</span>         <span class="o">=</span> <span class="p">[</span><span class="n">mcbi</span><span class="p">,</span> <span class="n">mctl</span><span class="p">,</span> <span class="n">mcbb</span><span class="p">]</span> <span class="c1"># list of the mc DFs</span>
 <span class="n">sample_names</span>       <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bi&#39;</span><span class="p">,</span> <span class="s1">&#39;Tl&#39;</span><span class="p">,</span> <span class="s1">&#39;bb&#39;</span><span class="p">]</span>
@@ -622,26 +597,19 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2//data/fanal_new_gamma.h5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MC Sample Bi, number of simulated events = 60184
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_gamma.h5
+MC Sample Bi, number of simulated events = 60184
 MC Sample Tl, number of simulated events = 687297
 MC Sample bb, number of simulated events = 47636
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="confidence-intervals">
+</section>
+<section id="confidence-intervals">
 <h3>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Permalink to this heading">#</a></h3>
 <p>Frequentist intervals are usually computed using the Feldman–Cousins construction.</p>
 <p>The following code constructs the confidence bands for a given number of <em>observed</em> events (on the <em>x</em> axis) and a range of <em>true signal events</em> (on the <em>y</em> axis).</p>
-<p><strong>Exercise</strong>:</p>
-<ul class="simple">
-<li><p>Study how the CI changes depending on the number of observed events</p></li>
-<li><p>Study what is the value of observed events that will give an observation and a discovery.</p></li>
-</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbkg</span>   <span class="o">=</span> <span class="n">n_Bi_RoI</span> <span class="o">+</span> <span class="n">n_Tl_RoI</span>
@@ -650,112 +618,159 @@ MC Sample bb, number of simulated events = 47636
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.67699999999999
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.684
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+</section>
+<section id="worked-example-feldman-cousins-with-zero-background">
+<h3>Worked example: Feldman-Cousins with zero background<a class="headerlink" href="#worked-example-feldman-cousins-with-zero-background" title="Permalink to this heading">#</a></h3>
+<p>Before working with our estimated background, let us build the FC confidence belt
+for the simplest case: <strong>no background</strong> (<span class="math notranslate nohighlight">\(n_{bkg} = 0\)</span>). This is just a pure Poisson
+signal measurement.</p>
+<p>In this case, if we observe <span class="math notranslate nohighlight">\(n\)</span> events, all of them must be signal.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbkg</span>   <span class="o">=</span> <span class="n">n_Bi_RoI</span> <span class="o">+</span> <span class="n">n_Tl_RoI</span>
-<span class="n">n0</span>     <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nbkg</span><span class="p">)</span>      <span class="c1"># number of observed events (int)</span>
-<span class="bp">cls</span>    <span class="o">=</span> <span class="p">(</span><span class="mf">0.68</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>    <span class="c1"># range of CL to show</span>
-<span class="n">factor</span> <span class="o">=</span> <span class="mf">1.5</span>
-<span class="n">nbins</span>  <span class="o">=</span> <span class="mi">100</span>
-<span class="n">nus</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">nbkg</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="c1"># range of number of signal events</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Example: FC confidence belt with nbkg = 0 ---</span>
+<span class="n">nbkg_example</span> <span class="o">=</span> <span class="mf">0.</span>                                      <span class="c1"># no background</span>
+<span class="n">nus_example</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>               <span class="c1"># range of true signal values</span>
+<span class="n">ns_example</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>                        <span class="c1"># range of observed counts</span>
 
-<span class="c1"># get the FC-CI functions for 68% and 95% CL</span>
-<span class="n">fcs</span>    <span class="o">=</span> <span class="p">[</span><span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">nus</span><span class="p">,</span> <span class="n">nbkg</span><span class="p">,</span> <span class="n">cl</span> <span class="o">=</span> <span class="n">cl</span><span class="p">)</span> <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">]</span>
+<span class="c1"># Build FC confidence interval functions at 68% and 95% CL</span>
+<span class="n">fc_68</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">nus_example</span><span class="p">,</span> <span class="n">nbkg_example</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.68</span><span class="p">)</span>
+<span class="n">fc_95</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">nus_example</span><span class="p">,</span> <span class="n">nbkg_example</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">fc</span><span class="p">,</span> <span class="n">cl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fcs</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-    <span class="n">ci</span> <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="n">n0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FC Cover Interval, observed n = </span><span class="si">{:d}</span><span class="s1">, at </span><span class="si">{:2.0f}</span><span class="s1"> % CL = (</span><span class="si">{:4.2f}</span><span class="s1">, </span><span class="si">{:4.2f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n0</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">,</span> <span class="o">*</span><span class="n">ci</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC Cover Interval, observed n = 81, at 68 % CL = (0.00, 8.66)
-FC Cover Interval, observed n = 81, at 90 % CL = (0.00, 14.85)
-FC Cover Interval, observed n = 81, at 95 % CL = (0.00, 18.56)
+<span class="c1"># For a specific observation, say n_obs = 5:</span>
+<span class="n">n_obs_example</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">ci_68</span> <span class="o">=</span> <span class="n">fc_68</span><span class="p">(</span><span class="n">n_obs_example</span><span class="p">)</span>
+<span class="n">ci_95</span> <span class="o">=</span> <span class="n">fc_95</span><span class="p">(</span><span class="n">n_obs_example</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Example: n_obs = </span><span class="si">{:d}</span><span class="s1">, nbkg = </span><span class="si">{:.0f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_obs_example</span><span class="p">,</span> <span class="n">nbkg_example</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  FC CI at 68% CL on signal: (</span><span class="si">{:.2f}</span><span class="s1">, </span><span class="si">{:.2f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ci_68</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  FC CI at 95% CL on signal: (</span><span class="si">{:.2f}</span><span class="s1">, </span><span class="si">{:.2f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ci_95</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell tag_solution docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the conficence band and the segment associated to an observation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the FC confidence bands for nbkg = 0</span>
 <span class="n">pltext</span><span class="o">.</span><span class="n">canvas</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="n">ns</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nbkg</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">fc</span><span class="p">,</span> <span class="n">cl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fcs</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>    
-    <span class="n">ys</span>   <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="o">*</span><span class="n">ys</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;FC CI </span><span class="si">{:6.0f}</span><span class="s1"> % CL&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nus</span><span class="p">)),</span> <span class="n">nus</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;observed&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FC CI bkg = </span><span class="si">{:4.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nbkg</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of events&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;number of signal events&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+<span class="k">for</span> <span class="n">fc</span><span class="p">,</span> <span class="n">cl</span><span class="p">,</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">fc_95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="p">(</span><span class="n">fc_68</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)]:</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="n">ns_example</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">ns_example</span><span class="p">,</span> <span class="o">*</span><span class="n">ys</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FC CI </span><span class="si">{:.0f}</span><span class="s1">% CL&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">n_obs_example</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;n_obs = </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_obs_example</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;observed events&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;true signal events&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feldman-Cousins belt (no background)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/fanal_signal_countexp_18_0.png" src="../../_images/fanal_signal_countexp_18_0.png" />
+</div>
+<p><strong>Key observations</strong> (no background case):</p>
+<ul class="simple">
+<li><p>When <span class="math notranslate nohighlight">\(n_{obs} = 0\)</span>, the upper limit at 95% CL is about 3 events (the Poisson upper limit).</p></li>
+<li><p>As <span class="math notranslate nohighlight">\(n_{obs}\)</span> increases, the confidence interval widens and shifts upward.</p></li>
+<li><p>For <span class="math notranslate nohighlight">\(n_{obs} = 0\)</span>, the interval is <strong>one-sided</strong> (upper limit only). For larger <span class="math notranslate nohighlight">\(n_{obs}\)</span>, it becomes <strong>two-sided</strong>.</p></li>
+</ul>
+</section>
+<section id="worked-example-the-half-life-function">
+<h3>Worked example: the half-life function<a class="headerlink" href="#worked-example-the-half-life-function" title="Permalink to this heading">#</a></h3>
+<p>We now implement the function that translates a number of signal events in the RoI
+into a half-life value, using the formula above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Example: half-life function ---</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tau_example</span><span class="p">(</span><span class="n">nbb</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the half-life (years) for a given number of signal events in the RoI.&quot;&quot;&quot;</span>
+    <span class="n">delta</span>    <span class="o">=</span> <span class="mf">0.9</span>                     <span class="c1"># 136Xe abundance</span>
+    <span class="n">W</span>        <span class="o">=</span> <span class="mf">0.136</span>                   <span class="c1"># atomic mass (kg/mol)</span>
+    <span class="n">eff_RoI</span>  <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_bb_RoI</span>     <span class="c1"># signal selection efficiency in RoI</span>
+    <span class="n">exposure</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">exposure</span>        <span class="c1"># M * t (kg * y)</span>
+    <span class="k">return</span> <span class="n">delta</span> <span class="o">*</span> <span class="n">eff_RoI</span> <span class="o">*</span> <span class="n">exposure</span> <span class="o">*</span> <span class="n">constants</span><span class="o">.</span><span class="n">Avogadro</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nbb</span> <span class="o">*</span> <span class="n">W</span><span class="p">)</span>
+
+<span class="c1"># Test: if we observe 1 signal event, what half-life does that correspond to?</span>
+<span class="k">for</span> <span class="n">nbb_test</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  nbb = </span><span class="si">{:3d}</span><span class="s1">  =&gt;  T_1/2 = </span><span class="si">{:.2e}</span><span class="s1"> y&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nbb_test</span><span class="p">,</span> <span class="n">tau_example</span><span class="p">(</span><span class="n">nbb_test</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note how the half-life is inversely proportional to the number of signal events:
+fewer signal events imply a longer half-life (the decay is rarer).</p>
+</section>
+<hr class="docutils" />
+<section id="now-it-is-your-turn">
+<h3>Now it is your turn<a class="headerlink" href="#now-it-is-your-turn" title="Permalink to this heading">#</a></h3>
+<p>Use the <strong>actual background</strong> from your experiment (<code class="docutils literal notranslate"><span class="pre">nbkg</span></code>) to:</p>
+<ol class="arabic simple">
+<li><p>Build the FC confidence belt at several CLs (68%, 90%, 95%)</p></li>
+<li><p>Implement a <code class="docutils literal notranslate"><span class="pre">tau</span></code> function for your experiment</p></li>
+<li><p>Translate the FC intervals into half-life limits</p></li>
+<li><p>Compute the p-value of the null hypothesis</p></li>
+</ol>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct the Feldman-Cousins confidence belt.</span>
+<span class="c1"># Use confint.fc_confband() to compute the acceptance band:</span>
+<span class="c1">#   ns   = np.arange(0, nmax)   # range of observed events</span>
+<span class="c1">#   band = confint.fc_confband(nbkg, ns, cl=0.95)</span>
+<span class="c1">#</span>
+<span class="c1"># Then use confint.get_fc_confinterval() to get the interval for a given observation.</span>
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_solution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the Feldman-Cousins confidence band.</span>
+<span class="c1"># Study how the confidence interval changes with the number of observed events.</span>
+<span class="c1"># YOUR CODE HERE</span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Translate the number of signal events into half-life time.</p>
 <p><strong>Exercise</strong>: Implement the <em>tau</em> function to return the half-life associated with <em>nbb</em> signal events in the selected RoI.</p>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tau</span><span class="p">(</span><span class="n">nbb</span><span class="p">):</span>
-    <span class="n">eff</span>      <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">eff_bb_RoI</span>
-    <span class="n">exposure</span> <span class="o">=</span> <span class="n">collpars</span><span class="o">.</span><span class="n">exposure</span>
-    <span class="n">tau</span>      <span class="o">=</span> <span class="n">nbb</span><span class="o">/</span><span class="n">collpars</span><span class="o">.</span><span class="n">exposure</span> <span class="c1"># implement here the formula of the lifetime</span>
-    <span class="k">return</span> <span class="n">tau</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implement the tau (half-life) function.</span>
+<span class="c1"># Use the formula from the markdown above:</span>
+<span class="c1">#</span>
+<span class="c1"># def tau(nbb):</span>
+<span class="c1">#     delta    = 0.9         # 136Xe abundance</span>
+<span class="c1">#     W        = 0.136       # atomic mass in kg/mol</span>
+<span class="c1">#     NA       = constants.Avogadro</span>
+<span class="c1">#     eff_RoI  = collpars.eff_bb_RoI  # signal efficiency in RoI</span>
+<span class="c1">#     Mt       = collpars.exposure     # exposure in kg*y</span>
+<span class="c1">#     return delta * eff_RoI * Mt * NA * np.log(2) / (nbb * W)</span>
+<span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">fc</span><span class="p">,</span> <span class="n">cl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fcs</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
-    <span class="n">ci</span>   <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="n">n0</span><span class="p">)</span>
-    <span class="n">taus</span> <span class="o">=</span> <span class="p">[</span><span class="n">tau</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ci</span><span class="p">]</span>
-    <span class="n">taus</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FC Cover Interval, observed n = </span><span class="si">{:d}</span><span class="s1">, at </span><span class="si">{:2.0f}</span><span class="s1"> % CL = (</span><span class="si">{:4.2e}</span><span class="s1">, </span><span class="si">{:4.2e}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n0</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">,</span> <span class="o">*</span><span class="n">taus</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC Cover Interval, observed n = 81, at 68 % CL = (8.66e-03, 0.00e+00)
-FC Cover Interval, observed n = 81, at 90 % CL = (1.49e-02, 0.00e+00)
-FC Cover Interval, observed n = 81, at 95 % CL = (1.86e-02, 0.00e+00)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the half-life for different numbers of observed signal events.</span>
+<span class="c1"># Use the tau() function defined above.</span>
+<span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pltext</span><span class="o">.</span><span class="n">canvas</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">fc</span><span class="p">,</span> <span class="n">cl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fcs</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>    
-    <span class="n">ys</span>     <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="n">ns</span><span class="p">)</span>
-    <span class="n">taus</span>   <span class="o">=</span> <span class="n">tau</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span>
-    <span class="n">taus</span><span class="p">[</span><span class="n">taus</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]</span> <span class="o">=</span> <span class="n">tau</span><span class="p">(</span><span class="n">nus</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="o">*</span><span class="n">taus</span><span class="p">,</span> 
-                     <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;FC CI </span><span class="si">{:6.0f}</span><span class="s1"> % CL&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nus</span><span class="p">)),</span> <span class="n">tau</span><span class="p">(</span><span class="n">nus</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;observed&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;FC CI bkg = </span><span class="si">{:4.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nbkg</span><span class="p">));</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;number of events&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T^{0\nu}_{\beta\beta}$ (y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">);</span>
-<span class="c1">#plt.tight_layout();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the half-life as a function of the number of signal events.</span>
+<span class="c1"># Also plot the Feldman-Cousins confidence interval translated to half-life.</span>
+<span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/fanal_signal_countexp_22_0.png" src="../../_images/fanal_signal_countexp_22_0.png" />
 </div>
-</div>
-</div>
-<div class="section" id="compute-the-p-value-of-the-null-hypothesis">
+</section>
+<section id="compute-the-p-value-of-the-null-hypothesis">
 <h3>Compute the p-value of the null hypothesis<a class="headerlink" href="#compute-the-p-value-of-the-null-hypothesis" title="Permalink to this heading">#</a></h3>
 <p>The p-value is the probability of obtaining an experiment with agreement with no-signal equal to or worse than the observation.</p>
 <p>When the p-value of the null hypothesis is below 3 sigma, we claim evidence; when it is below 5 sigma, a discovery!</p>
@@ -794,12 +809,12 @@ p0-values &lt; 2.87e-07 if n &gt; 131, Tbb &lt; 1.31e-01 y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_signal_countexp_25_0.png" src="../../_images/fanal_signal_countexp_25_0.png" />
+<img alt="../../_images/db052e10382c5fc82c991f7c3d7f36593c511d3c2ecf67fe8c2c3673d93c2554.png" src="../../_images/db052e10382c5fc82c991f7c3d7f36593c511d3c2ecf67fe8c2c3673d93c2554.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -813,7 +828,7 @@ p0-values &lt; 2.87e-07 if n &gt; 131, Tbb &lt; 1.31e-01 y
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/guide"
         },
         predefinedOutput: true
@@ -821,50 +836,117 @@ p0-values &lt; 2.87e-07 if n &gt; 131, Tbb &lt; 1.31e-01 y
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="fanal_bkg_uncertanties.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Uncertainties on the number of backgrounds events</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fanal_bkg_uncertainties.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Uncertainties on the number of backgrounds events</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="fanal_signal.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="fanal_signal.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Estimate the number of signal events</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-modules">Importing modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-half-life-relation">The half-life relation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-parameters">Main parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-intervals">Confidence Intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-feldman-cousins-with-zero-background">Worked example: Feldman-Cousins with zero background</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-the-half-life-function">Worked example: the half-life function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-it-is-your-turn">Now it is your turn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-p-value-of-the-null-hypothesis">Compute the p-value of the null hypothesis</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By José Ángel Hernando Morata<br/>
-  
-      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023-2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

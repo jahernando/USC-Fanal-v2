@@ -1,12 +1,14 @@
 # Fanal - USC
 
-A neutrino-less double beta decay search with mock data. 
+A neutrino-less double beta decay search with mock data.
 
-Author: José Ángel Hernando Morata
+Author: Jose Angel Hernando Morata
 
 email: jose.hernando@usc.es
 
-version: February 2023
+version: March 2026 (v2026.1.0)
+
+Course material edited and extended with the assistance of [Claude](https://claude.ai) (Anthropic).
 
 -------
 

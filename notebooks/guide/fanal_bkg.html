@@ -1,34 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Expected number of background events &#8212; Fanal - USC</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Expected number of background events &#8212; Fanal - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -37,12 +49,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -52,61 +64,109 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/guide/fanal_bkg';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertanties.html" />
+    <link rel="next" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertainties.html" />
     <link rel="prev" title="Energy resolution" href="fanal_energy_resolution.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Fanal - USC</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Fanal - USC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Fanal - USC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,430 +175,292 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../fanal.html">
-   Fanal, a neutrino-less beta double decay search
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_selection.html">
-   Signal selection
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_energy_resolution.html">
-   Energy resolution
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Expected number of background events
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_bkg_uncertanties.html">
-   Uncertainties on the number of backgrounds events
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_signal_countexp.html">
-   Sensitivity of a counting experiment
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_signal.html">
-   Estimate the number of signal events
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="fanal_data_access.html">
-   Open the box
-  </a>
- </li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise notebooks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fanal.html">Fanal, a neutrino-less beta double decay search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_selection.html">Signal selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Expected number of background events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal_countexp.html">Sensitivity of a counting experiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="crib_pandas.html">Crib sheet: data access, pandas and plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crib_fit.html">Crib sheet: fitting tools</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course structure</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../deployment.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_dynamics.html">Course dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_presentation.html">Guide: presenting your results</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/jahernando/USC-FPII-Fanal/teacher?urlpath=tree/notebooks/guide/fanal_bkg.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/USC-FPII-Fanal/teacher?urlpath=tree/notebooks/guide/fanal_bkg.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_bkg.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/guide/fanal_bkg.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/jahernando/USC-FPII-Fanal"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
 
-      </li>
-      
-      <li>
-        <a href="https://github.com/jahernando/USC-FPII-Fanal/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/fanal_bkg.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/notebooks/guide/fanal_bkg.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analysis">
-   Analysis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimation-of-the-background-events-in-the-blind-sample">
-   Estimation of the background events in the blind sample
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-modules">
-     Import modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parameters">
-     Parameters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data">
-     Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimate-blind-selection-efficiency-in-mc">
-     Estimate blind selection efficiency in MC
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">
-   Energy distribution of the blind data and mc samples
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimate-the-number-of-background-events-in-the-blind-data">
-   Estimate the number of background events in the blind-data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-the-total-number-of-background-events">
-     Compute the total number of background events
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">
-     Number of background events in RoI and E range
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-out">
-   Write out
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Expected number of background events</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#objectives">
-   Objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analysis">
-   Analysis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimation-of-the-background-events-in-the-blind-sample">
-   Estimation of the background events in the blind sample
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Analysis
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-modules">
-     Import modules
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parameters">
-     Parameters
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data">
-     Data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#estimate-blind-selection-efficiency-in-mc">
-     Estimate blind selection efficiency in MC
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">
-   Energy distribution of the blind data and mc samples
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#estimate-the-number-of-background-events-in-the-blind-data">
-   Estimate the number of background events in the blind-data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compute-the-total-number-of-background-events">
-     Compute the total number of background events
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">
-     Number of background events in RoI and E range
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#write-out">
-   Write out
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Expected number of background events</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-of-the-background-events-in-the-blind-sample">Estimation of the background events in the blind sample</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-blind-selection-efficiency-in-mc">Estimate blind selection efficiency in MC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">Energy distribution of the blind data and mc samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-the-number-of-background-events-in-the-blind-data">Estimate the number of background events in the blind-data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-total-number-of-background-events">Compute the total number of background events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">Number of background events in RoI and E range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-to-code-reference">Notation-to-code reference</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-out">Write out</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="expected-number-of-background-events">
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="expected-number-of-background-events">
 <h1>Expected number of background events<a class="headerlink" href="#expected-number-of-background-events" title="Permalink to this heading">#</a></h1>
-<div class="section" id="objectives">
+<section id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Estimate the total number of background events</strong></p></li>
 <li><p><strong>Estimate the number of selected background events</strong> in the energy enlarged window and <strong>in the RoI</strong></p></li>
 </ul>
-</div>
-<div class="section" id="analysis">
+</section>
+<section id="analysis">
 <h2>Analysis<a class="headerlink" href="#analysis" title="Permalink to this heading">#</a></h2>
 <p>We will use a <em>blind</em> data sample: data where the signal events have been removed by a selection, which we call the <em>blind</em> selection.</p>
 <p>The blind selection removes from the full data the signal events while retaining most of the background events.</p>
@@ -563,8 +485,8 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    * sel_ntracks, sel_eblob2, sel_erange
 </pre></div>
 </div>
-</div>
-<div class="section" id="estimation-of-the-background-events-in-the-blind-sample">
+</section>
+<section id="estimation-of-the-background-events-in-the-blind-sample">
 <h2>Estimation of the background events in the blind sample<a class="headerlink" href="#estimation-of-the-background-events-in-the-blind-sample" title="Permalink to this heading">#</a></h2>
 <p>We estimate the number of background events <span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b, \, n^{\mathrm{Tl}}_b\)</span> as the values that minimise the <span class="math notranslate nohighlight">\(-2 \log\)</span> extended maximum likelihood.</p>
 <p>We first define the PDF of the energy, <span class="math notranslate nohighlight">\(E\)</span>, for each background sample, <span class="math notranslate nohighlight">\(g_k(E), \;\; k = \mathrm{Bi}, \mathrm{Tl}\)</span>, using <em>simulated data</em>.</p>
@@ -579,10 +501,10 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 \[
 - 2 \log \mathcal{L}({\bf E} | {\bf n}_b).
 \]</div>
-</div>
-<div class="section" id="id1">
+</section>
+<section id="id1">
 <h2>Analysis<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<div class="section" id="import-modules">
+<section id="import-modules">
 <h3>Import modules<a class="headerlink" href="#import-modules" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,15 +517,15 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>  <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">tables</span> <span class="k">as</span> <span class="nn">tb</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tables</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">import</span> <span class="nn">scipy.stats</span>     <span class="k">as</span> <span class="nn">stats</span>  <span class="c1"># statistics and Many PDFs </span>
-<span class="c1">#import scipy.optimize  as optimize # Minimice funtions</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w">     </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>  <span class="c1"># statistics and Many PDFs </span>
+<span class="c1">#import scipy.optimize  as optimize # Minimize functions</span>
 
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -611,38 +533,45 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># REMEMBER TO ADD Your Fanal FOLDER TO PYTHONPATH</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">rootpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()[:</span><span class="o">-</span><span class="mi">15</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;add path to PYTHONPATH : &#39;</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">rootpath</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Find the project root: honours FANAL_ROOT env-var, otherwise walks up from cwd</span>
+<span class="n">_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FANAL_ROOT&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USCFANALDIR&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">_env</span> <span class="ow">and</span> <span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;ana&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()))</span>
+<span class="k">if</span> <span class="n">rootpath</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fanal root : &#39;</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">core.pltext</span>  <span class="k">as</span> <span class="nn">pltext</span>   <span class="c1"># extensions for plotting histograms</span>
-<span class="kn">import</span> <span class="nn">core.hfit</span>    <span class="k">as</span> <span class="nn">hfit</span>     <span class="c1"># extension to fit histograms</span>
-<span class="kn">import</span> <span class="nn">core.efit</span>    <span class="k">as</span> <span class="nn">efit</span>     <span class="c1"># Fit Utilites - Includes Extend Likelihood Fit with composite PDFs</span>
-<span class="kn">import</span> <span class="nn">core.utils</span>   <span class="k">as</span> <span class="nn">ut</span>       <span class="c1"># generic utilities</span>
-<span class="kn">import</span> <span class="nn">ana.fanal</span>    <span class="k">as</span> <span class="nn">fn</span>       <span class="c1"># analysis functions specific to fanal</span>
-<span class="kn">import</span> <span class="nn">ana.pltfanal</span> <span class="k">as</span> <span class="nn">pltfn</span>    <span class="c1"># plotting for fanal</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">core.pltext</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">pltext</span>   <span class="c1"># extensions for plotting histograms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.hfit</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">hfit</span>     <span class="c1"># extension to fit histograms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.efit</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">efit</span>     <span class="c1"># Fit Utilites - Includes Extend Likelihood Fit with composite PDFs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.utils</span><span class="w">   </span><span class="k">as</span><span class="w"> </span><span class="nn">ut</span>       <span class="c1"># generic utilities</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ana.fanal</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">fn</span>       <span class="c1"># analysis functions specific to fanal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ana.pltfanal</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pltfn</span>    <span class="c1"># plotting for fanal</span>
 
-<span class="kn">import</span> <span class="nn">collpars</span>    <span class="k">as</span> <span class="nn">collpars</span> <span class="c1"># collaboration specific parameters</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">collpars</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">collpars</span> <span class="c1"># collaboration specific parameters</span>
 <span class="n">pltext</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="parameters">
+</section>
+<section id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -676,8 +605,8 @@ Tl eff in RoI         : 0.0195 %
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="data">
+</section>
+<section id="data">
 <h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -685,9 +614,9 @@ Tl eff in RoI         : 0.0195 %
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;/data/fanal_&#39;</span> <span class="o">+</span> <span class="n">coll</span> <span class="o">+</span> <span class="s1">&#39;.h5&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data path and filename : &#39;</span><span class="p">,</span> <span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
 
-<span class="n">mcbi</span>       <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span>   <span class="c1"># MC Bi</span>
-<span class="n">mctl</span>       <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span>   <span class="c1"># MC Tl</span>
-<span class="n">data_blind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;data/blind&#39;</span><span class="p">)</span> <span class="c1"># blind data</span>
+<span class="n">mcbi</span>       <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/bi214&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>   <span class="c1"># MC Bi</span>
+<span class="n">mctl</span>       <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;mc/tl208&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>   <span class="c1"># MC Tl</span>
+<span class="n">data_blind</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_hdf</span><span class="p">(</span><span class="n">rootpath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;data/blind&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span> <span class="c1"># blind data</span>
 
 <span class="n">mc_samples</span>         <span class="o">=</span> <span class="p">[</span><span class="n">mcbi</span><span class="p">,</span> <span class="n">mctl</span><span class="p">]</span>
 <span class="n">sample_names</span>       <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bi&#39;</span><span class="p">,</span> <span class="s1">&#39;Tl&#39;</span><span class="p">]</span>
@@ -696,19 +625,19 @@ Tl eff in RoI         : 0.0195 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/FPII/USC-Fanal-v2//data/fanal_new_gamma.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_gamma.h5
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="estimate-blind-selection-efficiency-in-mc">
+</section>
+<section id="estimate-blind-selection-efficiency-in-mc">
 <h3>Estimate blind selection efficiency in MC<a class="headerlink" href="#estimate-blind-selection-efficiency-in-mc" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># apply the blind selection to the mc samples to obtaine blind mc samples</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># apply the blind selection to the mc samples to obtain blind mc samples</span>
 
-<span class="k">def</span> <span class="nf">efficiency</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">efficiency</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="p">))</span>
 
 <span class="n">mask_bi</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">selection_blind</span><span class="p">(</span><span class="n">mcbi</span><span class="p">)</span>
@@ -720,7 +649,7 @@ Tl eff in RoI         : 0.0195 %
 <span class="n">mc_blind_samples</span> <span class="o">=</span>  <span class="p">(</span><span class="n">mcbi</span><span class="p">[</span><span class="n">mask_bi</span><span class="p">],</span> <span class="n">mctl</span><span class="p">[</span><span class="n">mask_tl</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bi blind eff : </span><span class="si">{:6.4f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="n">eff_Bi_blind</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tl blind edd : </span><span class="si">{:6.4f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="n">eff_Tl_blind</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tl blind eff : </span><span class="si">{:6.4f}</span><span class="s1"> %&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">100.</span><span class="o">*</span><span class="n">eff_Tl_blind</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -731,13 +660,13 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="energy-distribution-of-the-blind-data-and-mc-samples">
+</section>
+</section>
+<section id="energy-distribution-of-the-blind-data-and-mc-samples">
 <h2>Energy distribution of the blind data and mc samples<a class="headerlink" href="#energy-distribution-of-the-blind-data-and-mc-samples" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_energy</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_energy</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
     <span class="n">pltext</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">E</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">sel_erange</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">label</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Energy (MeV)&#39;</span><span class="p">);</span> 
 
@@ -754,11 +683,11 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_bkg_18_0.png" src="../../_images/fanal_bkg_18_0.png" />
+<img alt="../../_images/61d02b2d8084844580bd0c9c5414b2a192f5595da6acd43dea6e7b0321148507.png" src="../../_images/61d02b2d8084844580bd0c9c5414b2a192f5595da6acd43dea6e7b0321148507.png" />
 </div>
 </div>
-</div>
-<div class="section" id="estimate-the-number-of-background-events-in-the-blind-data">
+</section>
+<section id="estimate-the-number-of-background-events-in-the-blind-data">
 <h2>Estimate the number of background events in the blind-data<a class="headerlink" href="#estimate-the-number-of-background-events-in-the-blind-data" title="Permalink to this heading">#</a></h2>
 <p>Estimate the number of events of Bi and Tl:</p>
 <ul class="simple">
@@ -785,10 +714,10 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fanal_bkg_21_0.png" src="../../_images/fanal_bkg_21_0.png" />
+<img alt="../../_images/5365b6164c6bb9ade01b88d26bc3ac297a41692eb2da61081094f578fa32ee15.png" src="../../_images/5365b6164c6bb9ade01b88d26bc3ac297a41692eb2da61081094f578fa32ee15.png" />
 </div>
 </div>
-<div class="section" id="compute-the-total-number-of-background-events">
+<section id="compute-the-total-number-of-background-events">
 <h3>Compute the total number of background events<a class="headerlink" href="#compute-the-total-number-of-background-events" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,57 +730,130 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of blind events Bi : 509.893
- number of blind events Tl : 3303.372
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of blind events Bi : 509.919
+ number of blind events Tl : 3303.643
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="number-of-background-events-in-roi-and-e-range">
+</section>
+<section id="number-of-background-events-in-roi-and-e-range">
 <h3>Number of background events in RoI and E range<a class="headerlink" href="#number-of-background-events-in-roi-and-e-range" title="Permalink to this heading">#</a></h3>
 <p><em>Exercise</em> Compute the number of bkg events for each sample in the Energy range and in RoI</p>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_Bi_total</span> <span class="o">=</span> <span class="n">n_Bi_blind</span><span class="o">/</span><span class="n">eff_Bi_blind</span>
-<span class="n">n_Tl_total</span> <span class="o">=</span> <span class="n">n_Tl_blind</span><span class="o">/</span><span class="n">eff_Tl_blind</span>
-
-<span class="n">n_Bi_E</span> <span class="o">=</span> <span class="n">n_Bi_total</span> <span class="o">*</span> <span class="n">eff_Bi_E</span>
-<span class="n">n_Tl_E</span> <span class="o">=</span> <span class="n">n_Tl_total</span> <span class="o">*</span> <span class="n">eff_Bi_E</span>
-
-<span class="n">n_Bi_RoI</span> <span class="o">=</span> <span class="n">n_Bi_total</span> <span class="o">*</span> <span class="n">eff_Bi_RoI</span>
-<span class="n">n_Tl_RoI</span> <span class="o">=</span> <span class="n">n_Tl_total</span> <span class="o">*</span> <span class="n">eff_Bi_RoI</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the total number of Bi and Tl events, and the expected</span>
+<span class="c1"># number of events in the energy range and in the RoI.</span>
+<span class="c1">#</span>
+<span class="c1"># Use the formulas:</span>
+<span class="c1">#   n_k_total = n_k_blind / eff_k_blind</span>
+<span class="c1">#   n_k_E     = n_k_total * eff_k_E</span>
+<span class="c1">#   n_k_RoI   = n_k_total * eff_k_RoI</span>
+<span class="c1">#</span>
+<span class="c1"># where k = Bi, Tl</span>
+<span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events total Bi      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_total</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events total Tl      : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_total</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in E range Bi : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_E</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in E range Tl : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_E</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in RoI Bi     : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Bi_RoI</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; number of events in RoI Tl     : </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_Tl_RoI</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of events total Bi      : 651.247
- number of events total Tl      : 4687.127
- number of events in E range Bi : 11.788
- number of events in E range Tl : 84.837
- number of events in RoI Bi     :  9.964
- number of events in RoI Tl     : 71.713
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the total, energy-range, and RoI event counts for Bi and Tl.</span>
+<span class="c1"># Define the variables: n_Bi_total, n_Tl_total, n_Bi_E, n_Tl_E, n_Bi_RoI, n_Tl_RoI</span>
+<span class="c1"># These will be written to collpars.py in the next cell.</span>
+<span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="notation-to-code-reference">
+<h3>Notation-to-code reference<a class="headerlink" href="#notation-to-code-reference" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Math</p></th>
+<th class="head"><p>Python variable</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>—</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">exposure</span></code></p></td>
+<td><p>Detector exposure (kg <span class="math notranslate nohighlight">\(\cdot\)</span> y)</p></td>
+</tr>
+<tr class="row-odd"><td><p>—</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">acc_bb</span></code></p></td>
+<td><p>Signal acceptance</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\epsilon^\mathrm{Bi}_b\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">eff_Bi_blind</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{214}\)</span>Bi blind selection efficiency</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\epsilon^\mathrm{Tl}_b\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">eff_Tl_blind</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{208}\)</span>Tl blind selection efficiency</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Bi}_b\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Bi_blind</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{214}\)</span>Bi events in blind sample</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Tl}_b\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Tl_blind</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{208}\)</span>Tl events in blind sample</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Bi}_\text{total}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Bi_total</span></code></p></td>
+<td><p>Total <span class="math notranslate nohighlight">\(^{214}\)</span>Bi events (<span class="math notranslate nohighlight">\(= n^\mathrm{Bi}_b / \epsilon^\mathrm{Bi}_b\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Tl}_\text{total}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Tl_total</span></code></p></td>
+<td><p>Total <span class="math notranslate nohighlight">\(^{208}\)</span>Tl events (<span class="math notranslate nohighlight">\(= n^\mathrm{Tl}_b / \epsilon^\mathrm{Tl}_b\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Bi}_E\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Bi_E</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{214}\)</span>Bi events in energy range (<span class="math notranslate nohighlight">\(= n^\mathrm{Bi}_\text{total} \cdot \epsilon^\mathrm{Bi}_E\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Tl}_E\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Tl_E</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{208}\)</span>Tl events in energy range (<span class="math notranslate nohighlight">\(= n^\mathrm{Tl}_\text{total} \cdot \epsilon^\mathrm{Tl}_E\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Bi}_{RoI}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Bi_RoI</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{214}\)</span>Bi events in RoI (<span class="math notranslate nohighlight">\(= n^\mathrm{Bi}_\text{total} \cdot \epsilon^\mathrm{Bi}_{RoI}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n^\mathrm{Tl}_{RoI}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">n_Tl_RoI</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(^{208}\)</span>Tl events in RoI (<span class="math notranslate nohighlight">\(= n^\mathrm{Tl}_\text{total} \cdot \epsilon^\mathrm{Tl}_{RoI}\)</span>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ana.fanal_display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fdisp</span>
+
+<span class="c1"># Check your values before writing to collpars.py</span>
+<span class="n">fdisp</span><span class="o">.</span><span class="n">display_collpars</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;—&#39;</span><span class="p">,</span>                          <span class="s1">&#39;exposure&#39;</span><span class="p">,</span>     <span class="n">exposure</span><span class="p">,</span>     <span class="s1">&#39;.2f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;—&#39;</span><span class="p">,</span>                          <span class="s1">&#39;acc_bb&#39;</span><span class="p">,</span>       <span class="n">acc_bb</span><span class="p">,</span>       <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\epsilon^\mathrm</span><span class="si">{Bi}</span><span class="s1">_b&#39;</span><span class="p">,</span>    <span class="s1">&#39;eff_Bi_blind&#39;</span><span class="p">,</span> <span class="n">eff_Bi_blind</span><span class="p">,</span> <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\epsilon^\mathrm</span><span class="si">{Tl}</span><span class="s1">_b&#39;</span><span class="p">,</span>    <span class="s1">&#39;eff_Tl_blind&#39;</span><span class="p">,</span> <span class="n">eff_Tl_blind</span><span class="p">,</span> <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Bi}</span><span class="s1">_b&#39;</span><span class="p">,</span>           <span class="s1">&#39;n_Bi_blind&#39;</span><span class="p">,</span>   <span class="n">n_Bi_blind</span><span class="p">,</span>   <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Tl}</span><span class="s1">_b&#39;</span><span class="p">,</span>           <span class="s1">&#39;n_Tl_blind&#39;</span><span class="p">,</span>   <span class="n">n_Tl_blind</span><span class="p">,</span>   <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Bi}</span><span class="s1">_\text</span><span class="si">{total}</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;n_Bi_total&#39;</span><span class="p">,</span>   <span class="n">n_Bi_total</span><span class="p">,</span>   <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Tl}</span><span class="s1">_\text</span><span class="si">{total}</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;n_Tl_total&#39;</span><span class="p">,</span>   <span class="n">n_Tl_total</span><span class="p">,</span>   <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Bi}</span><span class="s1">_E&#39;</span><span class="p">,</span>           <span class="s1">&#39;n_Bi_E&#39;</span><span class="p">,</span>       <span class="n">n_Bi_E</span><span class="p">,</span>       <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Tl}</span><span class="s1">_E&#39;</span><span class="p">,</span>           <span class="s1">&#39;n_Tl_E&#39;</span><span class="p">,</span>       <span class="n">n_Tl_E</span><span class="p">,</span>       <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Bi}</span><span class="s1">_</span><span class="si">{RoI}</span><span class="s1">&#39;</span><span class="p">,</span>       <span class="s1">&#39;n_Bi_RoI&#39;</span><span class="p">,</span>     <span class="n">n_Bi_RoI</span><span class="p">,</span>     <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="sa">r</span><span class="s1">&#39;n^\mathrm</span><span class="si">{Tl}</span><span class="s1">_</span><span class="si">{RoI}</span><span class="s1">&#39;</span><span class="p">,</span>       <span class="s1">&#39;n_Tl_RoI&#39;</span><span class="p">,</span>     <span class="n">n_Tl_RoI</span><span class="p">,</span>     <span class="s1">&#39;.3f&#39;</span><span class="p">),</span>
+<span class="p">])</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="write-out">
+</div>
+</section>
+</section>
+<section id="write-out">
 <h2>Write out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h2>
 <p>We write out into the <em><a class="reference external" href="http://collpars.py">collpars.py</a></em> file the number of events</p>
 <div class="cell docutils container">
@@ -885,8 +887,8 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -900,7 +902,7 @@ Tl blind edd : 70.4775 %
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks/guide"
         },
         predefinedOutput: true
@@ -908,50 +910,120 @@ Tl blind edd : 70.4775 %
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="fanal_energy_resolution.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Energy resolution</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fanal_energy_resolution.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Energy resolution</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="fanal_bkg_uncertanties.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="fanal_bkg_uncertainties.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Uncertainties on the number of backgrounds events</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimation-of-the-background-events-in-the-blind-sample">Estimation of the background events in the blind sample</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-modules">Import modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-blind-selection-efficiency-in-mc">Estimate blind selection efficiency in MC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">Energy distribution of the blind data and mc samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-the-number-of-background-events-in-the-blind-data">Estimate the number of background events in the blind-data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-total-number-of-background-events">Compute the total number of background events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">Number of background events in RoI and E range</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notation-to-code-reference">Notation-to-code reference</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-out">Write out</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By José Ángel Hernando Morata<br/>
-  
-      &copy; Copyright USC - J.A. Hernando - 2023.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023-2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
