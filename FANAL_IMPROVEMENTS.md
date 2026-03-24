@@ -19,7 +19,7 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 
 - [x] **Flesh out `fanal_data_access.ipynb`** ("open the box"). Added: "stop and think" planning cell, progressive selection plots, counting experiment with FC CI, extended likelihood fit, profile likelihood, p-value, half-life estimation, summary table.
 - [x] **Add a crib sheet notebook** `crib_pandas.ipynb` covering: HDF5 data reading, pandas DataFrame basics, boolean masks/selections, `pltext.hist` and `pltext.canvas` usage.
-- [ ] **Add a crib sheet notebook** `crib_fit.ipynb` covering: `hfit` (Gaussian+line fits), `efit` (extended likelihood fits), profile likelihood scans, confidence intervals. Based on patterns already used in the exercise notebooks.
+- [x] **Add a crib sheet notebook** `crib_fit.ipynb` covering: `hfit` (Gaussian+line fits), `efit` (extended likelihood fits), profile likelihood scans, confidence intervals. Based on patterns already used in the exercise notebooks.
 - [ ] **Add a presentation/article guide**: checklist of required sections, key figures, how to present a limit vs. a measurement.
 - [ ] **Consider `nbgrader`** for automated validation of student solutions.
 
@@ -37,3 +37,4 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 - [x] Added notation-to-code tables (markdown + `display_collpars()` in `ana/fanal_display.py`) in all 4 notebooks that write to `collpars.py`.
 - [x] Added `.fillna(0.)` to all `pd.read_hdf()` calls across 14 notebooks. NaN values in HDF5 data (blob/track columns) were generation artifacts; filling with 0 does not change analysis results.
 - [x] Added `crib_pandas.ipynb` crib sheet notebook with HDF5/pandas/masks/pltext reference.
+- [x] Added `crib_fit.ipynb` crib sheet notebook with hfit/efit/profile-likelihood/signal-hypothesis reference.
