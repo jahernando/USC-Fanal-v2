@@ -4,12 +4,12 @@
 title: Fanal - USC
 author: José Ángel Hernando Morata
 logo: logo.png
-copyright: USC - J.A. Hernando - 2023
+copyright: USC - J.A. Hernando - 2023-2026
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force # off, force, auto
+  execute_notebooks: off # off, force, auto
   only_build_toc_files: true
 
 # Define the name of the latex output file for PDF builds
@@ -34,7 +34,9 @@ repository:
 exclude_patterns:
   - README.md
   - TEACHER_WORKFLOW.md
+  - FANAL_IMPROVEMENTS.md
   - memory/**
+  - _build/**
 
 
 # Add GitHub buttons to your book
