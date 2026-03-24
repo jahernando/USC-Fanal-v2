@@ -20,7 +20,7 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 - [x] **Flesh out `fanal_data_access.ipynb`** ("open the box"). Added: "stop and think" planning cell, progressive selection plots, counting experiment with FC CI, extended likelihood fit, profile likelihood, p-value, half-life estimation, summary table.
 - [x] **Add a crib sheet notebook** `crib_pandas.ipynb` covering: HDF5 data reading, pandas DataFrame basics, boolean masks/selections, `pltext.hist` and `pltext.canvas` usage.
 - [x] **Add a crib sheet notebook** `crib_fit.ipynb` covering: `hfit` (Gaussian+line fits), `efit` (extended likelihood fits), profile likelihood scans, confidence intervals. Based on patterns already used in the exercise notebooks.
-- [ ] **Add a presentation/article guide**: checklist of required sections, key figures, how to present a limit vs. a measurement.
+- [x] **Add a presentation/article guide** (`guide_presentation.md`): deliverables, expected content, evaluation criteria (50/30/20). Plus course dynamics guide (`guide_dynamics.md`): session structure, notebook sequence, cyclic presentation scheme.
 - [ ] **Consider `nbgrader`** for automated validation of student solutions.
 
 ## Already done (2026-03-23)
@@ -38,3 +38,8 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 - [x] Added `.fillna(0.)` to all `pd.read_hdf()` calls across 14 notebooks. NaN values in HDF5 data (blob/track columns) were generation artifacts; filling with 0 does not change analysis results.
 - [x] Added `crib_pandas.ipynb` crib sheet notebook with HDF5/pandas/masks/pltext reference.
 - [x] Added `crib_fit.ipynb` crib sheet notebook with hfit/efit/profile-likelihood/signal-hypothesis reference.
+- [x] Added `guide_presentation.md` (deliverables, evaluation rubric) and `guide_dynamics.md` (course workflow, session structure).
+- [x] Organised `_toc.yml` into three sections: Exercise notebooks, Reference material, Course structure.
+- [x] Set up GitHub Pages deployment via GitHub Actions (`deploy-book.yml`). Book at https://jahernando.github.io/USC-FPII-Fanal/.
+- [x] Updated README, intro.md with Claude acknowledgement. Tagged v2026.1.0.
+- [x] Fixed NEXT_White_events.png not rendering in book (moved to `_static/`).
