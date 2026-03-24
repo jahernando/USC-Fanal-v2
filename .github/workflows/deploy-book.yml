@@ -25,7 +25,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install jupyter-book
+        run: pip install "jupyter-book<1"
 
       - name: Build the book
         run: jupyter-book build .
