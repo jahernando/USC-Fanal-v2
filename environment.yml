@@ -1,10 +1,11 @@
-name: USC-Fanal-v2
+name: fanal
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.11
   - jupyter
-  - rise
   - numpy
   - matplotlib
   - scipy
+  - pandas
+  - tables

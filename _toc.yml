@@ -22,5 +22,6 @@ parts:
 
 - caption: Course structure
   chapters:
+  - file: deployment
   - file: notebooks/guide/guide_dynamics
   - file: notebooks/guide/guide_presentation
