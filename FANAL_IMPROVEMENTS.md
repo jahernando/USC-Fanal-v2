@@ -30,3 +30,8 @@ Review of the student-facing notebooks (main branch) with proposed improvements.
 - [x] Added scaffolding hints to all `# YOUR CODE HERE` cells across all guide notebooks.
 - [x] Reorganised branch workflow: guide NBs identical on main and teacher; solutions in separate `*_sols.ipynb` (teacher-only). `git merge main` into teacher is now conflict-free.
 - [x] Added worked examples in `fanal_signal_countexp.ipynb` (FC belt nbkg=0, tau function) and `fanal_signal.ipynb` (full generate→fit→profile with large signal).
+
+## Already done (2026-03-24)
+
+- [x] Added notation-to-code tables (markdown + `display_collpars()` in `ana/fanal_display.py`) in all 4 notebooks that write to `collpars.py`.
+- [x] Added `.fillna(0.)` to all `pd.read_hdf()` calls across 14 notebooks. NaN values in HDF5 data (blob/track columns) were generation artifacts; filling with 0 does not change analysis results.
