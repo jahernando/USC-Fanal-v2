@@ -471,7 +471,7 @@ profile likelihood scans, and confidence intervals.</p>
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -486,7 +486,7 @@ profile likelihood scans, and confidence intervals.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 
 <span class="n">_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FANAL_ROOT&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USCFANALDIR&#39;</span><span class="p">)</span>
@@ -509,10 +509,25 @@ profile likelihood scans, and confidence intervals.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StopIteration</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                         <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;ana&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()))</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">if</span> <span class="n">rootpath</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+
+<span class="ne">StopIteration</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data for the examples</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data for the examples</span>
 <span class="n">dirpath</span>  <span class="o">=</span> <span class="n">rootpath</span> <span class="o">+</span> <span class="s1">&#39;/data/&#39;</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;fanal_new_gamma.h5&#39;</span>
 
@@ -583,7 +598,7 @@ The main function is <code class="docutils literal notranslate"><span class="pre
 We fit a Gaussian + line model.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select Bi events with 1 track in the energy range</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select Bi events with 1 track in the energy range</span>
 <span class="n">sel</span> <span class="o">=</span> <span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">num_tracks</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span> <span class="o">&gt;=</span> <span class="n">sel_erange</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span> <span class="o">&lt;</span> <span class="n">sel_erange</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="mi">60</span>
 
@@ -640,7 +655,7 @@ We fit a Gaussian + line model.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract parameters and uncertainties</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract parameters and uncertainties</span>
 <span class="n">mu</span>    <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="n">par</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
@@ -663,7 +678,7 @@ We fit a Gaussian + line model.</p>
 <p>If you only need the parameters (no residuals or <span class="math notranslate nohighlight">\(\chi^2\)</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># hfit.hfit returns just (pars, epars) — no chi2, no residual plot</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hfit.hfit returns just (pars, epars) — no chi2, no residual plot</span>
 <span class="n">par2</span><span class="p">,</span> <span class="n">epar2</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">hfit</span><span class="p">(</span><span class="n">mcbi</span><span class="o">.</span><span class="n">E</span><span class="p">[</span><span class="n">sel</span><span class="p">],</span> <span class="n">bins</span><span class="p">,</span> <span class="nb">range</span> <span class="o">=</span> <span class="n">sel_erange</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">fgausline</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sigma = </span><span class="si">{:.4f}</span><span class="s1"> +/- </span><span class="si">{:.4f}</span><span class="s1"> MeV&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">par2</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">epar2</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
 </pre></div>
@@ -676,7 +691,7 @@ We fit a Gaussian + line model.</p>
 <p>Each model has a list of parameter names for display.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pretty-print with LaTeX names</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pretty-print with LaTeX names</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hfit</span><span class="o">.</span><span class="n">str_parameters</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">epar</span><span class="p">,</span> <span class="n">parnames</span> <span class="o">=</span> <span class="n">hfit</span><span class="o">.</span><span class="n">ngausline</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -702,7 +717,7 @@ you can estimate how many events of each type are present using an
 a <strong>fit function</strong> that you can call on any data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the blind selection to MC samples</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the blind selection to MC samples</span>
 <span class="n">mask_bi</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">selection_blind</span><span class="p">(</span><span class="n">mcbi</span><span class="p">)</span>
 <span class="n">mask_tl</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">selection_blind</span><span class="p">(</span><span class="n">mctl</span><span class="p">)</span>
 <span class="n">mc_blind</span> <span class="o">=</span> <span class="p">[</span><span class="n">mcbi</span><span class="p">[</span><span class="n">mask_bi</span><span class="p">],</span> <span class="n">mctl</span><span class="p">[</span><span class="n">mask_tl</span><span class="p">]]</span>
@@ -729,7 +744,7 @@ a <strong>fit function</strong> that you can call on any data.</p>
 It returns <code class="docutils literal notranslate"><span class="pre">(result,</span> <span class="pre">values,</span> <span class="pre">ell,</span> <span class="pre">nevts_expected)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the blind data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the blind data</span>
 <span class="n">result</span><span class="p">,</span> <span class="n">enes</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">data_blind</span><span class="p">)</span>
 
 <span class="c1"># result.x contains the best-fit event counts</span>
@@ -751,7 +766,7 @@ It returns <code class="docutils literal notranslate"><span class="pre">(result,
 individual component contributions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names_latex</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">$Tl&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample_names_latex</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{214}</span><span class="s1">$Bi&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$^</span><span class="si">{208}</span><span class="s1">$Tl&#39;</span><span class="p">]</span>
 
 <span class="n">pltfn</span><span class="o">.</span><span class="n">plot_fit_ell</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">parnames</span> <span class="o">=</span> <span class="n">sample_names_latex</span><span class="p">);</span>
 </pre></div>
@@ -800,7 +815,7 @@ The 68% CL interval corresponds to where <span class="math notranslate nohighlig
 <h3>Run the scan<a class="headerlink" href="#run-the-scan" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan all parameters: returns (list of scan points, list of tmu values)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan all parameters: returns (list of scan points, list of tmu values)</span>
 <span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">tmu_scan</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">sizes</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">))</span>
 
 <span class="c1"># nis[0] = scan points for parameter 0 (Bi)</span>
@@ -816,7 +831,7 @@ The 68% CL interval corresponds to where <span class="math notranslate nohighlig
 <h3>Plot the scan<a class="headerlink" href="#plot-the-scan" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pltfn</span><span class="o">.</span><span class="n">plot_tmu_scan</span><span class="p">(</span><span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span><span class="p">,</span> <span class="n">titles</span> <span class="o">=</span> <span class="n">sample_names_latex</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pltfn</span><span class="o">.</span><span class="n">plot_tmu_scan</span><span class="p">(</span><span class="n">nis</span><span class="p">,</span> <span class="n">tmus</span><span class="p">,</span> <span class="n">titles</span> <span class="o">=</span> <span class="n">sample_names_latex</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -828,7 +843,7 @@ The 68% CL interval corresponds to where <span class="math notranslate nohighlig
 a given confidence level.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="mf">0.68</span>  <span class="c1"># 68% CL = 1 sigma</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="mf">0.68</span>  <span class="c1"># 68% CL = 1 sigma</span>
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sample_names_latex</span><span class="p">):</span>
     <span class="n">ci</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">tmu_conf_int</span><span class="p">(</span><span class="n">nis</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tmus</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">cl</span><span class="p">)</span>
@@ -845,7 +860,7 @@ a given confidence level.</p>
 <p>If you need finer control, you can scan one parameter yourself.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan parameter 0 (Bi) over a custom range</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan parameter 0 (Bi) over a custom range</span>
 <span class="n">mu_scan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">620</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">tmu_vals</span> <span class="o">=</span> <span class="n">efit</span><span class="o">.</span><span class="n">llike_scan</span><span class="p">(</span><span class="n">enes</span><span class="p">,</span> <span class="n">ell</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">mu_scan</span><span class="p">,</span> <span class="n">ipos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
@@ -877,7 +892,7 @@ The test statistic <span class="math notranslate nohighlight">\(q_0\)</span> tes
 and the <strong>p-value</strong> is <span class="math notranslate nohighlight">\(p_0 = 1 - \Phi(Z_0)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># When fitting 3 components (Bi + Tl + signal), the signal is parameter index 2:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># When fitting 3 components (Bi + Tl + signal), the signal is parameter index 2:</span>
 <span class="c1">#   result.x = [n_Bi, n_Tl, n_bb]</span>
 <span class="c1">#                 0      1     2</span>
 <span class="c1">#</span>
@@ -899,7 +914,7 @@ and the <strong>p-value</strong> is <span class="math notranslate nohighlight">\
 <p><code class="docutils literal notranslate"><span class="pre">fn.half_life()</span></code> converts a fitted number of signal events to a half-life.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># fn.half_life(n_signal, exposure_kg_y, efficiency, abundance=0.9, W=135.9)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fn.half_life(n_signal, exposure_kg_y, efficiency, abundance=0.9, W=135.9)</span>
 <span class="c1">#</span>
 <span class="c1"># Example:</span>
 <span class="c1"># tau = fn.half_life(n_bb_est, exposure, eff_bb_E)</span>

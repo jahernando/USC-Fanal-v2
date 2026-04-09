@@ -576,15 +576,32 @@ MC Sample Bi, number of simulated events = 60184
 <p><em>Exercise:</em> Compute the energy resolution of the other MC samples: <span class="math notranslate nohighlight">\(^{208}\mathrm{Tl}\)</span> and the <span class="math notranslate nohighlight">\(\beta\beta0\nu\)</span>.</p>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the energy distribution of each MC sample to a Gaussian + line model.</span>
-<span class="c1"># Use hfit.hfitres() with the fgausline function, e.g.:</span>
-<span class="c1">#   par, cov, _, _ = hfit.hfitres(mc.E[sel], bins, range=sel_erange, fun=hfit.fgausline)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the energy distribution of each MC sample to a Gaussian + line model</span>
+<span class="c1"># using pltext.hfitres(), which histograms the data and overlays the fit.</span>
 <span class="c1">#</span>
-<span class="c1"># Extract sigma from the fit parameters and compute the energy resolution:</span>
-<span class="c1">#   resolution = sigma / E_peak  (or FWHM / E_peak, where FWHM = 2.355 * sigma)</span>
+<span class="c1"># Steps:</span>
+<span class="c1">#   1. Define the energy range (eranges) around the peak for each sample (in keV).</span>
+<span class="c1">#      Adapt the range to each peak! E.g. for Bi: (2420., 2480.)</span>
+<span class="c1">#   2. Use &#39;gausline&#39; as the fit function (Gaussian + linear background).</span>
+<span class="c1">#   3. Provide an initial guess: (amplitude, mean, sigma, slope, offset)</span>
+<span class="c1">#      e.g. (10e3, 2445., 20., 0., 300.)</span>
+<span class="c1">#   4. Extract sigma and mu from the fit parameters (pars[2] and pars[1]).</span>
+<span class="c1">#   5. Compute the energy resolution:</span>
+<span class="c1">#        - absolute:  sigma, FWHM = 2.355 * sigma  (keV)</span>
+<span class="c1">#        - relative:  sigma / E_peak, FWHM / E_peak  (dimensionless or %)</span>
 <span class="c1">#</span>
-<span class="c1"># Store the results in a list called &#39;resolutions&#39;,</span>
-<span class="c1"># where resolutions[i] = (sigma_i, ...) for each sample.</span>
+<span class="c1"># Example for one sample (adapt eranges and guesses for each of your peaks!):</span>
+<span class="c1">#</span>
+<span class="c1"># eranges = ((2420., 2480.),)           # energy range in keV — adapt for each peak!</span>
+<span class="c1"># fitfuns = (&#39;gausline&#39;,)</span>
+<span class="c1"># guesses = ((10e3, 2445., 20., 0., 300.),)  # initial guess — adapt for each peak!</span>
+<span class="c1">#</span>
+<span class="c1"># resolutions = []</span>
+<span class="c1"># for i, mc in enumerate(mc_samples):</span>
+<span class="c1">#     pars, _, _, _ = pltext.hfitres(1e3 * mc.E, 100, range = eranges[i],</span>
+<span class="c1">#                                    fun = fitfuns[i], guess = guesses[i])</span>
+<span class="c1">#     resolutions.append((pars[2], pars[1]))  # (sigma, mu)</span>
+
 <span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
@@ -592,7 +609,22 @@ MC Sample Bi, number of simulated events = 60184
 </div>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute and print the energy resolution for each sample:</span>
+<span class="c1">#   - sigma (keV)</span>
+<span class="c1">#   - FWHM = 2.355 * sigma (keV)</span>
+<span class="c1">#   - relative resolution: FWHM / E_peak (%)</span>
+<span class="c1">#</span>
+<span class="c1"># Example:</span>
+<span class="c1"># for i, pars in enumerate(resolutions):</span>
+<span class="c1">#     sigma, fwhm = pars[0], 2.355 * pars[0]</span>
+<span class="c1">#     rel_fwhm    = 100 * fwhm / pars[1]</span>
+<span class="c1">#     print(f&#39;Sample {sample_names[i]}: sigma = {sigma:.2f} keV, &#39;</span>
+<span class="c1">#           f&#39;FWHM = {fwhm:.2f} keV, FWHM/E = {rel_fwhm:.2f} %&#39;)</span>
+<span class="c1">#</span>
+<span class="c1"># Exercise: study how the resolution (FWHM/E) varies with the peak energy</span>
+<span class="c1">#           across your MC samples (Bi, Tl, bb0nu).</span>
+
+<span class="c1"># YOUR CODE HERE</span>
 </pre></div>
 </div>
 </div>

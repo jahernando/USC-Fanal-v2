@@ -1,0 +1,1328 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Feldman-Cousins confidence intervals &#8212; Fanal - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/guide/crib_feldman_cousins';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Getting started" href="../../deployment.html" />
+    <link rel="prev" title="Crib sheet: fitting tools" href="crib_fit.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Fanal - USC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Fanal - USC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Fanal - USC
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercise notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../fanal.html">Fanal, a neutrino-less beta double decay search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_selection.html">Signal selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg.html">Expected number of background events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal_countexp.html">Sensitivity of a counting experiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference material</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="crib_pandas.html">Crib sheet: data access, pandas and plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crib_fit.html">Crib sheet: fitting tools</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Feldman-Cousins confidence intervals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Course structure</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../deployment.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_dynamics.html">Course dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_presentation.html">Guide: presenting your results</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/USC-FPII-Fanal/teacher?urlpath=tree/notebooks/guide/crib_feldman_cousins.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/USC-FPII-Fanal/issues/new?title=Issue%20on%20page%20%2Fnotebooks/guide/crib_feldman_cousins.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/guide/crib_feldman_cousins.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Feldman-Cousins confidence intervals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-the-nomad-problem-and-empty-intervals">Motivation: the NOMAD problem and empty intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nomad-problem">1. The NOMAD problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-classical-intervals">2. The problem with classical intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neyman-construction-for-poisson">Neyman construction for Poisson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-empty-intervals">The problem: empty intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-flip-flopping-problem">The flip-flopping problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-feldman-cousins-ordering-method">3. The Feldman-Cousins ordering method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-idea-ordering-by-likelihood-ratio">Key idea: ordering by likelihood ratio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-algorithm">Step-by-step algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-fc-ordering-for-mu-1-b-3">Worked example: FC ordering for <span class="math notranslate nohighlight">\(\mu = 1\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-full-fc-confidence-belt">4. Building the full FC confidence belt</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-classical-central-vs-feldman-cousins">Comparison: classical central vs Feldman-Cousins</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-transition-upper-limit-two-sided-interval">5. Automatic transition: upper limit ↔ two-sided interval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-background-on-the-fc-belt">6. Effect of background on the FC belt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-confidence-levels">7. Comparison of confidence levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="feldman-cousins-confidence-intervals">
+<h1>Feldman-Cousins confidence intervals<a class="headerlink" href="#feldman-cousins-confidence-intervals" title="Permalink to this heading">#</a></h1>
+<section id="motivation-the-nomad-problem-and-empty-intervals">
+<h2>Motivation: the NOMAD problem and empty intervals<a class="headerlink" href="#motivation-the-nomad-problem-and-empty-intervals" title="Permalink to this heading">#</a></h2>
+<p>This notebook presents the <strong>Feldman-Cousins</strong> method (Phys. Rev. D 57, 3873, 1998)
+for constructing unified confidence intervals in Poisson counting experiments.</p>
+<p><strong>Contents:</strong></p>
+<ol class="arabic simple">
+<li><p>The NOMAD problem: expecting background and seeing nothing</p></li>
+<li><p>Classical Neyman intervals and their pathologies</p></li>
+<li><p>The Feldman-Cousins ordering principle</p></li>
+<li><p>Construction of the confidence belt</p></li>
+<li><p>Numerical examples</p></li>
+</ol>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">_env</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;FANAL_ROOT&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USCFANALDIR&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">_env</span> <span class="ow">and</span> <span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">_env</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">rootpath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="s1">&#39;ana&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()))</span>
+<span class="k">if</span> <span class="n">rootpath</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.pltext</span><span class="w">  </span><span class="k">as</span><span class="w"> </span><span class="nn">pltext</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">core.confint</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">confint</span>
+<span class="n">pltext</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fanal root:&#39;</span><span class="p">,</span> <span class="n">rootpath</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fanal root: /Users/hernando/work/docencia/FPII-fanal/student
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="the-nomad-problem">
+<h2>1. The NOMAD problem<a class="headerlink" href="#the-nomad-problem" title="Permalink to this heading">#</a></h2>
+<p>The <strong>NOMAD</strong> experiment (CERN, search for <span class="math notranslate nohighlight">\(\nu_\mu \to \nu_\tau\)</span> oscillations) expected to observe
+<span class="math notranslate nohighlight">\(b = 3\)</span> background events in its signal region.</p>
+<p><strong>Question:</strong> What happens if we observe <span class="math notranslate nohighlight">\(n = 0\)</span> events?</p>
+<p>With <span class="math notranslate nohighlight">\(b = 3\)</span> expected background events, the probability of observing zero events is:</p>
+<div class="math notranslate nohighlight">
+\[P(n=0 \mid \mu + b) = e^{-(\mu + b)}\]</div>
+<p>For <span class="math notranslate nohighlight">\(\mu = 0\)</span> (no signal): <span class="math notranslate nohighlight">\(P(0 \mid 3) = e^{-3} \approx 0.05\)</span>.</p>
+<p>Unlikely, but not impossible. This scenario — expecting background and seeing nothing —
+creates a serious problem with classical confidence intervals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Probability of observing n=0 with b=3 expected background events (no signal)</span>
+<span class="n">b_nomad</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">p_zero</span>  <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">b_nomad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P(n=0 | mu=0, b=</span><span class="si">{:.0f}</span><span class="s1">) = </span><span class="si">{:.4f}</span><span class="s1">  (</span><span class="si">{:.1f}</span><span class="s1">%)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b_nomad</span><span class="p">,</span> <span class="n">p_zero</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">p_zero</span><span class="p">))</span>
+
+<span class="c1"># Poisson distribution for b=3</span>
+<span class="n">ns_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ns_plot</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns_plot</span><span class="p">,</span> <span class="n">b_nomad</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Poisson($\mu=0, b=3$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;n=0 observed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n (observed events)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;P(n)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;NOMAD problem: we expect b=3 background, observe n=0&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>P(n=0 | mu=0, b=3) = 0.0498  (5.0%)
+</pre></div>
+</div>
+<img alt="../../_images/10c140b330e77125b6a2e3aa9d9864ee61e8ccc9e67352ad905122ebd076a0a3.png" src="../../_images/10c140b330e77125b6a2e3aa9d9864ee61e8ccc9e67352ad905122ebd076a0a3.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="the-problem-with-classical-intervals">
+<h2>2. The problem with classical intervals<a class="headerlink" href="#the-problem-with-classical-intervals" title="Permalink to this heading">#</a></h2>
+<section id="neyman-construction-for-poisson">
+<h3>Neyman construction for Poisson<a class="headerlink" href="#neyman-construction-for-poisson" title="Permalink to this heading">#</a></h3>
+<p>For a Poisson process with mean <span class="math notranslate nohighlight">\(\mu + b\)</span> (signal + background), the classical
+<strong>central</strong> confidence interval at level <span class="math notranslate nohighlight">\(\alpha\)</span> is constructed as follows:</p>
+<p>For each true value of <span class="math notranslate nohighlight">\(\mu\)</span>, we find the acceptance interval <span class="math notranslate nohighlight">\([n_1, n_2]\)</span> such that:</p>
+<div class="math notranslate nohighlight">
+\[P(n_1 \leq n \leq n_2 \mid \mu + b) \geq \alpha\]</div>
+<p>splitting the remaining probability <strong>equally</strong> between both tails:</p>
+<div class="math notranslate nohighlight">
+\[P(n &lt; n_1 \mid \mu + b) \leq \frac{1-\alpha}{2}, \quad P(n &gt; n_2 \mid \mu + b) \leq \frac{1-\alpha}{2}\]</div>
+<p>The confidence interval for an observed <span class="math notranslate nohighlight">\(n\)</span> is obtained by inverting this band:
+the set of <span class="math notranslate nohighlight">\(\mu\)</span> values whose acceptance intervals contain <span class="math notranslate nohighlight">\(n_{obs}\)</span>.</p>
+</section>
+<section id="the-problem-empty-intervals">
+<h3>The problem: empty intervals<a class="headerlink" href="#the-problem-empty-intervals" title="Permalink to this heading">#</a></h3>
+<p>With the central ordering, if <span class="math notranslate nohighlight">\(b = 3\)</span> and we observe <span class="math notranslate nohighlight">\(n = 0\)</span>:</p>
+<ul class="simple">
+<li><p>The maximum likelihood estimator is <span class="math notranslate nohighlight">\(\hat{\mu} = n - b = 0 - 3 = -3\)</span> (unphysical!)</p></li>
+<li><p>The central interval at 90% CL turns out to be <strong>empty</strong>: there is no <span class="math notranslate nohighlight">\(\mu \geq 0\)</span>
+whose acceptance interval includes <span class="math notranslate nohighlight">\(n = 0\)</span></p></li>
+</ul>
+<p>This is absurd: we observed real data and cannot say anything about <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Classical CENTRAL interval construction for Poisson with background</span>
+<span class="c1"># Demonstration of the empty interval problem</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">classical_central_interval</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.90</span><span class="p">,</span> <span class="n">nmax</span><span class="o">=</span><span class="mi">30</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Classical central acceptance interval for signal mu with background bkg.</span>
+<span class="sd">    Splits probability (1-cl)/2 in each tail.</span>
+<span class="sd">    Returns (n_low, n_high).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cl</span>
+    <span class="n">ns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nmax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">pmf</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">mu</span> <span class="o">+</span> <span class="n">bkg</span><span class="p">)</span>
+    <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pmf</span><span class="p">)</span>
+    
+    <span class="c1"># Lower tail: P(n &lt; n_low) &lt;= alpha/2</span>
+    <span class="n">n_low</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n_low</span> <span class="o">&lt;</span> <span class="n">nmax</span> <span class="ow">and</span> <span class="n">cdf</span><span class="p">[</span><span class="n">n_low</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">alpha</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">n_low</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Upper tail: P(n &gt; n_high) &lt;= alpha/2  =&gt;  P(n &lt;= n_high) &gt;= 1 - alpha/2</span>
+    <span class="n">n_high</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">n_high</span> <span class="o">&lt;</span> <span class="n">nmax</span> <span class="ow">and</span> <span class="n">cdf</span><span class="p">[</span><span class="n">n_high</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">/</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">n_high</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">n_low</span><span class="p">,</span> <span class="n">n_high</span>
+
+<span class="c1"># Build the classical central band for b=3, 90% CL</span>
+<span class="n">bkg</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">cl</span>  <span class="o">=</span> <span class="mf">0.90</span>
+<span class="n">mus_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="n">n_lows_classic</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">n_highs_classic</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">mu</span> <span class="ow">in</span> <span class="n">mus_grid</span><span class="p">:</span>
+    <span class="n">nl</span><span class="p">,</span> <span class="n">nh</span> <span class="o">=</span> <span class="n">classical_central_interval</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="p">)</span>
+    <span class="n">n_lows_classic</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nl</span><span class="p">)</span>
+    <span class="n">n_highs_classic</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nh</span><span class="p">)</span>
+
+<span class="n">n_lows_classic</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_lows_classic</span><span class="p">)</span>
+<span class="n">n_highs_classic</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">n_highs_classic</span><span class="p">)</span>
+
+<span class="c1"># Invert: for n_obs=0, find which mu values contain it</span>
+<span class="n">n_obs_test</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_lows_classic</span> <span class="o">&lt;=</span> <span class="n">n_obs_test</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n_highs_classic</span> <span class="o">&gt;=</span> <span class="n">n_obs_test</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">,</span> <span class="n">n_lows_classic</span><span class="p">,</span> <span class="n">n_highs_classic</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span>
+                 <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Central acceptance band 90% CL&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">,</span> <span class="n">n_lows_classic</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">,</span> <span class="n">n_highs_classic</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">n_obs_test</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1"> = 0$&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">mask</span><span class="p">):</span>
+    <span class="n">mu_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+    <span class="n">mu_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">[</span><span class="n">mask</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">mu_low</span><span class="p">,</span> <span class="n">mu_high</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;CI: [</span><span class="si">{:.1f}</span><span class="s1">, </span><span class="si">{:.1f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu_low</span><span class="p">,</span> <span class="n">mu_high</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Classical central interval for n_obs=0: [</span><span class="si">{:.2f}</span><span class="s1">, </span><span class="si">{:.2f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu_low</span><span class="p">,</span> <span class="n">mu_high</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;EMPTY INTERVAL</span><span class="se">\n</span><span class="s1">for $n_</span><span class="si">{obs}</span><span class="s1">=0$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+             <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+             <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;EMPTY INTERVAL! No mu &gt;= 0 whose central acceptance band includes n=0&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ (true signal)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$ (observed events)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Classical central acceptance band (90% CL, $b=</span><span class="si">{:.0f}</span><span class="s1">$)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EMPTY INTERVAL! No mu &gt;= 0 whose central acceptance band includes n=0
+</pre></div>
+</div>
+<img alt="../../_images/c147c7dea661e63cbd136dd4434696eefc42e3d1eda44a95d8e2e90fb0a7d21b.png" src="../../_images/c147c7dea661e63cbd136dd4434696eefc42e3d1eda44a95d8e2e90fb0a7d21b.png" />
+</div>
+</div>
+</section>
+<section id="the-flip-flopping-problem">
+<h3>The flip-flopping problem<a class="headerlink" href="#the-flip-flopping-problem" title="Permalink to this heading">#</a></h3>
+<p>Beyond empty intervals, classical intervals suffer from <strong>flip-flopping</strong>:</p>
+<ul class="simple">
+<li><p>If the experimenter observes <span class="math notranslate nohighlight">\(n\)</span> large (relative to <span class="math notranslate nohighlight">\(b\)</span>), they report a <strong>central</strong> two-sided interval for <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+<li><p>If they observe <span class="math notranslate nohighlight">\(n\)</span> small (compatible with or below <span class="math notranslate nohighlight">\(b\)</span>), they switch to a one-sided <strong>upper limit</strong>.</p></li>
+</ul>
+<p>This <em>a posteriori</em> decision (based on the data) <strong>violates frequentist coverage</strong>.
+The 90% confidence level no longer means the interval contains the true value
+90% of the time, because the construction rule changes depending on the outcome.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Classical decision</p></th>
+<th class="head"><p>Problem</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n \gg b\)</span></p></td>
+<td><p>Two-sided interval</p></td>
+<td><p>OK</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n \approx b\)</span></p></td>
+<td><p>Two-sided or upper limit?</p></td>
+<td><p>Ambiguity</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n &lt; b\)</span></p></td>
+<td><p>Upper limit</p></td>
+<td><p>Under-coverage</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n = 0, b &gt; 0\)</span></p></td>
+<td><p>Upper limit… or empty?</p></td>
+<td><p>Empty interval</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Feldman and Cousins solve both problems</strong> with a single procedure that automatically
+transitions between upper limits and two-sided intervals.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-feldman-cousins-ordering-method">
+<h2>3. The Feldman-Cousins ordering method<a class="headerlink" href="#the-feldman-cousins-ordering-method" title="Permalink to this heading">#</a></h2>
+<section id="key-idea-ordering-by-likelihood-ratio">
+<h3>Key idea: ordering by likelihood ratio<a class="headerlink" href="#key-idea-ordering-by-likelihood-ratio" title="Permalink to this heading">#</a></h3>
+<p>The Neyman construction requires choosing <strong>which values of <span class="math notranslate nohighlight">\(n\)</span> to include first</strong> in the
+acceptance interval of each <span class="math notranslate nohighlight">\(\mu\)</span>. The classical central ordering splits the tails equally.
+Feldman-Cousins proposes a different criterion: <strong>ordering by the likelihood ratio</strong>.</p>
+<p>For each possible observation <span class="math notranslate nohighlight">\(n\)</span>, compute:</p>
+<div class="math notranslate nohighlight">
+\[R(n) = \frac{P(n \mid \mu)}{P(n \mid \hat{\mu}_{\text{best}})}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(n \mid \mu) = \frac{(\mu + b)^n \, e^{-(\mu+b)}}{n!}\)</span> is the Poisson probability of observing <span class="math notranslate nohighlight">\(n\)</span> given <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\mu}_{\text{best}} = \max(n - b, \, 0)\)</span> is the <strong>best physical estimator</strong> of <span class="math notranslate nohighlight">\(\mu\)</span> given <span class="math notranslate nohighlight">\(n\)</span>
+(constrained to <span class="math notranslate nohighlight">\(\mu \geq 0\)</span>, since the signal cannot be negative)</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(n \mid \hat{\mu}_{\text{best}})\)</span> is the probability evaluated at the best fit</p></li>
+</ul>
+<p>Equivalently, we use the test statistic:</p>
+<div class="math notranslate nohighlight">
+\[t(n) = -2 \ln R(n) = -2 \left[\ln P(n \mid \mu) - \ln P(n \mid \hat{\mu}_{\text{best}})\right]\]</div>
+<p><strong>Values of <span class="math notranslate nohighlight">\(n\)</span> with the smallest <span class="math notranslate nohighlight">\(t\)</span> (largest <span class="math notranslate nohighlight">\(R\)</span>) are included first.</strong></p>
+</section>
+<section id="step-by-step-algorithm">
+<h3>Step-by-step algorithm<a class="headerlink" href="#step-by-step-algorithm" title="Permalink to this heading">#</a></h3>
+<p>For a fixed value of <span class="math notranslate nohighlight">\(\mu\)</span> and background <span class="math notranslate nohighlight">\(b\)</span>, at confidence level CL:</p>
+<ol class="arabic simple">
+<li><p>For each <span class="math notranslate nohighlight">\(n = 0, 1, 2, \ldots, n_{\max}\)</span>:</p>
+<ul class="simple">
+<li><p>Compute <span class="math notranslate nohighlight">\(\hat{\mu}_{\text{best}}(n) = \max(n - b, 0)\)</span></p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(R(n) = P(n \mid \mu + b) \,/\, P(n \mid \hat{\mu}_{\text{best}} + b)\)</span></p></li>
+</ul>
+</li>
+<li><p>Sort the values of <span class="math notranslate nohighlight">\(n\)</span> from largest to smallest <span class="math notranslate nohighlight">\(R\)</span> (equivalently, from smallest to largest <span class="math notranslate nohighlight">\(t\)</span>)</p></li>
+<li><p>Include values of <span class="math notranslate nohighlight">\(n\)</span> in that order, accumulating <span class="math notranslate nohighlight">\(P(n \mid \mu + b)\)</span>, until the cumulative probability reaches CL</p></li>
+<li><p>The acceptance interval is <span class="math notranslate nohighlight">\([n_{\min}, n_{\max}]\)</span> of the included values</p></li>
+<li><p>Repeat for each <span class="math notranslate nohighlight">\(\mu\)</span> on a fine grid</p></li>
+<li><p><strong>Invert</strong>: for a given <span class="math notranslate nohighlight">\(n_{\text{obs}}\)</span>, the confidence interval is the set of <span class="math notranslate nohighlight">\(\mu\)</span> values whose acceptance intervals contain <span class="math notranslate nohighlight">\(n_{\text{obs}}\)</span></p></li>
+</ol>
+</section>
+<section id="worked-example-fc-ordering-for-mu-1-b-3">
+<h3>Worked example: FC ordering for <span class="math notranslate nohighlight">\(\mu = 1\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span><a class="headerlink" href="#worked-example-fc-ordering-for-mu-1-b-3" title="Permalink to this heading">#</a></h3>
+<p>Let us walk through step by step how FC selects which values of <span class="math notranslate nohighlight">\(n\)</span> to include in the acceptance interval.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step-by-step FC ordering example</span>
+<span class="n">mu_example</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">bkg</span>        <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">cl</span>         <span class="o">=</span> <span class="mf">0.90</span>
+<span class="n">ns</span>         <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="c1"># Step 1: for each n, compute mu_best and the probabilities</span>
+<span class="n">mu_best</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">ns</span> <span class="o">-</span> <span class="n">bkg</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>      <span class="c1"># physical estimator</span>
+<span class="n">p_mu</span>    <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">mu_example</span> <span class="o">+</span> <span class="n">bkg</span><span class="p">)</span>  <span class="c1"># P(n | mu + b)</span>
+<span class="n">p_best</span>  <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="n">mu_best</span> <span class="o">+</span> <span class="n">bkg</span><span class="p">)</span>     <span class="c1"># P(n | mu_best + b)</span>
+
+<span class="c1"># Likelihood ratio and test statistic t</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">p_mu</span> <span class="o">/</span> <span class="n">p_best</span>
+<span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p_mu</span> <span class="o">+</span> <span class="mf">1e-300</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p_best</span> <span class="o">+</span> <span class="mf">1e-300</span><span class="p">))</span>
+
+<span class="c1"># Table with all values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  n  | mu_best |  P(n|mu+b) | P(n|best)  |    R     |    t&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-----|---------|------------|------------|----------|--------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ns</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; </span><span class="si">{:2d}</span><span class="s1">  |  </span><span class="si">{:4.1f}</span><span class="s1">   | </span><span class="si">{:.6f}</span><span class="s1">  | </span><span class="si">{:.6f}</span><span class="s1">  | </span><span class="si">{:.4f}</span><span class="s1">  | </span><span class="si">{:6.3f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">n</span><span class="p">,</span> <span class="n">mu_best</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p_mu</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p_best</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  n  | mu_best |  P(n|mu+b) | P(n|best)  |    R     |    t
+-----|---------|------------|------------|----------|--------
+  0  |   0.0   | 0.018316  | 0.049787  | 0.3679  |  2.000
+  1  |   0.0   | 0.073263  | 0.149361  | 0.4905  |  1.425
+  2  |   0.0   | 0.146525  | 0.224042  | 0.6540  |  0.849
+  3  |   0.0   | 0.195367  | 0.224042  | 0.8720  |  0.274
+  4  |   1.0   | 0.195367  | 0.195367  | 1.0000  | -0.000
+  5  |   2.0   | 0.156293  | 0.175467  | 0.8907  |  0.231
+  6  |   3.0   | 0.104196  | 0.160623  | 0.6487  |  0.866
+  7  |   4.0   | 0.059540  | 0.149003  | 0.3996  |  1.835
+  8  |   5.0   | 0.029770  | 0.139587  | 0.2133  |  3.090
+  9  |   6.0   | 0.013231  | 0.131756  | 0.1004  |  4.597
+ 10  |   7.0   | 0.005292  | 0.125110  | 0.0423  |  6.326
+ 11  |   8.0   | 0.001925  | 0.119378  | 0.0161  |  8.255
+ 12  |   9.0   | 0.000642  | 0.114368  | 0.0056  | 10.367
+ 13  |  10.0   | 0.000197  | 0.109940  | 0.0018  | 12.645
+ 14  |  11.0   | 0.000056  | 0.105989  | 0.0005  | 15.077
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Steps 2-3: Sort by t (smallest first) and accumulate probability</span>
+<span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">cum_prob</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">included</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FC inclusion order (mu=</span><span class="si">{:.1f}</span><span class="s1">, b=</span><span class="si">{:.1f}</span><span class="s1">, CL=</span><span class="si">{:.0f}</span><span class="s1">%):&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu_example</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  step |  n  |    t   |  P(n|mu+b)  |  cumulative P | included&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-------|-----|--------|-------------|---------------|----------&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">step</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>
+    <span class="n">cum_prob</span> <span class="o">+=</span> <span class="n">p_mu</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">included</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="p">(</span><span class="n">cum_prob</span> <span class="o">-</span> <span class="n">p_mu</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">cl</span><span class="p">:</span>
+        <span class="n">included</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+        <span class="n">mark</span> <span class="o">=</span> <span class="s1">&#39;&lt;--&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">included</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ns</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+        <span class="n">mark</span> <span class="o">=</span> <span class="s1">&#39;&lt;-- (reaches CL)&#39;</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   </span><span class="si">{:2d}</span><span class="s1">  | </span><span class="si">{:2d}</span><span class="s1">  | </span><span class="si">{:5.3f}</span><span class="s1"> |  </span><span class="si">{:.6f}</span><span class="s1">   |   </span><span class="si">{:.6f}</span><span class="s1">     | </span><span class="si">{:s}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">step</span><span class="p">,</span> <span class="n">ns</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">p_mu</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">cum_prob</span><span class="p">,</span> <span class="n">mark</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">cum_prob</span> <span class="o">&gt;=</span> <span class="n">cl</span><span class="p">:</span>
+        <span class="k">break</span>
+
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FC acceptance interval: [</span><span class="si">{:d}</span><span class="s1">, </span><span class="si">{:d}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">included</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">included</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cumulative probability: </span><span class="si">{:.4f}</span><span class="s1"> &gt;= </span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cum_prob</span><span class="p">,</span> <span class="n">cl</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC inclusion order (mu=1.0, b=3.0, CL=90%):
+  step |  n  |    t   |  P(n|mu+b)  |  cumulative P | included
+-------|-----|--------|-------------|---------------|----------
+    0  |  4  | -0.000 |  0.195367   |   0.195367     | &lt;--
+    1  |  5  | 0.231 |  0.156293   |   0.351660     | &lt;--
+    2  |  3  | 0.274 |  0.195367   |   0.547027     | &lt;--
+    3  |  2  | 0.849 |  0.146525   |   0.693552     | &lt;--
+    4  |  6  | 0.866 |  0.104196   |   0.797748     | &lt;--
+    5  |  1  | 1.425 |  0.073263   |   0.871010     | &lt;--
+    6  |  7  | 1.835 |  0.059540   |   0.930551     | &lt;--
+
+FC acceptance interval: [1, 7]
+Cumulative probability: 0.9306 &gt;= 0.90
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Key observation:</strong> Note that for <span class="math notranslate nohighlight">\(n &lt; b\)</span> (e.g. <span class="math notranslate nohighlight">\(n = 0, 1, 2\)</span>), the estimator
+<span class="math notranslate nohighlight">\(\hat\mu_\text{best} = 0\)</span> (it saturates at the physical boundary), and the ratio <span class="math notranslate nohighlight">\(R\)</span> is not
+necessarily small. This allows <span class="math notranslate nohighlight">\(n=0\)</span> <strong>to be included</strong> in the acceptance interval of small
+values of <span class="math notranslate nohighlight">\(\mu\)</span>, resolving the empty interval problem.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="building-the-full-fc-confidence-belt">
+<h2>4. Building the full FC confidence belt<a class="headerlink" href="#building-the-full-fc-confidence-belt" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build the FC confidence belt for the NOMAD case: b=3, 90% CL</span>
+<span class="n">bkg</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">cl</span>  <span class="o">=</span> <span class="mf">0.90</span>
+<span class="n">mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Use the confint module from the project</span>
+<span class="n">n0s</span><span class="p">,</span> <span class="n">n1s</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">fc_confband</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="n">cl</span><span class="p">)</span>
+
+<span class="c1"># Also build the confidence interval function</span>
+<span class="n">fc_90</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="n">cl</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># FC acceptance band</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">n0s</span><span class="p">,</span> <span class="n">n1s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span>
+                 <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FC band 90% CL&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">n0s</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">n1s</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Case n_obs = 0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1"> = 0$&#39;</span><span class="p">)</span>
+<span class="n">ci_0</span> <span class="o">=</span> <span class="n">fc_90</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">ci_0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci_0</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FC 90% CI for n_obs=0, b=</span><span class="si">{:.0f}</span><span class="s1">: mu in [</span><span class="si">{:.2f}</span><span class="s1">, </span><span class="si">{:.2f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">,</span> <span class="o">*</span><span class="n">ci_0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  -&gt; Upper limit: mu &lt; </span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ci_0</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># Also show n_obs = 1, 2, 3</span>
+<span class="k">for</span> <span class="n">n_test</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]:</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">fc_90</span><span class="p">(</span><span class="n">n_test</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  n_obs = </span><span class="si">{:d}</span><span class="s1">: mu in [</span><span class="si">{:.2f}</span><span class="s1">, </span><span class="si">{:.2f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_test</span><span class="p">,</span> <span class="o">*</span><span class="n">ci</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ (true signal)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$ (observed events)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Feldman-Cousins confidence belt (90% CL, $b=</span><span class="si">{:.0f}</span><span class="s1">$)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FC 90% CI for n_obs=0, b=3: mu in [0.00, 0.90]
+  -&gt; Upper limit: mu &lt; 0.90
+  n_obs = 0: mu in [0.00, 0.90]
+  n_obs = 1: mu in [0.00, 1.86]
+  n_obs = 2: mu in [0.00, 3.01]
+  n_obs = 3: mu in [0.00, 4.41]
+  n_obs = 5: mu in [0.00, 6.97]
+  n_obs = 8: mu in [1.56, 10.99]
+</pre></div>
+</div>
+<img alt="../../_images/fcd47958fb3654a97436d57049d62c1ab8054b7931c6266ddecee5352f35d9e5.png" src="../../_images/fcd47958fb3654a97436d57049d62c1ab8054b7931c6266ddecee5352f35d9e5.png" />
+</div>
+</div>
+<section id="comparison-classical-central-vs-feldman-cousins">
+<h3>Comparison: classical central vs Feldman-Cousins<a class="headerlink" href="#comparison-classical-central-vs-feldman-cousins" title="Permalink to this heading">#</a></h3>
+<p>Let us overlay both bands to understand the difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Side-by-side comparison of both bands</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Left panel: Classical central</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">,</span> <span class="n">n_lows_classic</span><span class="p">,</span> <span class="n">n_highs_classic</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Classical central&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">,</span> <span class="n">n_lows_classic</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus_grid</span><span class="p">,</span> <span class="n">n_highs_classic</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1"> = 0$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Classical central (90% CL)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;EMPTY</span><span class="se">\n</span><span class="s1">INTERVAL&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="c1"># Right panel: Feldman-Cousins</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">n0s</span><span class="p">,</span> <span class="n">n1s</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Feldman-Cousins&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">n0s</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">n1s</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1"> = 0$&#39;</span><span class="p">)</span>
+<span class="n">ci_0</span> <span class="o">=</span> <span class="n">fc_90</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">ci_0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci_0</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;CI: $\mu \in [</span><span class="si">{:.1f}</span><span class="s1">, </span><span class="si">{:.1f}</span><span class="s1">]$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">ci_0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Feldman-Cousins (90% CL)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;NOMAD case: $b = </span><span class="si">{:.0f}</span><span class="s1">$, $n_{{obs}} = 0$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fe12c7a07a07cfa23ff6c623008c29a3a36b1a6070962b779df19a4e2f44958a.png" src="../../_images/fe12c7a07a07cfa23ff6c623008c29a3a36b1a6070962b779df19a4e2f44958a.png" />
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="automatic-transition-upper-limit-two-sided-interval">
+<h2>5. Automatic transition: upper limit ↔ two-sided interval<a class="headerlink" href="#automatic-transition-upper-limit-two-sided-interval" title="Permalink to this heading">#</a></h2>
+<p>One of the main virtues of FC is that it <strong>does not require deciding a priori</strong> whether to report
+an upper limit or a two-sided interval. The transition occurs naturally:</p>
+<ul class="simple">
+<li><p>For <strong>small</strong> <span class="math notranslate nohighlight">\(n_\text{obs}\)</span> (less than or close to <span class="math notranslate nohighlight">\(b\)</span>): the FC interval is asymmetric
+and starts at <span class="math notranslate nohighlight">\(\mu = 0\)</span> – it acts as an <strong>upper limit</strong></p></li>
+<li><p>For <strong>large</strong> <span class="math notranslate nohighlight">\(n_\text{obs}\)</span> (well above <span class="math notranslate nohighlight">\(b\)</span>): the FC interval centres around
+<span class="math notranslate nohighlight">\(\hat\mu = n - b\)</span> – it acts as a <strong>two-sided interval</strong></p></li>
+</ul>
+<p>This solves the <em>flip-flopping</em> problem: the same procedure, applied blindly before
+seeing the data, produces the correct type of interval.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Demonstration of the upper limit → two-sided interval transition</span>
+<span class="n">bkg</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">fc_90</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.90</span><span class="p">)</span>
+
+<span class="n">ns_demo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">cis</span> <span class="o">=</span> <span class="p">[</span><span class="n">fc_90</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ns_demo</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Left panel: FC intervals for each n_obs</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ns_demo</span><span class="p">):</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">cis</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;darkorange&#39;</span> <span class="k">if</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;seagreen&#39;</span>
+    <span class="n">tipo</span>  <span class="o">=</span> <span class="s1">&#39;UL&#39;</span> <span class="k">if</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;two-sided&#39;</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">left</span><span class="o">=</span><span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">bkg</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$b = </span><span class="si">{:.0f}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ (signal)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FC 90% CI for each $n_</span><span class="si">{obs}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Right panel: interval bounds</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">mu_lows</span>  <span class="o">=</span> <span class="p">[</span><span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">cis</span><span class="p">]</span>
+<span class="n">mu_highs</span> <span class="o">=</span> <span class="p">[</span><span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">cis</span><span class="p">]</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns_demo</span><span class="p">,</span> <span class="n">mu_lows</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\mu_</span><span class="si">{low}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ns_demo</span><span class="p">,</span> <span class="n">mu_highs</span><span class="p">,</span> <span class="s1">&#39;s-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\mu_</span><span class="si">{high}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">bkg</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$b = </span><span class="si">{:.0f}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;CI bounds as a function of $n_</span><span class="si">{obs}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Transition from upper limit to two-sided interval:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">ns_demo</span><span class="p">:</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">fc_90</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">tipo</span> <span class="o">=</span> <span class="s1">&#39;Upper limit&#39;</span> <span class="k">if</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;Two-sided&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  n=</span><span class="si">{:2d}</span><span class="s1">: mu in [</span><span class="si">{:5.2f}</span><span class="s1">, </span><span class="si">{:5.2f}</span><span class="s1">]  (</span><span class="si">{:s}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">tipo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transition from upper limit to two-sided interval:
+  n= 0: mu in [ 0.00,  0.95]  (Upper limit)
+  n= 1: mu in [ 0.00,  1.85]  (Upper limit)
+  n= 2: mu in [ 0.00,  3.01]  (Upper limit)
+  n= 3: mu in [ 0.00,  4.41]  (Upper limit)
+  n= 4: mu in [ 0.00,  5.56]  (Upper limit)
+  n= 5: mu in [ 0.00,  6.97]  (Upper limit)
+  n= 6: mu in [ 0.20,  8.42]  (Two-sided)
+  n= 7: mu in [ 0.90,  9.52]  (Two-sided)
+  n= 8: mu in [ 1.55, 10.98]  (Two-sided)
+  n= 9: mu in [ 1.90, 12.28]  (Two-sided)
+  n=10: mu in [ 2.66, 13.48]  (Two-sided)
+  n=11: mu in [ 3.06, 14.79]  (Two-sided)
+  n=12: mu in [ 4.01, 15.99]  (Two-sided)
+  n=13: mu in [ 4.46, 17.04]  (Two-sided)
+  n=14: mu in [ 5.51, 18.50]  (Two-sided)
+  n=15: mu in [ 6.52, 19.50]  (Two-sided)
+</pre></div>
+</div>
+<img alt="../../_images/6ae87ae5ef4ad61be17d1617c1da3182dd7128eff1dd7c80eaf358b6f47e2114.png" src="../../_images/6ae87ae5ef4ad61be17d1617c1da3182dd7128eff1dd7c80eaf358b6f47e2114.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="effect-of-background-on-the-fc-belt">
+<h2>6. Effect of background on the FC belt<a class="headerlink" href="#effect-of-background-on-the-fc-belt" title="Permalink to this heading">#</a></h2>
+<p>How does the confidence belt change with the background level? Let us compare <span class="math notranslate nohighlight">\(b = 0\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span>, and <span class="math notranslate nohighlight">\(b = 10\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparison of FC bands for different background levels</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">bkgs</span>   <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;royalblue&#39;</span><span class="p">,</span> <span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="s1">&#39;darkorange&#39;</span><span class="p">]</span>
+<span class="n">mus_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">bkgs</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="n">fc</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">mus_fine</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.90</span><span class="p">)</span>
+    <span class="n">n0</span><span class="p">,</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">fc_confband</span><span class="p">(</span><span class="n">mus_fine</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="mf">0.90</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mus_fine</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus_fine</span><span class="p">,</span> <span class="n">n0</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mus_fine</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Show n=b line</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$n = b = </span><span class="si">{:.0f}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+    
+    <span class="c1"># CI for n_obs = 0</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$b = </span><span class="si">{:.0f}</span><span class="s1">$,  FC 90% CI($n=0$) = [</span><span class="si">{:.1f}</span><span class="s1">, </span><span class="si">{:.1f}</span><span class="s1">]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">ci</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Feldman-Cousins bands at 90% CL for different backgrounds&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b4e0c1f246eeae6b77841bda9879ae33809f0b1c67b997de6fe772c2a02431dc.png" src="../../_images/b4e0c1f246eeae6b77841bda9879ae33809f0b1c67b997de6fe772c2a02431dc.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="comparison-of-confidence-levels">
+<h2>7. Comparison of confidence levels<a class="headerlink" href="#comparison-of-confidence-levels" title="Permalink to this heading">#</a></h2>
+<p>Let us see how the FC intervals change at 68%, 90%, and 95% CL for the <span class="math notranslate nohighlight">\(b = 3\)</span> case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># FC bands at different confidence levels</span>
+<span class="n">bkg</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">mus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">ns_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="bp">cls</span>    <span class="o">=</span> <span class="p">[</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">]</span>
+<span class="n">alphas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span>  <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;darkorange&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">cl</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">alphas</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="n">fc</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="n">cl</span><span class="p">)</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="n">ns_range</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">ns_range</span><span class="p">,</span> <span class="n">ys</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ys</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">col</span><span class="p">,</span>
+                     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FC </span><span class="si">{:.0f}</span><span class="s1">% CL&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">bkg</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$b = </span><span class="si">{:.0f}</span><span class="s1">$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$n_</span><span class="si">{obs}</span><span class="s1">$ (observed events)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ (signal)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;FC intervals for $b = </span><span class="si">{:.0f}</span><span class="s1">$ at different CLs&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Summary table for n_obs = 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Summary for n_obs = 0, b = </span><span class="si">{:.0f}</span><span class="s1">:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bkg</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="bp">cls</span><span class="p">:</span>
+    <span class="n">fc</span> <span class="o">=</span> <span class="n">confint</span><span class="o">.</span><span class="n">get_fc_confinterval</span><span class="p">(</span><span class="n">mus</span><span class="p">,</span> <span class="n">bkg</span><span class="p">,</span> <span class="n">cl</span><span class="o">=</span><span class="n">cl</span><span class="p">)</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="n">fc</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;  </span><span class="si">{:2.0f}</span><span class="s1">% CL: mu in [</span><span class="si">{:.2f}</span><span class="s1">, </span><span class="si">{:.2f}</span><span class="s1">]  (UL = </span><span class="si">{:.2f}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">cl</span><span class="p">,</span> <span class="n">ci</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ci</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summary for n_obs = 0, b = 3:
+  95% CL: mu in [0.00, 1.61]  (UL = 1.61)
+  90% CL: mu in [0.00, 0.90]  (UL = 0.90)
+  68% CL: mu in [0.00, 0.10]  (UL = 0.10)
+</pre></div>
+</div>
+<img alt="../../_images/703a9f01352499229e83778f979f5e1fdec90a892c7c942be8e7be74155c53d9.png" src="../../_images/703a9f01352499229e83778f979f5e1fdec90a892c7c942be8e7be74155c53d9.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Classical central interval</p></th>
+<th class="head"><p>Feldman-Cousins</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ordering</p></td>
+<td><p>Equal tails <span class="math notranslate nohighlight">\((1-\alpha)/2\)</span></p></td>
+<td><p>Likelihood ratio <span class="math notranslate nohighlight">\(R(n)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n \ll b\)</span></p></td>
+<td><p>Empty interval</p></td>
+<td><p>Upper limit (valid)</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n \gg b\)</span></p></td>
+<td><p>Two-sided interval</p></td>
+<td><p>Two-sided interval</p></td>
+</tr>
+<tr class="row-odd"><td><p>Prior decision</p></td>
+<td><p>Must choose UL vs two-sided</p></td>
+<td><p>Automatic</p></td>
+</tr>
+<tr class="row-even"><td><p>Coverage</p></td>
+<td><p>Violated by <em>flip-flopping</em></p></td>
+<td><p>Guaranteed by construction</p></td>
+</tr>
+<tr class="row-odd"><td><p>Physical constraint <span class="math notranslate nohighlight">\(\mu \geq 0\)</span></p></td>
+<td><p>Not incorporated</p></td>
+<td><p>Built in via <span class="math notranslate nohighlight">\(\hat\mu_{\text{best}}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Reference:</strong> G.J. Feldman and R.D. Cousins, <em>“Unified approach to the classical statistical
+analysis of small signals”</em>, Phys. Rev. D 57, 3873 (1998). [arXiv:physics/9711021]</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/guide"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="crib_fit.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Crib sheet: fitting tools</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../deployment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting started</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-the-nomad-problem-and-empty-intervals">Motivation: the NOMAD problem and empty intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-nomad-problem">1. The NOMAD problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-with-classical-intervals">2. The problem with classical intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neyman-construction-for-poisson">Neyman construction for Poisson</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-empty-intervals">The problem: empty intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-flip-flopping-problem">The flip-flopping problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-feldman-cousins-ordering-method">3. The Feldman-Cousins ordering method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-idea-ordering-by-likelihood-ratio">Key idea: ordering by likelihood ratio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-algorithm">Step-by-step algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-fc-ordering-for-mu-1-b-3">Worked example: FC ordering for <span class="math notranslate nohighlight">\(\mu = 1\)</span>, <span class="math notranslate nohighlight">\(b = 3\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-full-fc-confidence-belt">4. Building the full FC confidence belt</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-classical-central-vs-feldman-cousins">Comparison: classical central vs Feldman-Cousins</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-transition-upper-limit-two-sided-interval">5. Automatic transition: upper limit ↔ two-sided interval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effect-of-background-on-the-fc-belt">6. Effect of background on the FC belt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-confidence-levels">7. Comparison of confidence levels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023-2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
