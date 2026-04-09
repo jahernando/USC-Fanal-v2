@@ -19,6 +19,7 @@ parts:
   chapters:
   - file: notebooks/guide/crib_pandas.ipynb
   - file: notebooks/guide/crib_fit.ipynb
+  - file: notebooks/guide/crib_feldman_cousins.ipynb
 
 - caption: Course structure
   chapters:
