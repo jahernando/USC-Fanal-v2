@@ -515,6 +515,12 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,7 +557,7 @@ n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fanal root :  /Users/hernando/work/docencia/FPII-fanal/USC-FPII-Fanal
 </pre></div>
 </div>
 </div>
@@ -626,7 +632,7 @@ Tl eff in RoI         : 0.0195 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_gamma.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/FPII-fanal/USC-FPII-Fanal/data/fanal_new_gamma.h5
 </pre></div>
 </div>
 </div>
@@ -656,7 +662,7 @@ Tl eff in RoI         : 0.0195 %
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bi blind eff : 78.2949 %
-Tl blind edd : 70.4775 %
+Tl blind eff : 70.4775 %
 </pre></div>
 </div>
 </div>
@@ -684,7 +690,7 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/61d02b2d8084844580bd0c9c5414b2a192f5595da6acd43dea6e7b0321148507.png" src="../../_images/61d02b2d8084844580bd0c9c5414b2a192f5595da6acd43dea6e7b0321148507.png" />
+<img alt="../../_images/7c58dfdfa529d67d5e11cae99cf02883ab29cbc8169dfc90b7ab413ae038dadb.png" src="../../_images/7c58dfdfa529d67d5e11cae99cf02883ab29cbc8169dfc90b7ab413ae038dadb.png" />
 </div>
 </div>
 </section>
@@ -715,7 +721,7 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5365b6164c6bb9ade01b88d26bc3ac297a41692eb2da61081094f578fa32ee15.png" src="../../_images/5365b6164c6bb9ade01b88d26bc3ac297a41692eb2da61081094f578fa32ee15.png" />
+<img alt="../../_images/7bc771ed8c1be443bc423c34ac90e37c06520833680227ac4bf1245916d59151.png" src="../../_images/7bc771ed8c1be443bc423c34ac90e37c06520833680227ac4bf1245916d59151.png" />
 </div>
 </div>
 <section id="compute-the-total-number-of-background-events">
@@ -731,8 +737,8 @@ Tl blind edd : 70.4775 %
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of blind events Bi : 509.919
- number of blind events Tl : 3303.643
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> number of blind events Bi : 510.126
+ number of blind events Tl : 3304.908
 </pre></div>
 </div>
 </div>
@@ -831,6 +837,17 @@ Tl blind edd : 70.4775 %
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exposures</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;new_alpha&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;new_beta&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;new_gamma&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+              <span class="s1">&#39;new_delta&#39;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s1">&#39;new_epsilon&#39;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">}</span>
+<span class="n">acc_bb</span>     <span class="o">=</span> <span class="mf">0.79</span>
+
+<span class="n">exposure</span>   <span class="o">=</span> <span class="n">exposures</span><span class="p">[</span><span class="n">coll</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ana.fanal_display</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">fdisp</span>
 
 <span class="c1"># Check your values before writing to collpars.py</span>
@@ -859,13 +876,7 @@ Tl blind edd : 70.4775 %
 <p>We write out into the <em><a class="reference external" href="http://collpars.py">collpars.py</a></em> file the number of events</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exposures</span>  <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;new_alpha&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s1">&#39;new_beta&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;new_gamma&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-              <span class="s1">&#39;new_delta&#39;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span> <span class="s1">&#39;new_epsilon&#39;</span><span class="p">:</span> <span class="mi">3000</span><span class="p">}</span>
-<span class="n">acc_bb</span>     <span class="o">=</span> <span class="mf">0.79</span>
-
-<span class="n">exposure</span>   <span class="o">=</span> <span class="n">exposures</span><span class="p">[</span><span class="n">coll</span><span class="p">]</span>
-
-<span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">write</span><span class="p">):</span>
     <span class="n">of</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;collpars.py&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
     <span class="n">of</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;exposure        = </span><span class="si">{:6.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exposure</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; # kg y </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>

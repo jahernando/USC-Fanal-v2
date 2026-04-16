@@ -507,7 +507,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>add path to PYTHONPATH :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fanal root :  /Users/hernando/work/docencia/FPII-fanal/USC-FPII-Fanal
 </pre></div>
 </div>
 </div>
@@ -598,7 +598,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/master/Fisica_Particulas/USC-Fanal-v2//data/fanal_new_gamma.h5
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data path and filename :  /Users/hernando/work/docencia/FPII-fanal/USC-FPII-Fanal/data/fanal_new_gamma.h5
 MC Sample Bi, number of simulated events = 60184
 MC Sample Tl, number of simulated events = 687297
 MC Sample bb, number of simulated events = 47636
@@ -619,7 +619,7 @@ MC Sample bb, number of simulated events = 47636
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.684
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>81.67699999999999
 </pre></div>
 </div>
 </div>
@@ -652,6 +652,13 @@ signal measurement.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Example: n_obs = 5, nbkg = 0
+  FC CI at 68% CL on signal: (2.81, 7.74)
+  FC CI at 95% CL on signal: (1.91, 11.26)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -667,6 +674,9 @@ signal measurement.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fff98fb09b45cd18db9b91120904a23afde0846922aa4aae408681388fc18df2.png" src="../../_images/fff98fb09b45cd18db9b91120904a23afde0846922aa4aae408681388fc18df2.png" />
 </div>
 </div>
 <p><strong>Key observations</strong> (no background case):</p>
@@ -697,6 +707,14 @@ into a half-life value, using the formula above.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nbb =   1  =&gt;  T_1/2 = 1.43e+27 y
+  nbb =   5  =&gt;  T_1/2 = 2.86e+26 y
+  nbb =  10  =&gt;  T_1/2 = 1.43e+26 y
+  nbb =  50  =&gt;  T_1/2 = 2.86e+25 y
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note how the half-life is inversely proportional to the number of signal events:
 fewer signal events imply a longer half-life (the decay is rarer).</p>
@@ -714,9 +732,7 @@ fewer signal events imply a longer half-life (the decay is rarer).</p>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct the Feldman-Cousins confidence belt.</span>
-<span class="c1"># Use confint.fc_confband() to compute the acceptance band:</span>
 <span class="c1">#   ns   = np.arange(0, nmax)   # range of observed events</span>
-<span class="c1">#   band = confint.fc_confband(nbkg, ns, cl=0.95)</span>
 <span class="c1">#</span>
 <span class="c1"># Then use confint.get_fc_confinterval() to get the interval for a given observation.</span>
 <span class="c1"># YOUR CODE HERE</span>
