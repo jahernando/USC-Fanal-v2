@@ -24,20 +24,26 @@ cd notebooks/guide
 # Start fresh
 rm -f collpars.py
 
-echo "=== 1/5 fanal_selection_sols ==="
+echo "=== 1/7 fanal_selection_sols ==="
 jupyter nbconvert --to notebook --execute fanal_selection_sols.ipynb
 
-echo "=== 2/5 fanal_energy_resolution_sols ==="
+echo "=== 2/7 fanal_energy_resolution_sols ==="
 jupyter nbconvert --to notebook --execute fanal_energy_resolution_sols.ipynb
 
-echo "=== 3/5 fanal_bkg_sols ==="
+echo "=== 3/7 fanal_bkg_sols ==="
 jupyter nbconvert --to notebook --execute fanal_bkg_sols.ipynb
 
-echo "=== 4/5 fanal_bkg_uncertainties_sols ==="
+echo "=== 4/7 fanal_bkg_uncertainties_sols ==="
 jupyter nbconvert --to notebook --execute fanal_bkg_uncertainties_sols.ipynb
 
-echo "=== 5/5 fanal_data_access_sols ==="
+echo "=== 5/7 fanal_data_access_sols ==="
 jupyter nbconvert --to notebook --execute fanal_data_access_sols.ipynb
+
+echo "=== 6/7 fanal_signal_countexp_sols ==="
+jupyter nbconvert --to notebook --execute fanal_signal_countexp_sols.ipynb
+
+echo "=== 7/7 fanal_signal_sols ==="
+jupyter nbconvert --to notebook --execute fanal_signal_sols.ipynb
 
 # Clean up generated files
 rm -f *_sols.nbconvert.ipynb
