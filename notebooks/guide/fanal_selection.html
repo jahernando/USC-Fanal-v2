@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Signal selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_bkg.html">Expected number of background events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of background events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_signal_countexp.html">Sensitivity of a counting experiment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
@@ -522,7 +522,7 @@ document.write(`
 <p>The typical selection requires the following cuts:</p>
 <section id="number-of-tracks">
 <h4>Number of tracks<a class="headerlink" href="#number-of-tracks" title="Permalink to this heading">#</a></h4>
-<p>Electrons radiate photons by bremsstrahlung that can produce other electrons. Each secondary electron can generate a track in the detector. In general, the signal has only one track while the backgrounds events have more than one track.</p>
+<p>Electrons radiate photons by bremsstrahlung that can produce other electrons. Each secondary electron can generate a track in the detector. In general, the signal has only one track while the background events have more than one track.</p>
 <p>We select events with only one track:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* num_tracks == 1
 </pre></div>
@@ -979,7 +979,7 @@ variable : track1_length
 </section>
 <section id="efficiencies">
 <h2>Efficiencies<a class="headerlink" href="#efficiencies" title="Permalink to this heading">#</a></h2>
-<p>We compute the efficiency of each of the selection cut and the efficiency of the selection for the bkg and the signal</p>
+<p>We compute the efficiency of each of the selection cuts and the efficiency of the selection for the background and the signal.</p>
 <p>In the example, only the efficiency for the signal is printed and plotted.</p>
 <p><strong>Explore</strong> Inspect what is the meaning of <em>mask</em> in the following cells</p>
 <p><strong>Exercise</strong> Compute the efficiencies for the background</p>
@@ -1094,8 +1094,8 @@ variable : track1_length
 </section>
 <section id="write-out">
 <h3>Write out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h3>
-<p>We write the relevant python variables into a file, called <em><a class="reference external" href="http://collpars.py">collpars.py</a></em>, which contains the relevant parameters of the analysis and which will be used in the following notebooks.</p>
-<p>We write out into the parameter file:</p>
+<p>We write the relevant Python variables into a file, called <em><a class="reference external" href="http://collpars.py">collpars.py</a></em>, which contains the relevant parameters of the analysis and which will be used in the following notebooks.</p>
+<p>We write into the parameter file:</p>
 <ul class="simple">
 <li><p>The selection cuts</p></li>
 <li><p>The efficiencies of the selection for each sample</p></li>

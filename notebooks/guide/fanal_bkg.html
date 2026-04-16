@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/guide/fanal_bkg';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertainties.html" />
+    <link rel="next" title="Uncertainties on the number of background events" href="fanal_bkg_uncertainties.html" />
     <link rel="prev" title="Energy resolution" href="fanal_energy_resolution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="fanal_selection.html">Signal selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Expected number of background events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of background events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_signal_countexp.html">Sensitivity of a counting experiment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
@@ -433,7 +433,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-blind-selection-efficiency-in-mc">Estimate blind selection efficiency in MC</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">Energy distribution of the blind data and mc samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">Energy distribution of the blind data and MC samples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-the-number-of-background-events-in-the-blind-data">Estimate the number of background events in the blind-data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-total-number-of-background-events">Compute the total number of background events</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">Number of background events in RoI and E range</a></li>
@@ -472,7 +472,7 @@ document.write(`
 \[ 
 n^k_{RoI} = \frac{\epsilon^k_{RoI}}{\epsilon^k_{b}} n^k_b
 \]</div>
-<p>We also estimate the number of background events in the enlarged energy window, <span class="math notranslate nohighlight">\(\epsilon^k_E\)</span>:</p>
+<p>We also estimate the number of background events in the enlarged energy window, <span class="math notranslate nohighlight">\(n^k_E\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ 
 n^k_{E} = \frac{\epsilon^k_{E}}{\epsilon^k_{b}} n^k_b
@@ -670,7 +670,7 @@ Tl blind eff : 70.4775 %
 </section>
 </section>
 <section id="energy-distribution-of-the-blind-data-and-mc-samples">
-<h2>Energy distribution of the blind data and mc samples<a class="headerlink" href="#energy-distribution-of-the-blind-data-and-mc-samples" title="Permalink to this heading">#</a></h2>
+<h2>Energy distribution of the blind data and MC samples<a class="headerlink" href="#energy-distribution-of-the-blind-data-and-mc-samples" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_energy</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
@@ -698,9 +698,9 @@ Tl blind eff : 70.4775 %
 <h2>Estimate the number of background events in the blind-data<a class="headerlink" href="#estimate-the-number-of-background-events-in-the-blind-data" title="Permalink to this heading">#</a></h2>
 <p>Estimate the number of events of Bi and Tl:</p>
 <ul class="simple">
-<li><p>Obtain the pdfs distribution for a reference variable, i.e. energy, for each blind sample.</p></li>
-<li><p>Generate a combined pdf where the parameters are the number of events of each sample.</p></li>
-<li><p>Estimate the number of blind Tl and Bi events fitting the energy distribution to the combined pdf.</p></li>
+<li><p>Obtain the PDFs for a reference variable, i.e. energy, for each blind sample.</p></li>
+<li><p>Generate a combined PDF where the parameters are the number of events of each sample.</p></li>
+<li><p>Estimate the number of blind Tl and Bi events fitting the energy distribution to the combined PDF.</p></li>
 <li><p>Compute the total number of Tl and Bi using the efficiencies of the blind selection in the MC samples.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -873,7 +873,7 @@ Tl blind eff : 70.4775 %
 </section>
 <section id="write-out">
 <h2>Write out<a class="headerlink" href="#write-out" title="Permalink to this heading">#</a></h2>
-<p>We write out into the <em><a class="reference external" href="http://collpars.py">collpars.py</a></em> file the number of events</p>
+<p>We write into the <em><a class="reference external" href="http://collpars.py">collpars.py</a></em> file the number of events.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">write</span> <span class="o">=</span> <span class="kc">True</span>
@@ -946,7 +946,7 @@ Tl blind eff : 70.4775 %
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Uncertainties on the number of backgrounds events</p>
+        <p class="prev-next-title">Uncertainties on the number of background events</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -976,7 +976,7 @@ Tl blind eff : 70.4775 %
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-blind-selection-efficiency-in-mc">Estimate blind selection efficiency in MC</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">Energy distribution of the blind data and mc samples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-distribution-of-the-blind-data-and-mc-samples">Energy distribution of the blind data and MC samples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-the-number-of-background-events-in-the-blind-data">Estimate the number of background events in the blind-data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-the-total-number-of-background-events">Compute the total number of background events</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-background-events-in-roi-and-e-range">Number of background events in RoI and E range</a></li>

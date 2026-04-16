@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Estimate the number of signal events" href="fanal_signal.html" />
-    <link rel="prev" title="Uncertainties on the number of backgrounds events" href="fanal_bkg_uncertainties.html" />
+    <link rel="prev" title="Uncertainties on the number of background events" href="fanal_bkg_uncertainties.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="fanal_selection.html">Signal selection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_energy_resolution.html">Energy resolution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_bkg.html">Expected number of background events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of backgrounds events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fanal_bkg_uncertainties.html">Uncertainties on the number of background events</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Sensitivity of a counting experiment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_signal.html">Estimate the number of signal events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fanal_data_access.html">Open the box</a></li>
@@ -540,7 +540,7 @@ document.write(`
 <li><p><span class="math notranslate nohighlight">\(\epsilon^{\beta\beta}_{RoI}\)</span> is the efficiency of selecting signal events in the RoI (as a fraction, computed using MC)</p></li>
 <li><p><span class="math notranslate nohighlight">\(M\)</span> is the mass of the detector (kg)</p></li>
 <li><p><span class="math notranslate nohighlight">\(t\)</span> is the exposure time (y)</p></li>
-<li><p><span class="math notranslate nohighlight">\(N_A\)</span> is the Avogadro number</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_A\)</span> is Avogadro’s number</p></li>
 <li><p><span class="math notranslate nohighlight">\(W\)</span> is the atomic mass (g/mol)</p></li>
 </ul>
 </section>
@@ -749,7 +749,7 @@ fewer signal events imply a longer half-life (the decay is rarer).</p>
 </div>
 </div>
 </div>
-<p>Translate the number of signal events into half-life time.</p>
+<p>Translate the number of signal events into a half-life.</p>
 <p><strong>Exercise</strong>: Implement the <em>tau</em> function to return the half-life associated with <em>nbb</em> signal events in the selected RoI.</p>
 <div class="cell tag_solution docutils container">
 <div class="cell_input docutils container">
@@ -789,9 +789,8 @@ fewer signal events imply a longer half-life (the decay is rarer).</p>
 </section>
 <section id="compute-the-p-value-of-the-null-hypothesis">
 <h3>Compute the p-value of the null hypothesis<a class="headerlink" href="#compute-the-p-value-of-the-null-hypothesis" title="Permalink to this heading">#</a></h3>
-<p>The p-value is the probability of obtaining an experiment with agreement with no-signal equal to or worse than the observation.</p>
-<p>When the p-value of the null hypothesis is below 3 sigma, we claim evidence; when it is below 5 sigma, a discovery!</p>
-<p>Note that we claim a discovery when the data does not agree with the background-only hypothesis.</p>
+<p>The p-value is the probability of observing a result at least as extreme as the one measured, assuming the background-only (no-signal) hypothesis is true.</p>
+<p>When the significance exceeds 3 sigma (p &lt; 2.7×10⁻³), we claim evidence; when it exceeds 5 sigma (p &lt; 2.87×10⁻⁷), we claim a discovery.</p>
 <p>In the case of a counting experiment, the distribution of the number of observed events under the no-signal hypothesis is a Poisson distribution with mean <span class="math notranslate nohighlight">\(n^{bkg}_{RoI}\)</span>, the number of background events in the RoI.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -869,7 +868,7 @@ p0-values &lt; 2.87e-07 if n &gt; 131, Tbb &lt; 1.31e-01 y
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Uncertainties on the number of backgrounds events</p>
+        <p class="prev-next-title">Uncertainties on the number of background events</p>
       </div>
     </a>
     <a class="right-next"
