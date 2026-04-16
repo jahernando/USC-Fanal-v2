@@ -51,10 +51,31 @@ Results from the solution notebooks for each collaboration.
 | t₁/₂ fit (×10²⁵ y) | 16.8 | 12.5 | 10.4 | 14.8 | 19.1 |
 | t₁/₂ 68% CI fit (×10²⁵ y) | (10.4, 28.7) | (8.97, 19.3) | (7.26, 16.8) | (10.9, 21.9) | (13.5, 33.1) |
 
+## Combined Result (Counting Experiment)
+
+The five collaborations are combined using a joint Poisson likelihood with a common decay-rate parameter $\mu = 1/\mathcal{T}_{1/2}$:
+
+$$\mathcal{L}(\mu) = \prod_c \mathrm{Poisson}(n_c \mid b_c + \mu \, s_c)$$
+
+| Quantity | Combined | Range (individual) |
+|----------|------:|------:|
+| n observed (total) | 278 | 6 – 117 |
+| n background (total) | 187.10 | 2.53 – 78.85 |
+| n signal (total) | 90.90 | 3.47 – 38.15 |
+| **t₁/₂ (×10²⁵ y)** | **13.28** | 9.47 – 20.7 |
+| t₁/₂ 68% CI (×10²⁵ y) | (11.2, 16.1) | — |
+| t₁/₂ 95% CI (×10²⁵ y) | (9.7, 20.0) | — |
+| **z₀ (σ)** | **6.59** | 2.12 – 3.76 |
+| p-value | 2.26×10⁻¹¹ | 1.68×10⁻² – 8.59×10⁻⁵ |
+
+**Compatibility test**: χ² = 2.23, ndof = 4, p = 0.694 — all five measurements are consistent.
+
 ## Key Observations
 
-- **Best significance**: Beta (3.76σ), followed by Alpha (3.46σ) and Delta (3.35σ).
+- **Discovery**: No individual collaboration exceeds 5σ, but the combination reaches **6.59σ**, crossing the discovery threshold.
+- **Best individual significance**: Beta (3.76σ), followed by Alpha (3.46σ) and Delta (3.35σ).
 - **Worst significance**: Epsilon (2.12σ) — the poorest energy resolution (10.9 keV) dilutes the signal despite 3000 kg·y exposure.
 - **Energy resolution matters**: Beta (5.25 keV, 1000 kg·y) outperforms Delta (7.91 keV, 3000 kg·y) in significance, demonstrating that better resolution is more effective than simply increasing exposure when backgrounds are high.
 - **Signal excess**: All collaborations observe more events than the expected background, consistent with a ββ0ν signal.
 - **Counting vs. fit**: The fit-based t₁/₂ is generally consistent with the counting estimate, with deviations depending on how well the 3-component fit separates signal from background.
+- **Compatibility**: The five individual measurements are fully compatible (p = 0.69), validating the combination.
